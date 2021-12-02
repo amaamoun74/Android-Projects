@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Health APP</string>
+
+    <string name="todo">TODO</string>
+    <string name="app_name">Health Care</string>
+    <string name="slogan">The best app for your health</string>
+    <string name="sign_up">Sign-Up</string>
+    <string name="log_in">Log-In</string>
+    <string name="App_Name">Health Care</string>
 </resources>
