@@ -1,14 +1,16 @@
-package com.example.healthapp;
+package UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class StartingApp extends AppCompatActivity {
+import com.example.healthapp.R;
+
+public class LogIn extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_starting_app);
+        setContentView(R.layout.activity_log_in);
     }
 }

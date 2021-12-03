@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".StartingApp"
+            android:name="UI.LogIn"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="UI.StartingApp"
+            android:exported="true" />
+        <activity
+            android:name="UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

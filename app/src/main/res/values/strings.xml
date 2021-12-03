@@ -3,7 +3,12 @@
     <string name="todo">TODO</string>
     <string name="app_name">Health Care</string>
     <string name="slogan">The best app for your health</string>
-    <string name="sign_up">Sign-Up</string>
-    <string name="log_in">Log-In</string>
-    <string name="App_Name">Health Care</string>
+    <string name="sign_up">Sign up</string>
+    <string name="log_in"><textcolor color = "#FFFF">Log in</textcolor></string>
+    <string name="welcome">Welcome back</string>
+    <string name="hint">Log in to continue</string>
+    <string name="usernameHint"><font size = "18">Username</font></string>
+    <string name="passwordHint"><font size = "18">Password</font></string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
 </resources>

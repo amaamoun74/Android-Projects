@@ -1,15 +1,16 @@
-package com.example.healthapp;
+package UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.healthapp.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,13 +36,10 @@ public class MainActivity extends AppCompatActivity {
         appName.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this,StartingApp.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, StartingApp.class);
+            startActivity(intent);
+            finish();
         },splashDuration);
     }
 }
