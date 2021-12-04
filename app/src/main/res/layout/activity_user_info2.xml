@@ -7,6 +7,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical"
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,47 +72,49 @@
         android:layout_marginLeft="10sp"
         android:orientation="horizontal"
         android:layout_marginTop="15sp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginBottom="10sp"
-        android:text="Sign-Up as:-"
-        android:textColor="#070707"
-        android:textSize="24sp" />
-    <RadioGroup
-        android:id="@+id/radio2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp">
-        <RadioButton
-            android:id="@+id/patientbtn"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Patient"
-            android:textSize="20sp"
-            android:textColor="#2E1563"></RadioButton>
-        <RadioButton
-            android:id="@+id/doctorbtn"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="10sp"
+            android:text="@string/sign_up_as"
+            android:textColor="#070707"
+            android:textSize="24sp" />
+        <RadioGroup
+            android:id="@+id/radio2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Doctor"
-            android:textSize="20sp"
-            android:textColor="#2E1563"></RadioButton>
-        <RadioButton
-            android:id="@+id/policemanbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Policeman"
-            android:textSize="20sp"
-            android:textColor="#2E1563"></RadioButton>
-    </RadioGroup>
-</LinearLayout>
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:id="@+id/patientbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/patient"
+                android:textSize="20sp"
+                android:textColor="#2E1563"> </RadioButton>
+            <RadioButton
+                android:id="@+id/doctorbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/doctor"
+                android:textSize="20sp"
+                android:textColor="#2E1563"> </RadioButton>
+            <RadioButton
+                android:id="@+id/policemanbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/policeman"
+                android:textSize="20sp"
+                android:textColor="#2E1563"> </RadioButton>
+        </RadioGroup>
+    </LinearLayout>
 
 
     <Button

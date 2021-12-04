@@ -27,4 +27,8 @@
     <string name="didn_t_receive_a_message">Didn\'t receive a message?</string>
     <string name="send_again">Send Again</string>
     <string name="enter_the_6_digits">Enter the 6 digits</string>
+    <string name="policeman">Policeman</string>
+    <string name="doctor">Doctor</string>
+    <string name="patient">Patient</string>
+    <string name="sign_up_as">Sign-Up as:-</string>
 </resources>

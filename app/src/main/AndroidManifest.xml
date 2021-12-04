@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name="UI.user_Info"
+            android:exported="false" />
+        <activity
             android:name=".userInfo"
             android:exported="false" />
         <activity
