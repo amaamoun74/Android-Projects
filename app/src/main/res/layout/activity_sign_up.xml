@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="UI.StartingApp"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/logo1"
+            tools:ignore="ContentDescription,HardcodedText"> </ImageView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:text="@string/register"
+        android:textColor="#0F4090"
+        android:textSize="35sp"
+        android:textStyle="bold"> </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/hint2"
+        android:textColor="#989494"
+        android:textSize="18sp"
+        android:textStyle="bold"> </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp" >
+
+        <EditText
+            android:id="@+id/username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:autofillHints="name"
+            android:gravity="left"
+            android:hint="@string/usernameHint"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"
+            android:importantForAutofill="no"> </EditText>
+
+        <EditText
+            android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:autofillHints="password"
+            android:gravity="left"
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+
+        <EditText
+            android:id="@+id/confirmPass"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:autofillHints="no"
+            android:gravity="left"
+            android:hint="@string/confirm_password_hint"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+
+        <EditText
+            android:id="@+id/nationalID"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:hint="@string/nationalId_hint"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"
+            android:importantForAutofill="no"> </EditText>
+
+        <EditText
+            android:id="@+id/phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:autofillHints="phone"
+            android:gravity="left"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bluebutton"
+        android:text="@string/next"
+        android:textSize="28sp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="left"
+            android:text="@string/already_have_an_account"
+            android:textColor="#A19F9F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
+        <TextView
+            android:id="@+id/login_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_in"
+            android:textStyle="bold"
+            android:textColor="#0F4090"
+            android:textSize="18sp"
+            android:layout_gravity="left"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="5dp"
+            android:gravity="left"
+            tools:ignore="RtlHardcoded"> </TextView>
+    </LinearLayout>
+
+</LinearLayout>

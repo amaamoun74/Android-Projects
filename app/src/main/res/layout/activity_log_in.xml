@@ -17,7 +17,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="81dp"
             android:layout_gravity="center"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="20dp"
@@ -60,7 +60,7 @@
     android:inputType="textPersonName"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
     android:hint="@string/usernameHint"
-    android:textColorHint="#990F4090"
+    android:textColorHint="#660F4090"
     android:textColor="#E60F4090"
     android:textStyle="bold"
     android:textSize="22sp"
@@ -73,28 +73,29 @@
     tools:ignore="RtlHardcoded"
     android:autofillHints="name"> </EditText>
     <EditText
-        android:id="@+id/password_input"
+        android:id="@+id/password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="@string/passwordHint"
-        android:textColorHint="#990F4090"
-        android:textColor="#E60F4090"
-        android:textStyle="bold"
-        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:autofillHints="password"
         android:drawableEnd="@drawable/ic_baseline_visibility_off_20"
+        android:gravity="left"
+        android:hint="@string/passwordHint"
+        android:inputType="textPassword"
         android:paddingStart="20dp"
         android:paddingEnd="10dp"
-        android:gravity="left"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
+        android:textColor="#E60F4090"
+        android:textColorHint="#660F4090"
+        android:textSize="22sp"
 
-        tools:ignore="RtlHardcoded"
-        android:autofillHints="password"> </EditText>
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
 
     <TextView
+        android:id="@+id/forgetPass_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forget_password"
@@ -113,7 +114,7 @@
 
 
     <Button
-        android:id="@+id/logInButton"
+        android:id="@+id/logInBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -135,16 +136,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dont_have_an_account"
-            android:textStyle="bold"
-            android:textColor="#A19F9F"
-            android:textSize="18sp"
             android:layout_gravity="right"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="0dp"
             android:gravity="left"
-            tools:ignore="RtlHardcoded"> </TextView>
+            android:text="@string/dont_have_an_account"
+            android:textColor="#A19F9F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
     <TextView
+        android:id="@+id/signUp_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
