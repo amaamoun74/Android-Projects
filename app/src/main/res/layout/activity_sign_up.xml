@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="UI.StartingApp"
     android:background="#FFFFFF"
     android:orientation="vertical">
@@ -46,14 +47,109 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp" >
+        android:layout_width="400dp"
+        android:layout_height="460dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="First Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Last Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="E-mail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirm_pass"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nationalId"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="National-ID">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColorHint="#B6ADAD"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+        <!--<EditText
             android:id="@+id/username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -71,9 +167,10 @@
             android:textColorHint="#660F4090"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>-->
 
-        <EditText
+
+        <!--<EditText
             android:id="@+id/email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -83,6 +180,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:hint="@string/e_mail"
+            android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:paddingStart="20dp"
             android:paddingEnd="10dp"
@@ -90,10 +188,9 @@
             android:textColorHint="#660F4090"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"
-            android:importantForAutofill="no"> </EditText>
+            tools:ignore="RtlHardcoded,TextContrastCheck"></EditText>-->
 
-        <EditText
+        <!--<EditText
             android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -111,9 +208,9 @@
             android:textColorHint="#660F4090"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+            tools:ignore="RtlHardcoded,TextContrastCheck"></EditText>-->
 
-        <EditText
+        <!--<EditText
             android:id="@+id/confirmPass"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -131,9 +228,9 @@
             android:textColorHint="#660F4090"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+            tools:ignore="RtlHardcoded,TextContrastCheck"></EditText>-->
 
-        <EditText
+       <!-- <EditText
             android:id="@+id/nationalID"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -143,6 +240,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:hint="@string/nationalId_hint"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
             android:paddingStart="20dp"
             android:paddingEnd="10dp"
@@ -150,10 +248,9 @@
             android:textColorHint="#660F4090"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"
-            android:importantForAutofill="no"> </EditText>
+            tools:ignore="RtlHardcoded,TextContrastCheck"></EditText>-->
 
-        <EditText
+        <!--<EditText
             android:id="@+id/phone"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -171,21 +268,21 @@
             android:textColorHint="#660F4090"
             android:textSize="22sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
+            tools:ignore="RtlHardcoded,TextContrastCheck"></EditText>-->
 
-    </LinearLayout>
 
     <Button
         android:id="@+id/next_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/bluebutton"
         android:text="@string/next"
         android:textSize="28sp"
+        android:textColor="@color/white"
         />
     <LinearLayout
         android:layout_width="wrap_content"

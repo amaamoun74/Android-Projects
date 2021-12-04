@@ -3,17 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="UI.StartingApp"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    >
+    tools:context="UI.StartingApp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -23,19 +21,19 @@
             android:layout_marginBottom="20dp"
             android:contentDescription="TODO"
             android:src="@drawable/logo1"
-            tools:ignore="ContentDescription,HardcodedText"> </ImageView>
+            tools:ignore="ContentDescription,HardcodedText"></ImageView>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
-        android:layout_gravity="center"
         android:text="@string/welcome"
         android:textColor="#0F4090"
         android:textSize="48sp"
-        android:textStyle="bold"> </TextView>
+        android:textStyle="bold"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,72 +43,57 @@
         android:text="@string/hint"
         android:textColor="#989494"
         android:textSize="18sp"
-        android:textStyle="bold"> </TextView>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:weightSum="2"
-    >
-<EditText
-    android:id="@+id/text_input"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:inputType="textPersonName"
-    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-    android:hint="@string/usernameHint"
-    android:textColorHint="#660F4090"
-    android:textColor="#E60F4090"
-    android:textStyle="bold"
-    android:textSize="22sp"
-    android:paddingStart="20dp"
-    android:paddingEnd="10dp"
-    android:gravity="left"
-    android:layout_margin="10dp"
-    android:layout_gravity="center"
-    android:layout_weight="1"
-    tools:ignore="RtlHardcoded"
-    android:autofillHints="name"> </EditText>
-    <EditText
-        android:id="@+id/password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:textStyle="bold"></TextView>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        android:autofillHints="password"
-        android:drawableEnd="@drawable/ic_baseline_visibility_off_20"
-        android:gravity="left"
-        android:hint="@string/passwordHint"
-        android:inputType="textPassword"
-        android:paddingStart="20dp"
-        android:paddingEnd="10dp"
-        android:textColor="#E60F4090"
-        android:textColorHint="#660F4090"
-        android:textSize="22sp"
-
-        android:textStyle="bold"
-        tools:ignore="RtlHardcoded,TextContrastCheck"> </EditText>
-
-    <TextView
-        android:id="@+id/forgetPass_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forget_password"
-        android:textStyle="bold"
-        android:textColor="#0F4090"
-        android:textSize="18sp"
-        android:layout_gravity="right"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
         android:gravity="center"
-        tools:ignore="RtlHardcoded"> </TextView>
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgetPass_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="@string/forget_password"
+            android:textColor="#0F4090"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded"></TextView>
 
 
-</LinearLayout>
-
+    </LinearLayout>
 
 
     <Button
@@ -123,16 +106,17 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/bluebutton"
         android:text="@string/log_in"
-        android:textSize="28sp"
-        />
+        android:textSize="28sp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_gravity="center"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_gravity="center"
+        android:orientation="horizontal"
         android:weightSum="2">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,20 +128,21 @@
             android:textColor="#A19F9F"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
-    <TextView
-        android:id="@+id/signUp_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:textStyle="bold"
-        android:textColor="#0F4090"
-        android:textSize="18sp"
-        android:layout_gravity="left"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="5dp"
-        android:gravity="left"
-        tools:ignore="RtlHardcoded"> </TextView>
+            tools:ignore="RtlHardcoded,TextContrastCheck"></TextView>
+
+        <TextView
+            android:id="@+id/signUp_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="left"
+            android:text="@string/sign_up"
+            android:textColor="#0F4090"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded"></TextView>
     </LinearLayout>
 
 </LinearLayout>

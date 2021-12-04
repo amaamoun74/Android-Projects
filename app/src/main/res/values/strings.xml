@@ -7,8 +7,11 @@
     <string name="log_in"><textcolor color="#FFFF">Log in</textcolor></string>
     <string name="welcome">Welcome back</string>
     <string name="hint">Log in to continue</string>
-    <string name="usernameHint"><font size="18">Username</font></string>
-    <string name="passwordHint"><font size="18">Password</font></string>
+    <string name="usernameHint">Username</string>
+    <string name="firstNameHint">FirstName</string>
+    <string name="lastNameHint">LastName</string>
+    <string name="passwordHint">Password</string>
+    <string name="confirmdPasswordHint">Confirm Password</string>
     <string name="forget_password">Forget Password?</string>
     <string name="dont_have_an_account">Don\'t have an account?</string>
     <string name="already_have_an_account">Already have an account</string>
@@ -19,6 +22,7 @@
     <string name="nationalId_hint">National ID</string>
     <string name="phone_number">Phone number</string>
     <string name="next">Next</string>
+    <string name="back">Back</string>
     <string name="verification_code"><font size="35">--- ---</font></string>
     <string name="didn_t_receive_a_message">Didn\'t receive a message?</string>
     <string name="send_again">Send Again</string>
