@@ -85,7 +85,9 @@
             android:layout_margin="10dp"
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
-            android:hint="@string/passwordHint">
+            android:hint="@string/passwordHint"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#0F4090">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
@@ -93,6 +95,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:textColor="#0F4090"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#0F4090"
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
