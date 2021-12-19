@@ -10,6 +10,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <activity
+            android:name=".userProfile"
+            android:exported="false" />
+        <activity
             android:name="UI.user_Info"
             android:exported="true" />
         <activity
