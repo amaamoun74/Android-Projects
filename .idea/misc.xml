@@ -22,6 +22,12 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/bluebutton.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/graybox.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/graybutton.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_20.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_32.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_person_32.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/shape.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/whitebutton.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
@@ -32,6 +38,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/activity_user_info2.xml" value="0.20108695652173914" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/activity_verification.xml" value="0.1956521739130435" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/contact_us.xml" value="0.25" />
       </map>
     </option>
   </component>

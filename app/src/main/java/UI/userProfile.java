@@ -1,8 +1,10 @@
-package com.example.healthapp;
+package UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.healthapp.R;
 
 public class userProfile extends AppCompatActivity {
 
