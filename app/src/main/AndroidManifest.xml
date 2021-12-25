@@ -10,25 +10,28 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <activity
-            android:name="UI.userProfile"
+            android:name=".UI.userProfile"
             android:exported="false" />
         <activity
-            android:name="UI.user_Info"
+            android:name=".UI.user_Info"
             android:exported="true" />
         <activity
-            android:name="UI.Verification"
+            android:name=".UI.Verification"
             android:exported="true" />
         <activity
-            android:name="UI.SignUp"
+            android:name=".UI.SignUp"
             android:exported="true" />
         <activity
-            android:name="UI.LogIn"
+            android:name=".UI.LogIn"
             android:exported="true" />
         <activity
-            android:name="UI.StartingApp"
+            android:name=".UI.StartingApp"
             android:exported="true" />
         <activity
-            android:name="UI.MainActivity"
+            android:name=".UI.Home"
+            android:exported="true"/>
+        <activity
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
