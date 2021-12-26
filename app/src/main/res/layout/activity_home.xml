@@ -64,6 +64,7 @@
                 android:background="@color/mainBlue"
 
                 >
+
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar11"
                     android:layout_width="wrap_content"
@@ -82,7 +83,6 @@
                   android:layout_gravity="center"
                   android:layout_marginTop="10dp"
                   android:layout_marginBottom="10dp"
-                  android:contentDescription="@string/todo"
                   android:src="@drawable/menu_24"></ImageView>
                   -->
 
@@ -147,6 +147,7 @@
             android:weightSum="2">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/profileCV"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -253,6 +254,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/dataCV"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -298,6 +300,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/contactCV"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"

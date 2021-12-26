@@ -45,9 +45,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-        implementation "androidx.drawerlayout:drawerlayout:1.1.1"
+
+    // for navigation drawer
+    implementation "androidx.drawerlayout:drawerlayout:1.1.1"
     implementation 'androidx.appcompat:appcompat:1.1.x'
 
+    // for qr scanning
+    implementation 'com.budiyev.android:code-scanner:2.1.0'
+   // implementation 'com.github.nisrulz:qreader:{latest version}'
+   // implementation 'com.karumi:dexter:6.2.3'
+    // momkn yb2a f error hna
+    //implementation 'com.google.android.gms:play-services-version:18..0.0'
 
 
 }

@@ -6,45 +6,35 @@
     tools:context="UI.StartingApp"
     android:background="#FFFFFF"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:background="@drawable/shape"
         android:orientation="horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="81dp"
-            android:layout_gravity=""
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="20dp"
             android:contentDescription="TODO"
             android:src="@drawable/logo1"
-            tools:ignore="ContentDescription,HardcodedText">
-        </ImageView>
+            tools:ignore="ContentDescription,HardcodedText"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Contact Us"
             android:textColor="#fff"
             android:textSize="38sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            />
+            android:textStyle="bold" />
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send Us A Message"
-        android:textColor="#5A78A8"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,8 +49,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:background="@drawable/graybox"
-            android:gravity=""
-            android:paddingLeft="15dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:text="Username"
             android:textColor="#5A78A8"
             android:textSize="15sp"
@@ -72,8 +63,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:background="@drawable/graybox"
-            android:gravity=""
-            android:paddingLeft="15dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:text="Email"
             android:textColor="#5A78A8"
             android:textSize="15sp"
@@ -85,8 +77,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:background="@drawable/graybox"
-            android:gravity=""
-            android:paddingLeft="15dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:text="Phone Number"
             android:textColor="#5A78A8"
             android:textSize="15sp"
@@ -99,7 +92,8 @@
             android:layout_margin="10dp"
             android:background="@drawable/graybox"
             android:gravity="top"
-            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:paddingTop="15dp"
             android:text="Message"
             android:textColor="#5A78A8"
@@ -139,7 +133,7 @@
                     android:textSize="18sp"
                     android:textColor="#5A78A8"
                     android:textStyle="bold"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginStart="50dp"
                     android:buttonTint="#0F4090"/>
             </RadioGroup>
 
