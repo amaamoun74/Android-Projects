@@ -22,6 +22,7 @@ public class Permission {
         List<String> permissionList = new ArrayList<>();
         for (String perm : appPermission)
         {
+
             if (ContextCompat.checkSelfPermission(context,perm)!= PackageManager.PERMISSION_GRANTED)
             {
                 permissionList.add(perm);

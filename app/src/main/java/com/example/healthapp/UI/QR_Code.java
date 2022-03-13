@@ -1,4 +1,4 @@
-package UI;
+package com.example.healthapp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,6 @@ import android.widget.ToggleButton;
 
 import com.example.healthapp.R;
 import com.karumi.dexter.Dexter;
-import com.karumi.dexter.DexterBuilder;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
@@ -113,6 +112,7 @@ public class QR_Code extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+
         Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
                     @Override

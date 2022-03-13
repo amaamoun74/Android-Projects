@@ -11,6 +11,7 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/cardviewshape.xml" value="0.24722222222222223" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/data_icon.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/edittext.xml" value="0.2388888888888889" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/graybox.xml" value="0.20925925925925926" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/graybutton.xml" value="0.1640625" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_32.xml" value="0.1609375" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/person.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/qr.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/qrshape.xml" value="0.14270833333333333" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/rectangle.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/settings_ic.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/shape.xml" value="0.1671875" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/drawable/share_ic.xml" value="0.14635416666666667" />
@@ -28,14 +30,14 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout-v21/activity_user_info2.xml" value="0.12360688956433637" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />
-        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_home.xml" value="0.152" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_home_page.xml" value="0.1480978260869565" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_log_in.xml" value="0.24623115577889448" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_menu_test.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.11200000000000002" />
-        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_qr_scanning.xml" value="0.10054347826086957" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_qr_scanning.xml" value="0.264" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_sign_up.xml" value="0.176" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_starting_app.xml" value="0.136" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_user_info2.xml" value="0.2277992277992278" />

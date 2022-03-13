@@ -10,12 +10,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.healthapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -88,8 +86,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
 
             case R.id.dataCV:
-                Toast.makeText(this, "Data Screen is not implemented yet ", Toast.LENGTH_SHORT).show();
-         /*       intent = new Intent(this,.class);
+                intent = new Intent(this, QR_Code.class);
+                startActivity(intent);
+         /*       Toast.makeText(this, "Data Screen is not implemented yet ", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this,.class);
                 startActivity(intent);
            */     break;
 
@@ -102,6 +102,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 intent = new Intent(this, ContactUs.class);
                 startActivity(intent);
                 break;
+
 
         }
     }

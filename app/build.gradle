@@ -52,10 +52,14 @@ dependencies {
 
     // for qr scanning
     implementation 'com.budiyev.android:code-scanner:2.1.0'
-   // implementation 'com.github.nisrulz:qreader:{latest version}'
-   // implementation 'com.karumi:dexter:6.2.3'
+   implementation 'com.github.nisrulz:qreader:{latest version}'
+   implementation 'com.karumi:dexter:6.2.3'
     // momkn yb2a f error hna
-    //implementation 'com.google.android.gms:play-services-version:18..0.0'
+    //implementation 'com.google.android.gms:play-services-version:18.0.0'
 
+    // for qr generation
+    implementation 'com.github.nisrulz:qreader:2.1.2'
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.google.android.gms:play-services-vision:18.0.0'
 
 }

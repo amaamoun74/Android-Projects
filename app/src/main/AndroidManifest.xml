@@ -12,6 +12,10 @@
         <activity
             android:name=".UI.qrScanning"
             android:exported="true" />
+
+        <activity
+            android:name=".UI.QR_Code"
+            android:exported="true" />
         <activity
             android:name=".UI.userProfile"
             android:exported="true" />
