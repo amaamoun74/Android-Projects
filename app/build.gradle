@@ -45,6 +45,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
 
     // for navigation drawer
     implementation "androidx.drawerlayout:drawerlayout:1.1.1"
@@ -57,9 +58,12 @@ dependencies {
     // momkn yb2a f error hna
     //implementation 'com.google.android.gms:play-services-version:18.0.0'
 
-    // for qr generation
+    // for qr Scanner menna
     implementation 'com.github.nisrulz:qreader:2.1.2'
     implementation 'com.karumi:dexter:5.0.0'
     implementation 'com.google.android.gms:play-services-vision:18.0.0'
 
+    // for QR generation
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.4'
+    implementation 'com.google.zxing:core:3.3.3'
 }

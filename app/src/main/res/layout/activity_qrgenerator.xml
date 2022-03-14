@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.QRGenerator"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    >
+
+    <ImageView
+        android:id="@+id/qrImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
+        android:background="#2F5C5A57"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".UI.QRGenerator"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
+
+<!--
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColorHint="@color/mainBlue"
+            android:layout_margin="10dp"
+
+            android:hint="enter text to generate qr code" >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#0F4090"
+            android:inputType="text">
+        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#80052861"
+            android:layout_margin="10dp"
+            android:hint= "enter text to generate QR code"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#0F4090"
+                android:inputType="text"> </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/generate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generate"
+            android:fontFamily="monospace"
+            android:textStyle="normal"
+            android:textSize="22sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/bluebutton"
+            />
+    </LinearLayout>
+
+</LinearLayout>

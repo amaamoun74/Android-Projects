@@ -86,7 +86,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
 
             case R.id.dataCV:
-                intent = new Intent(this, QR_Code.class);
+                intent = new Intent(this, QRGenerator.class);
                 startActivity(intent);
          /*       Toast.makeText(this, "Data Screen is not implemented yet ", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,.class);
