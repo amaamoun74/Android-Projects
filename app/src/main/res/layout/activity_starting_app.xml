@@ -54,7 +54,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="60dp"
             android:text="@string/slogan"
-            android:textColor="#0F4090"
+            android:textColor="#1479FF"
             android:textSize="64sp"
             android:textStyle="bold"> </TextView>
 
@@ -69,7 +69,7 @@
             android:layout_marginEnd="28dp"
             android:background="@drawable/graybutton"
             android:text="@string/sign_up"
-            android:textColor="#0F4090"
+            android:textColor="#FF5358"
             android:textSize="28sp"/>
 
         <Button
@@ -83,7 +83,5 @@
             android:background="@drawable/bluebutton"
             android:text="@string/log_in"
             android:textSize="28sp"
-
-
              />
     </LinearLayout>

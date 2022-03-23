@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.healthapp.R;
+import com.example.healthapp.pojo.BottomNavActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LogIn extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class LogIn extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LogIn.this,Home.class);
+                Intent intent = new Intent(LogIn.this, BottomNavActivity.class);
                 startActivity(intent);
                 Toast.makeText(LogIn.this, "Welcome welcome welcome!", Toast.LENGTH_LONG).show();
             }
