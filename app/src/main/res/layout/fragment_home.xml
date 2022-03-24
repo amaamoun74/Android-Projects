@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pojo.HomeFragment">
-
+    tools:context=".pojo.HomeFragment"
+    android:background="@drawable/back">
 
     <androidx.drawerlayout.widget.DrawerLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E6FFFFFF"
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
-
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_view"
@@ -23,23 +22,25 @@
             android:layout_gravity="start"
             app:headerLayout="@layout/header"
             app:menu="@menu/menu"
-
-
+            app:itemTextColor="@color/secondBlue"
+             android:background="#FFFF"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/back">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0F4090"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:scrollbarStyle="insideInset"
+                >
 
-                <ImageView
+                <!--                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="58dp"
                     android:layout_gravity="center"
@@ -48,36 +49,43 @@
                     android:contentDescription="TODO"
                     android:src="@drawable/logo1"
                     tools:ignore="ContentDescription,HardcodedText"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:text="@string/home"
-                    android:textColor="#FFF"
-                    android:textSize="45sp"
-                    android:textStyle="bold"/>
+-->
 
                 <androidx.appcompat.widget.Toolbar
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/mainBlue"
-
-                    >
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:padding="5dp"
+                    android:scrollbarStyle="insideOverlay">
 
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#00008577"
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:minHeight="?attr/actionBarSize"
                         android:theme="?attr/actionBarTheme"
-                        app:navigationIcon="@drawable/menu_24"/>
+                        app:navigationIcon="@drawable/menu_24"
+                        />
                 </androidx.appcompat.widget.Toolbar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:text="@string/home"
+                    android:textColor="#FFF"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:textSize="45sp"
+                     />
+
 
                 <!--
                   <ImageView
@@ -93,14 +101,15 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
+
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/profileIV"
-                    android:layout_width="121dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
@@ -110,6 +119,7 @@
                     tools:ignore="ContentDescription,HardcodedText"/>
 
                 <LinearLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -123,19 +133,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:text="@string/hi_username"
-                        android:textColor="#0F4090"
+                        android:textColor="@color/secondBlue"
                         android:textSize="30sp"
-                        android:textStyle="italic"/>
+                        android:fontFamily="@font/quicksand_medium"/>
 
                     <TextView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+
                         android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/quicksand_light"
                         android:text="user type"
-                        android:textColor="#80202022"
+                        android:textColor="#9A202022"
                         android:textSize="25sp"
-                        android:textStyle="italic"/>
+                        android:textStyle="italic" />
                 </LinearLayout>
 
 
@@ -192,9 +204,9 @@
                             android:layout_marginBottom="10dp"
                             android:gravity="center"
                             android:text="@string/see_your_profile"
-                            android:textColor="#80202022"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textColor="#89898E"
+                            android:fontFamily="@font/quicksand_regular"/>
 
                     </LinearLayout>
 
@@ -232,6 +244,7 @@
                             android:text="@string/qr_code"
                             android:textColor="#052861"
                             android:textSize="28sp"
+                            android:fontFamily="@font/quicksand_bold"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -241,9 +254,9 @@
                             android:layout_marginBottom="10dp"
                             android:gravity="center"
                             android:text="@string/user_qr_code"
-                            android:textColor="#80202022"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textColor="#89898E"
+                            android:fontFamily="@font/quicksand_regular"/>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

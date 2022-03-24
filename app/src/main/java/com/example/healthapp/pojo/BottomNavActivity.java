@@ -1,38 +1,24 @@
 package com.example.healthapp.pojo;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.healthapp.R;
-import com.example.healthapp.UI.ContactUs;
-import com.example.healthapp.UI.QRGenerator;
-import com.example.healthapp.UI.qrScanning;
-import com.example.healthapp.UI.userProfile;
-
 public class BottomNavActivity extends AppCompatActivity {
-
     MeowBottomNavigation meowBottomNavigation ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bottom_nav);
-        //replaceFragment(new HomeFragment());
-
 
         meowBottomNavigation= findViewById(R.id.bottom_nav_bar);
-
         //adding menu items
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.qr));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_send_24));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_person_32));
-
 
         meowBottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -40,10 +26,8 @@ public class BottomNavActivity extends AppCompatActivity {
 
                 switch (item.getId()) {
                     case 1:
-
                         replaceFragment(new HomeFragment());
                         break;
-
 
                     case 2:
                         replaceFragment(new DashboardFragment());
@@ -55,19 +39,15 @@ public class BottomNavActivity extends AppCompatActivity {
                 }
             }
         });
-
        // meowBottomNavigation.setCount(1,"10");
         meowBottomNavigation.show(1,true);
-
         meowBottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 switch (item.getId()) {
                     case 1:
-
                         replaceFragment(new HomeFragment());
                         break;
-
 
                     case 2:
                         replaceFragment(new DashboardFragment());
@@ -96,6 +76,4 @@ public class BottomNavActivity extends AppCompatActivity {
         transaction.commit();
         //getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment);
     }
-
-
 }

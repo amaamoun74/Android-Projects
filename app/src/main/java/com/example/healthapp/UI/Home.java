@@ -62,7 +62,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+           // super.onBackPressed();
         }
 
     }
