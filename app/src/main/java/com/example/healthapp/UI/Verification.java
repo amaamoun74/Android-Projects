@@ -1,10 +1,10 @@
 package com.example.healthapp.UI;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthapp.R;
 
@@ -23,7 +23,6 @@ public class Verification extends AppCompatActivity {
 
             Toast.makeText(this, "welcoooome", Toast.LENGTH_SHORT).show();
         });
-
 
     }
 }

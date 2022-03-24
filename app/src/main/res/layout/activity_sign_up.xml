@@ -14,10 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape"
         android:orientation="horizontal"
-        android:layout_weight="1"
-
-        >
-
+        android:layout_weight="1">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="72dp"
@@ -42,7 +39,6 @@
             android:textStyle="bold"> </TextView>
     </LinearLayout>
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +51,6 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_weight="1"> </TextView>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -92,9 +87,7 @@
             android:textColorHint="#80052861"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/e_mail"
-
             >
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"

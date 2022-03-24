@@ -64,10 +64,15 @@ dependencies {
     implementation 'com.karumi:dexter:5.0.0'
     implementation 'com.google.android.gms:play-services-vision:18.0.0'
 
+
     // for QR generation
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.4'
     implementation 'com.google.zxing:core:3.3.3'
 
     // for bottom nav bar material design
     implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
+
+    //for lottie animations
+    def lottieVersion = "5.0.3"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

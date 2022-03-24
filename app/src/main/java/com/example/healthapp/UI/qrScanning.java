@@ -1,14 +1,11 @@
 package com.example.healthapp.UI;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.Manifest;
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
@@ -16,6 +13,8 @@ import com.budiyev.android.codescanner.DecodeCallback;
 import com.example.healthapp.R;
 import com.example.healthapp.pojo.Permission;
 import com.google.zxing.Result;
+
+
 
 public class qrScanning extends AppCompatActivity {
     private CodeScanner mCodeScanner;
