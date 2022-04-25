@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pojo.HomeFragment">
 
-
     <androidx.drawerlayout.widget.DrawerLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,18 +14,17 @@
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
 
-
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/header"
-            app:menu="@menu/menu"
-
-
-            />
-
+            app:menu="@menu/menu" />
+        <!--
+        app:itemTextColor="@color/secondBlue"
+        android:background="#FFFF"
+    -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,10 +34,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0F4090"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:scrollbarStyle="insideInset">
 
-                <ImageView
+                <!--                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="58dp"
                     android:layout_gravity="center"
@@ -48,36 +46,41 @@
                     android:contentDescription="TODO"
                     android:src="@drawable/logo1"
                     tools:ignore="ContentDescription,HardcodedText"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:text="@string/home"
-                    android:textColor="#FFF"
-                    android:textSize="45sp"
-                    android:textStyle="bold"/>
+-->
 
                 <androidx.appcompat.widget.Toolbar
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/mainBlue"
-
-                    >
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:padding="5dp"
+                    android:scrollbarStyle="insideOverlay">
 
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#00008577"
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:minHeight="?attr/actionBarSize"
                         android:theme="?attr/actionBarTheme"
-                        app:navigationIcon="@drawable/menu_24"/>
+                        app:navigationIcon="@drawable/menu_24" />
                 </androidx.appcompat.widget.Toolbar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:gravity="center"
+                    android:text="@string/home"
+                    android:textColor="#FFF"
+                    android:textSize="45sp" />
+
 
                 <!--
                   <ImageView
@@ -95,21 +98,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
+                android:layout_marginTop="-10dp"
+
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/profileIV"
-                    android:layout_width="121dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:contentDescription="TODO"
                     android:src="@mipmap/profile"
-                    tools:ignore="ContentDescription,HardcodedText"/>
+                    tools:ignore="ContentDescription,HardcodedText" />
 
                 <LinearLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -122,20 +127,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:fontFamily="@font/quicksand_medium"
                         android:text="@string/hi_username"
-                        android:textColor="#0F4090"
-                        android:textSize="30sp"
-                        android:textStyle="italic"/>
+                        android:textColor="@color/purple_700"
+                        android:textSize="30sp" />
 
                     <TextView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
+
                         android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/quicksand_light"
                         android:text="user type"
-                        android:textColor="#80202022"
+                        android:textColor="#9A202022"
                         android:textSize="25sp"
-                        android:textStyle="italic"/>
+                        android:textStyle="italic" />
                 </LinearLayout>
 
 
@@ -174,7 +181,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="6"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/person"/>
+                            android:src="@drawable/person" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -183,18 +190,18 @@
                             android:text="@string/profile"
                             android:textColor="#052861"
                             android:textSize="28sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand_regular"
                             android:gravity="center"
                             android:text="@string/see_your_profile"
-                            android:textColor="#80202022"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textColor="#89898E"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -223,27 +230,28 @@
                             android:layout_height="0dp"
                             android:layout_gravity="center"
                             android:layout_weight="6"
-                            android:src="@drawable/qr"/>
+                            android:src="@drawable/qr" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_bold"
                             android:gravity="center"
                             android:text="@string/qr_code"
                             android:textColor="#052861"
                             android:textSize="28sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand_regular"
                             android:gravity="center"
                             android:text="@string/user_qr_code"
-                            android:textColor="#80202022"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textColor="#89898E"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -278,7 +286,7 @@
                             android:layout_height="0dp"
                             android:layout_gravity="center"
                             android:layout_weight="6"
-                            android:src="@drawable/data_icon"/>
+                            android:src="@drawable/data_icon" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -287,7 +295,7 @@
                             android:text="Data"
                             android:textColor="#052861"
                             android:textSize="28sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -298,7 +306,7 @@
                             android:text="(Adding-Editing-Deleting) data"
                             android:textColor="#80202022"
                             android:textSize="12sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -325,7 +333,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="6"
                             android:contentDescription="@string/todo"
-                            android:src="@drawable/contact"/>
+                            android:src="@drawable/contact" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -334,7 +342,7 @@
                             android:text="Contact Us"
                             android:textColor="#052861"
                             android:textSize="28sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -345,7 +353,7 @@
                             android:text="For more information"
                             android:textColor="#80202022"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
