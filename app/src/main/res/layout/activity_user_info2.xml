@@ -10,19 +10,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape"
-        android:orientation="vertical"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_wave__3_"
+        android:orientation="horizontal"
         >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/logo1"
-            tools:ignore="ContentDescription,HardcodedText"> </ImageView>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +49,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="10dp"
                 android:text="@string/male"
-                android:textColor="#651FFF"
+                android:textColor="#0F4090"
                 android:textSize="20sp"
                 android:buttonTint="#0F4090"
                 />
@@ -70,7 +62,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="5dp"
                 android:text="@string/female"
-                android:textColor="#B93161"
+                android:textColor="#0F4090"
                 android:textSize="20sp"
                 android:buttonTint="#0F4090"
                 > </RadioButton>
@@ -129,17 +121,7 @@
                 android:buttonTint="#0F4090"
                 > </RadioButton>
 
-            <RadioButton
-                android:id="@+id/policemanbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/policeman"
-                android:textSize="20sp"
-                android:textColor="#2E1563"
-                android:buttonTint="#0F4090"
-                > </RadioButton>
+            
         </RadioGroup>
 
     </LinearLayout>

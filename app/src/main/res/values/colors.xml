@@ -10,7 +10,7 @@
     <color name="colorPrimary">#17781B</color>
     <color name="colorPrimaryDark">#052907</color>
     <color name="colorAccent">#DA366E</color>
-    <color name="mainBlue"> #1479FF </color>
+    <color name="mainBlue"> #1479FF</color>
     <color name="hintColor"> #80202022</color>
 
 </resources>

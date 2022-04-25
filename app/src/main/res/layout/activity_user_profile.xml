@@ -9,51 +9,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@drawable/shape"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_wave__3_"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/logo1"
-            tools:ignore="ContentDescription,HardcodedText"/>
+            android:layout_width="97dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/profile_icon" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="Profile"
-            android:textSize="45sp"
-            android:textColor="#FFF"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp"
-            />
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="50dp"
+            android:text="Username"
+            android:textColor="#FFFFFFFF"
+            android:textSize="25dp" />
+
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <ImageView
-        android:layout_width="97dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:src="@mipmap/profile_icon" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:textColor="#052861"
-        android:textSize="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="5dp"
-        />
-</LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

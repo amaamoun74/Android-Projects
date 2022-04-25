@@ -10,91 +10,57 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape"
-        android:orientation="vertical"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_wave__3_"
+        android:orientation="horizontal"
         >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="81dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/logo1"
-            tools:ignore="ContentDescription,HardcodedText"> </ImageView>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp"
-        android:layout_gravity="center"
-        android:text="@string/register"
-        android:textColor="#0F4090"
-        android:textSize="48sp"
-        android:textStyle="bold"> </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="40dp"
-        android:text="@string/enter_the_6_digits"
-        android:textColor="#989494"
-        android:textSize="18sp"
-        android:textStyle="bold"> </TextView>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:weightSum="2">
+        android:padding="10dp">
 
-        <EditText
-            android:id="@+id/text_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="6"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="@string/verification_code"
-            android:textColorHint="#660F4090"
-            android:textColor="#E60F4090"
-            android:textStyle="bold"
-            android:textSize="28sp"
-            android:paddingStart="20dp"
-            android:paddingEnd="10dp"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            tools:ignore="RtlHardcoded"
-            android:autofillHints="name"> </EditText>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_gravity="center"
-        android:weightSum="2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="@string/enter_the_6_digits"
+            android:textColor="#989494"
+            android:textSize="25sp"
+            android:textStyle="bold"> </TextView>
+
+        <EditText
+            android:id="@+id/text_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:autofillHints="name"
+            android:ems="6"
+            android:gravity="center"
+            android:hint="@string/verification_code"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:paddingEnd="10dp"
+            android:textColor="#E60F4090"
+            android:textColorHint="#660F4090"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="left"
             android:text="@string/didn_t_receive_a_message"
             android:textColor="#A19F9F"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
 
@@ -106,25 +72,25 @@
             android:textStyle="bold"
             android:textColor="#0F4090"
             android:textSize="18sp"
-            android:layout_gravity="left"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="5dp"
+            android:layout_gravity="center"
             android:gravity="left"
             tools:ignore="RtlHardcoded"> </TextView>
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bluebutton"
+            android:text="@string/sign_up"
+            android:textSize="28sp"
+            />
     </LinearLayout>
 
 
-    <Button
-        android:id="@+id/signup_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bluebutton"
-        android:text="@string/sign_up"
-        android:textSize="28sp"
-        />
+
+
 
 </LinearLayout>

@@ -11,46 +11,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_wave__3_"
         android:orientation="horizontal"
         android:layout_weight="1">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="72dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/logo1"
-            tools:ignore="ContentDescription,HardcodedText"
-            > </ImageView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="top"
-            android:text="@string/register"
-            android:textColor="#FFF"
-            android:textSize="45sp"
-            android:textStyle="bold"> </TextView>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="88dp"
+            android:text="@string/hint2"
+            android:textColor="#989494"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_weight="1"> </TextView>
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:text="@string/hint2"
-        android:textColor="#989494"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_weight="1"> </TextView>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,13 +41,15 @@
         android:layout_weight="1">
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidth="5dp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="@string/first_name">
+            android:hint="@string/first_name"
+
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
@@ -76,6 +57,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:textColor="#0F4090"
+
+
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,13 +70,16 @@
             android:textColorHint="#80052861"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/e_mail"
+
+
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:textColor="#0F4090"> </com.google.android.material.textfield.TextInputEditText>
+                android:textColor="#0F4090"
+                > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
