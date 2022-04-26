@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW);
+
+        // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW);
         setContentView(R.layout.activity_main);
 
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
