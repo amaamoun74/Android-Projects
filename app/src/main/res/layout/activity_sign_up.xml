@@ -149,7 +149,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth=""
+            app:boxStrokeWidth="2dp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
