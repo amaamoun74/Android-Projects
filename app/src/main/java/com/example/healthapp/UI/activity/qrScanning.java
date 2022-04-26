@@ -38,6 +38,7 @@ public class qrScanning extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(qrScanning.this, result.getText(), Toast.LENGTH_SHORT).show();
+
                     }
                 });
             }

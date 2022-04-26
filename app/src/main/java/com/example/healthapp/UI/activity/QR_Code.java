@@ -3,6 +3,9 @@ package com.example.healthapp.UI.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
+import android.graphics.Camera;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.healthapp.R;
+import com.example.healthapp.UI.fragment.HomeFragment;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -31,18 +35,22 @@ public class QR_Code extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
+        txt_result = (TextView) findViewById(R.id.code_info);
+        surfaceView = (SurfaceView) findViewById(R.id.camera_view);
+        setupQReader();
+        qrEader.start();
 
         //Request permission
         Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
-                        setupCamera();
+                        setupQReader();
                     }
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse response) {
-                        Toast.makeText(QR_Code.this,"You must enable this permission",Toast.LENGTH_SHORT);
+                        Toast.makeText(QR_Code.this, "You must enable this permission", Toast.LENGTH_SHORT);
                     }
 
                     @Override
@@ -51,25 +59,9 @@ public class QR_Code extends AppCompatActivity {
                     }
                 }).check();
     }
-    private void setupCamera(){
-        txt_result = (TextView) findViewById(R.id.code_info);
-        ToggleButton btn_on_off = (ToggleButton) findViewById(R.id.btn_enable_disable);
-        btn_on_off.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(qrEader.isCameraRunning()){
-                    btn_on_off.setChecked(false);
-                    qrEader.stop();
-                }
-                else {
-                    btn_on_off.setChecked(true);
-                    qrEader.start();
-                }
-            }
-        });
-       surfaceView = (SurfaceView) findViewById(R.id.camera_view);
-       setupQReader();
-    }
+
+
+
 
     private void setupQReader(){
         qrEader = new QREader.Builder(this, surfaceView, new QRDataListener() {
@@ -79,6 +71,10 @@ public class QR_Code extends AppCompatActivity {
                     @Override
                     public void run() {
                         txt_result.setText(data);
+                        qrEader.stop();
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(data));
+                        startActivity(intent);
                     }
                 });
             }
@@ -117,13 +113,13 @@ public class QR_Code extends AppCompatActivity {
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
-                        if(qrEader!=null)
+                        if (qrEader != null)
                             qrEader.releaseAndCleanup();
                     }
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse response) {
-                        Toast.makeText(QR_Code.this,"You must enable this permission",Toast.LENGTH_SHORT);
+                        Toast.makeText(QR_Code.this, "You must enable this permission", Toast.LENGTH_SHORT);
                     }
 
                     @Override
@@ -131,5 +127,7 @@ public class QR_Code extends AppCompatActivity {
 
                     }
                 }).check();
+
     }
+
 }

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.healthapp.R;
 import com.example.healthapp.UI.activity.ContactUs;
 import com.example.healthapp.UI.activity.QRGenerator;
+import com.example.healthapp.UI.activity.QR_Code;
 import com.example.healthapp.UI.activity.qrScanning;
 import com.example.healthapp.UI.activity.userProfile;
 import com.google.android.material.navigation.NavigationView;
@@ -120,7 +121,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
            */     break;
 
             case R.id.qrCV:
-                intent = new Intent(getActivity(), qrScanning.class);
+                intent = new Intent(getActivity(), QR_Code.class);
                 startActivity(intent);
                 break;
 
