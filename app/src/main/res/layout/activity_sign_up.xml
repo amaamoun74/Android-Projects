@@ -41,7 +41,7 @@
         android:layout_weight="1">
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth="5dp"
+            app:boxStrokeWidth="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidth="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
 
-            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidth="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidth="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidth="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxStrokeWidth="2dp"
+            app:boxStrokeWidth="@dimen/_2sdp"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
