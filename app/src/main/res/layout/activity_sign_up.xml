@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+android:isScrollContainer="true"
+android:fitsSystemWindows="true"
+android:scrollbars="vertical"
+tools:ignore="ScrollViewCount"
+xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,13 +13,15 @@
     android:background="#FFFFFF"
     android:orientation="vertical"
     >
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/ic_wave__3_"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
@@ -29,16 +36,14 @@
             > </TextView>
     </LinearLayout>
 
-
-
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_weight="1">
+        android:layout_marginTop="15dp"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
             app:boxStrokeWidth="2dp"
@@ -165,56 +170,54 @@
                 android:textColor="#0F4090"
                 android:inputType="number"> </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+            <Button
+                android:id="@+id/next_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bluebutton"
+                android:text="@string/next"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                />
 
-    <Button
-        android:id="@+id/next_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="0dp"
-        android:background="@drawable/bluebutton"
-        android:text="@string/next"
-        android:textSize="28sp"
-        android:textColor="@color/white"
-        android:layout_weight="1"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_gravity="center"
-        android:weightSum="2"
-        android:layout_weight="1">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="0dp"
-            android:gravity="left"
-            android:text="@string/already_have_an_account"
-            android:textColor="#A19F9F"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
-        <TextView
-            android:id="@+id/login_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/log_in"
-            android:textStyle="bold"
-            android:textColor="#0F4090"
-            android:textSize="18sp"
-            android:layout_gravity="left"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="5dp"
-            android:gravity="left"
-            tools:ignore="RtlHardcoded"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_gravity="center"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="left"
+                    android:text="@string/already_have_an_account"
+                    android:textColor="#A19F9F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
+                <TextView
+                    android:id="@+id/login_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/log_in"
+                    android:textStyle="bold"
+                    android:textColor="#0F4090"
+                    android:textSize="18sp"
+                    android:layout_gravity="left"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="5dp"
+                    android:gravity="left"
+                    tools:ignore="RtlHardcoded"/>
+            </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
+    </ScrollView>
