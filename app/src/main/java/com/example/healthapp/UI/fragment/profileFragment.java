@@ -1,4 +1,4 @@
-package com.example.healthapp.pojo;
+package com.example.healthapp.UI.fragment;
 
 import android.os.Bundle;
 

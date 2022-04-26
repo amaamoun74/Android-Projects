@@ -1,4 +1,4 @@
-package com.example.healthapp.UI;
+package com.example.healthapp.UI.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +19,6 @@ import com.google.zxing.Result;
 public class qrScanning extends AppCompatActivity {
     private CodeScanner mCodeScanner;
      Permission permission;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +50,6 @@ public class qrScanning extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onResume() {
         super.onResume();

@@ -1,4 +1,4 @@
-package com.example.healthapp.UI;
+package com.example.healthapp.UI.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

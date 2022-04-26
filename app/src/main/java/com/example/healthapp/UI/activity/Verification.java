@@ -1,4 +1,4 @@
-package com.example.healthapp.UI;
+package com.example.healthapp.UI.activity;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -19,10 +19,7 @@ public class Verification extends AppCompatActivity {
 
         signup_btn= findViewById(R.id.signup_btn);
 
-        signup_btn.setOnClickListener(view -> {
-
-            Toast.makeText(this, "welcoooome", Toast.LENGTH_SHORT).show();
-        });
+        signup_btn.setOnClickListener(view -> Toast.makeText(this, "welcome", Toast.LENGTH_SHORT).show());
 
     }
 }

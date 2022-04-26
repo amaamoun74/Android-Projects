@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#E6FFFFFF"
     android:fitsSystemWindows="true"
-    tools:context=".UI.Home"
+    tools:context=".UI.activity.Home"
     tools:openDrawer="start">
 
 
@@ -205,7 +205,8 @@
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/cardview_light_background"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="20dp"
+                android:background="@drawable/cardviewshape">
 
                 <LinearLayout
                     android:layout_width="match_parent"

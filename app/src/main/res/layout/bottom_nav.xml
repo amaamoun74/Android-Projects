@@ -24,5 +24,7 @@
         app:mbn_countBackgroundColor="#F33300"
         app:mbn_backgroundBottomColor="@color/mainBlue"
         app:mbn_defaultIconColor="@color/white"
+        app:mbn_shadowColor="@color/black"
+
         />
 </LinearLayout>

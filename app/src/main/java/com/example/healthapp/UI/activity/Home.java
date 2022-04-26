@@ -1,4 +1,4 @@
-package com.example.healthapp.UI;
+package com.example.healthapp.UI.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;

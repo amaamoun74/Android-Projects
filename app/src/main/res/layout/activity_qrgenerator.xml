@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.QRGenerator"
+    tools:context=".UI.activity.QRGenerator"
     android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center_vertical"
@@ -25,7 +25,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".UI.QRGenerator"
+        tools:context=".UI.activity.QRGenerator"
         android:background="@color/white"
         android:orientation="vertical"
         >
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
             android:layout_margin="10dp"
-            android:hint= "enter text to generate QR code"
+            android:hint= "@string/enter_text_to_generate_qr_code"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text"
@@ -68,7 +68,7 @@
             android:id="@+id/generate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Generate"
+            android:text="@string/generate"
             android:fontFamily="monospace"
             android:textStyle="normal"
             android:textSize="22sp"

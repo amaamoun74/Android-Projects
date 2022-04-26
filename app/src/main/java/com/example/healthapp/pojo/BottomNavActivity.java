@@ -9,6 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.healthapp.R;
+import com.example.healthapp.UI.fragment.DashboardFragment;
+import com.example.healthapp.UI.fragment.HomeFragment;
+import com.example.healthapp.UI.fragment.profileFragment;
+
 public class BottomNavActivity extends AppCompatActivity {
     MeowBottomNavigation meowBottomNavigation ;
     @Override
@@ -21,6 +25,8 @@ public class BottomNavActivity extends AppCompatActivity {
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.qr));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_send_24));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_person_32));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_person_32));
+
 
         meowBottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
