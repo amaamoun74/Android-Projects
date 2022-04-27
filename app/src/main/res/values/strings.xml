@@ -75,5 +75,9 @@
     <string name="send">Send</string>
     <string name="preferred_method_of_response">Preferred method of response</string>
     <string name="message">Message</string>
+    <string name="user_interface">user interface</string>
+    <string name="social">social</string>
+    <string name="medical">Medical</string>
+    <string name="personal">Personal</string>
 
 </resources>

@@ -9,11 +9,13 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.healthapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -55,6 +57,39 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         profileCV.setOnClickListener(this);
         dataCV.setOnClickListener(this);
         contactUsCv.setOnClickListener(this);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+                switch (item.getItemId()) {
+                    case R.id.share:
+                        try {
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("text/plan");
+                            String body = "Share from the T-care app now" ;
+                            intent.putExtra(Intent.EXTRA_TEXT, body);
+                            startActivity(Intent.createChooser(intent, "Share with :"));
+
+                        } catch (Exception e) {
+                            Toast.makeText(Home.this, "\"Hmm.. Sorry, \\nCannot be share\"", Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+
+                    case R.id.logOut:
+                        startActivity(new Intent(Home.this, StartingApp.class));
+                        break;
+
+                    case R.id.aboutUs:
+                        Toast.makeText(Home.this, "about us is pressed", Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        return true;
+                }
+                return true;
+            }
+        });
     }
 
 
@@ -67,15 +102,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.nav_logout) {
-            Intent intent = new Intent(this, LogIn.class);
-            startActivity(intent);
-        }
-
-        return true;
-    }
 
     public void onClick(View view) {
         Intent intent;
@@ -105,5 +131,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

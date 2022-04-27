@@ -4,21 +4,21 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/settings"
             android:icon="@drawable/settings_ic"
             android:title="@string/action_settings"
             />
     </group>
 
-    <item android:title="social ">
+    <item android:title="@string/social">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_slideshow"
+                    android:id="@+id/share"
                     android:icon="@drawable/share_ic"
                     android:title="@string/share" />
                 <item
-                    android:id="@+id/nav_gallery"
+                    android:id="@+id/aboutUs"
                     android:icon="@drawable/info_ic"
                     android:visible="true"
                     android:title="@string/about_us" />
@@ -26,11 +26,11 @@
         </menu>
     </item>
 
-    <item android:title="user interface ">
+    <item android:title="@string/user_interface">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_logout"
+                    android:id="@+id/logOut"
                     android:icon="@drawable/ic_baseline_login_24"
                     android:title="@string/logout" />
             </group>
