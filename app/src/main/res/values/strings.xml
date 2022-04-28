@@ -80,4 +80,12 @@
     <string name="medical">Medical</string>
     <string name="personal">Personal</string>
 
+<string name="description">Description here</string>
+<array name="title">
+    <item>title1</item>
+    <item>title2</item>
+    <item>title3</item>
+    <item>title4</item>
+    <item>title5</item>
+</array>
 </resources>

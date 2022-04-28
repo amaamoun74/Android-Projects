@@ -1,11 +1,10 @@
 package com.example.healthapp.UI.activity;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
 
 import com.example.healthapp.R;
 import com.example.healthapp.UI.fragment.MedicalDataFragment;

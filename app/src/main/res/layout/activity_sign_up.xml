@@ -166,8 +166,9 @@ android:orientation="vertical">
                 android:id="@+id/nationalId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="number"
                 android:textColor="#0F4090"
-                android:inputType="number"> </com.google.android.material.textfield.TextInputEditText>
+                tools:ignore="TouchTargetSizeCheck"></com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
             <Button
                 android:id="@+id/next_btn"
