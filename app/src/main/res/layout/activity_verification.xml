@@ -51,7 +51,7 @@
             android:textColorHint="#660F4090"
             android:textSize="28sp"
             android:textStyle="bold"
-            tools:ignore="RtlHardcoded"></EditText>
+            tools:ignore="RtlHardcoded"/>
 
         <TextView
             android:layout_width="wrap_content"

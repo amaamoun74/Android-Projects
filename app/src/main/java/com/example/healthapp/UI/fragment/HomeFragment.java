@@ -1,4 +1,5 @@
 package com.example.healthapp.UI.fragment;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,15 +18,13 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+
 import com.example.healthapp.R;
-import com.example.healthapp.UI.activity.ContactUs;
 import com.example.healthapp.UI.activity.DataActivity;
 import com.example.healthapp.UI.activity.Home;
-import com.example.healthapp.UI.activity.QRGenerator;
 import com.example.healthapp.UI.activity.QR_Code;
 import com.example.healthapp.UI.activity.StartingApp;
-import com.example.healthapp.UI.activity.qrScanning;
-import com.example.healthapp.UI.activity.userProfile;
+import com.example.healthapp.UI.activity.userProfile3;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -170,7 +169,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Intent intent;
         switch (view.getId()) {
             case R.id.profileCV:
-                intent = new Intent(getActivity(), userProfile.class);
+                intent = new Intent(getActivity(), userProfile3.class);
                 startActivity(intent);
                 break;
 

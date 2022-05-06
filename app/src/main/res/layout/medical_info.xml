@@ -7,7 +7,7 @@
     android:layout_margin="10dp"
     android:padding="@dimen/_5sdp"
     app:cardCornerRadius="@dimen/_10sdp"
-  >
+    app:cardElevation="25dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,7 +19,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Title"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/mainBlue"/>
 
         <TextView
             android:id="@+id/descriptionTextView"
@@ -29,7 +31,8 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="Description here"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textColor="@color/mainBlue"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
