@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.healthapp.R;
-import com.example.healthapp.UI.fragment.DashboardFragment;
+import com.example.healthapp.UI.fragment.ExposureFragment;
 import com.example.healthapp.UI.fragment.HomeFragment;
 import com.example.healthapp.UI.fragment.profileFragment;
 
@@ -38,7 +38,7 @@ public class BottomNavActivity extends AppCompatActivity {
                         break;
 
                     case 2:
-                        replaceFragment(new DashboardFragment());
+                        replaceFragment(new ExposureFragment());
                         break;
 
                     case 3:
@@ -58,7 +58,7 @@ public class BottomNavActivity extends AppCompatActivity {
                         break;
 
                     case 2:
-                        replaceFragment(new DashboardFragment());
+                        replaceFragment(new ExposureFragment());
                         break;
 
                     case 3:

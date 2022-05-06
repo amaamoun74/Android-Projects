@@ -35,7 +35,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.medical_info_list, parent, false));
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.medical_info_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.medical_info, parent, false);
         return new ViewHolder(view);
     }
 

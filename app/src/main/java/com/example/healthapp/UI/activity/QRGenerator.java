@@ -1,14 +1,16 @@
 package com.example.healthapp.UI.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.healthapp.R;
+
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
@@ -24,7 +26,6 @@ public class QRGenerator extends AppCompatActivity {
         qrImage = findViewById(R.id.qrImage);
         generate = findViewById(R.id.generate);
         text = findViewById(R.id.text);
-
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,11 +33,8 @@ public class QRGenerator extends AppCompatActivity {
                 QRGEncoder encoder = new QRGEncoder(data, null , QRGContents.Type.TEXT,800);
                 encoder.setColorBlack(Color.RED);
                 encoder.setColorWhite(Color.WHITE);
-
                 qrImage.setImageBitmap(encoder.getBitmap());
             }
         });
-
-
     }
 }

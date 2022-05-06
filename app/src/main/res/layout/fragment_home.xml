@@ -33,12 +33,6 @@
             android:background="@drawable/back">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:scrollbarStyle="insideInset"
-                >
 
                 <!--                <ImageView
                     android:layout_width="wrap_content"
@@ -52,32 +46,38 @@
 -->
 
                 <androidx.appcompat.widget.Toolbar
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
                     android:padding="5dp"
                     android:scrollbarStyle="insideOverlay">
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:scrollbarStyle="insideInset"
+                        >
+
 
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:paddingTop="@dimen/_18sdp"
                         android:gravity="center"
                         android:minHeight="?attr/actionBarSize"
                         android:theme="?attr/actionBarTheme"
                         app:navigationIcon="@drawable/menu_24"
                         />
-                </androidx.appcompat.widget.Toolbar>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="50dp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:text="@string/home"
@@ -99,6 +99,7 @@
                       -->
 
             </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
                 android:layout_marginTop="-10dp"

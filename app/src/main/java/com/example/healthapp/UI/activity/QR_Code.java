@@ -1,20 +1,16 @@
 package com.example.healthapp.UI.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Intent;
-import android.graphics.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.SurfaceView;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthapp.R;
-import com.example.healthapp.UI.fragment.HomeFragment;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -69,7 +65,7 @@ public class QR_Code extends AppCompatActivity {
             public void onDetected(String data) {
                 txt_result.post(new Runnable() {
                     @Override
-                    public void run() {
+                    public void run(){
                         txt_result.setText(data);
                         qrEader.stop();
                         Intent intent = new Intent(Intent.ACTION_VIEW);
