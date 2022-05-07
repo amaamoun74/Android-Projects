@@ -69,8 +69,13 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/data_icon.xml" value="0.152" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/graybox.xml" value="0.152" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/graybutton.xml" value="0.152" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.1315" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.143" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1315" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1315" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.152" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_20.xml" value="0.1315" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.1315" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_baseline_visibility_off_32.xml" value="0.143" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1235" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1235" />
@@ -116,6 +121,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_exposure_system.xml" value="0.209375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_first.xml" value="0.184375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_home2.xml" value="0.209375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_medical_data.xml" value="0.209375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_notifications.xml" value="0.1703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_personal_data.xml" value="0.209375" />

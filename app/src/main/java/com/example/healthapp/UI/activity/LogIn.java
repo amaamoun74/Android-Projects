@@ -1,7 +1,5 @@
 package com.example.healthapp.UI.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.healthapp.R;
-import com.example.healthapp.pojo.BottomNavActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LogIn extends AppCompatActivity {
@@ -34,7 +33,7 @@ public class LogIn extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LogIn.this, BottomNavActivity.class);
+                Intent intent = new Intent(LogIn.this, Home2.class);
                 startActivity(intent);
                 Toast.makeText(LogIn.this, "Welcome welcome welcome!", Toast.LENGTH_LONG).show();
             }
