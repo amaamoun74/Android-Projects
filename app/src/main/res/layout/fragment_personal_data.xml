@@ -1,14 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.fragment.PersonalDataFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.fragment.data.PersonalDataFragment"
+    android:fitsSystemWindows="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+
+    <LinearLayout
+       android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/ic_wave__3_"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/profile_icon"
+                android:layout_gravity="start"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:contentDescription="profileImage"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menna Ashraf"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/quicksand_bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="menna132@gmail.com"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/quicksand_medium"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="370dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="48dp"
+                        android:text="Patient Name"
+                        android:fontFamily="@font/quicksand_medium"/>
+
+                    <EditText
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:minHeight="48dp"
+                        android:text="Mobile Number"
+                        android:fontFamily="@font/quicksand_medium"/>
+
+                    <EditText
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:minHeight="48dp"
+                        android:text="E-mail"
+                        android:fontFamily="@font/quicksand_medium"/>
+
+                    <EditText
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:minHeight="48dp"
+                        android:text="Date of birth"
+                        android:fontFamily="@font/quicksand_medium"/>
+
+                    <EditText
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:minHeight="48dp"
+                        android:text="Gender"
+                        android:fontFamily="@font/quicksand_medium"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bluebutton"
+                android:text="Edit Profile"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/quicksand_bold"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

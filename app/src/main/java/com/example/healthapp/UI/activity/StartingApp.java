@@ -13,6 +13,7 @@ public class StartingApp extends AppCompatActivity {
 
     Button logIn;
     Button signUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,25 +21,24 @@ public class StartingApp extends AppCompatActivity {
 
         logIn = findViewById(R.id.logInButton);
         signUp = findViewById(R.id.signUpButton);
-try {
+        try {
 
-    logIn.setOnClickListener(view -> {
-        Intent intent = new Intent(StartingApp.this,LogIn.class);
-        startActivity(intent);
-        finish();
-    });
+            logIn.setOnClickListener(view -> {
+                Intent intent = new Intent(StartingApp.this, LogIn.class);
+                startActivity(intent);
+                finish();
+            });
 
-    signUp.setOnClickListener(view -> {
-        Intent intent = new Intent(StartingApp.this,SignUp.class);
-        startActivity(intent);
-        finish();
-    });
+            signUp.setOnClickListener(view -> {
+                Intent intent = new Intent(StartingApp.this, SignUp.class);
+                startActivity(intent);
+                finish();
+            });
 
-}
-catch (Exception e){
-    e.printStackTrace();
-    Log.d("error",e.toString());
-}
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("error", e.toString());
+        }
 
     }
 }

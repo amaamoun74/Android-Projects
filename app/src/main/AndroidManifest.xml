@@ -12,16 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme">
         <activity
-            android:name=".UI.activity.Home2"
+            android:name=".pojo.BottomNavigation"
             android:exported="false" />
         <activity
             android:name=".UI.activity.userProfile3"
             android:exported="false" />
         <activity
             android:name=".UI.activity.DataActivity"
-            android:exported="false" />
-        <activity
-            android:name=".pojo.BottomNavActivity"
             android:exported="false" />
         <activity
             android:name=".UI.activity.QRGenerator"

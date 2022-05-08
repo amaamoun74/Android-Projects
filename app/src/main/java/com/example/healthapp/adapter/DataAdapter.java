@@ -10,22 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.healthapp.R;
-import com.example.healthapp.UI.fragment.MedicalDataFragment;
 import com.example.healthapp.model.Data;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<Data> ArrayList = new ArrayList<>();
 
     Context context;
-    List<MedicalDataFragment> list;
+    ArrayList<Data> list;
 
-  /**  public DataAdapter (Context context, List<MedicalDataFragment> list){
+   public DataAdapter (Context context, ArrayList<Data> list){
         this.context = context;
         this.list = list;
-    }*/
+    }
 
     public DataAdapter() {
 

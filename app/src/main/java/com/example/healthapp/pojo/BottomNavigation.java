@@ -1,4 +1,4 @@
-package com.example.healthapp.UI.activity;
+package com.example.healthapp.pojo;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -11,11 +11,11 @@ import com.example.healthapp.R;
 import com.example.healthapp.UI.fragment.ExposureFragment;
 import com.example.healthapp.UI.fragment.HomeFragment;
 import com.example.healthapp.UI.fragment.HomeFragment2;
-import com.example.healthapp.UI.fragment.MedicalDataFragment;
-import com.example.healthapp.UI.fragment.PersonalDataFragment;
-import com.example.healthapp.UI.fragment.profileFragment;
+import com.example.healthapp.UI.fragment.MoreOptionFragment;
+import com.example.healthapp.UI.fragment.QRScanningFragment;
+import com.example.healthapp.UI.fragment.data.profileFragment;
 
-public class Home2 extends AppCompatActivity {
+public class BottomNavigation extends AppCompatActivity {
 
     MeowBottomNavigation bottomNav;
 
@@ -50,9 +50,9 @@ public class Home2 extends AppCompatActivity {
                 } else if (item.getId() == 4) {
                     fragment = new HomeFragment2();
                 } else if (item.getId() == 5) {
-                    fragment = new PersonalDataFragment();
+                    fragment = new QRScanningFragment();
                 } else if (item.getId() == 6) {
-                    fragment = new MedicalDataFragment();
+                    fragment = new MoreOptionFragment();
                 }
                 loadFragment(fragment);
             }
@@ -64,6 +64,14 @@ public class Home2 extends AppCompatActivity {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 Toast.makeText(getApplicationContext(), "You clicked "+item.getId(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        bottomNav.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
+            @Override
+            public void onReselectItem(MeowBottomNavigation.Model item) {
+                Toast.makeText(getApplicationContext(), "You reselected "+item.getId(), Toast.LENGTH_SHORT).show();
+
             }
         });
     }

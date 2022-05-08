@@ -1,14 +1,17 @@
-package com.example.healthapp.UI.activity;
+package com.example.healthapp.UI.fragment;
 
 import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.SurfaceView;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
 import com.karumi.dexter.Dexter;
@@ -21,23 +24,30 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import github.nisrulz.qreader.QRDataListener;
 import github.nisrulz.qreader.QREader;
 
-public class QR_Code extends AppCompatActivity {
 
+public class QRScanningFragment extends Fragment {
     private SurfaceView surfaceView;
     private QREader qrEader;
     private TextView txt_result;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr_code);
-        txt_result = (TextView) findViewById(R.id.code_info);
-        surfaceView = (SurfaceView) findViewById(R.id.camera_view);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_q_r_scanning, container, false);
+        txt_result = (TextView) view.findViewById(R.id.code_info);
+        surfaceView = (SurfaceView) view.findViewById(R.id.camera_view);
         setupQReader();
         qrEader.start();
 
         //Request permission
-        Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
+        Dexter.withActivity(getActivity()).withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
@@ -46,7 +56,7 @@ public class QR_Code extends AppCompatActivity {
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse response) {
-                        Toast.makeText(QR_Code.this, "You must enable this permission", Toast.LENGTH_SHORT);
+                        Toast.makeText(getActivity(), "You must enable this permission", Toast.LENGTH_SHORT);
                     }
 
                     @Override
@@ -54,11 +64,13 @@ public class QR_Code extends AppCompatActivity {
 
                     }
                 }).check();
+
+        return view;
     }
 
 
     private void setupQReader() {
-        qrEader = new QREader.Builder(this, surfaceView, new QRDataListener() {
+        qrEader = new QREader.Builder(getActivity(), surfaceView, new QRDataListener() {
             @Override
             public void onDetected(String data) {
                 txt_result.post(new Runnable() {
@@ -77,9 +89,9 @@ public class QR_Code extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-        Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
+        Dexter.withActivity(getActivity()).withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
@@ -89,7 +101,7 @@ public class QR_Code extends AppCompatActivity {
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse response) {
-                        Toast.makeText(QR_Code.this, "You must enable this permission", Toast.LENGTH_SHORT);
+                        Toast.makeText(getActivity(), "You must enable this permission", Toast.LENGTH_SHORT);
                     }
 
                     @Override
@@ -99,10 +111,10 @@ public class QR_Code extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
 
-        Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
+        Dexter.withActivity(getActivity()).withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse response) {
@@ -112,7 +124,7 @@ public class QR_Code extends AppCompatActivity {
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse response) {
-                        Toast.makeText(QR_Code.this, "You must enable this permission", Toast.LENGTH_SHORT);
+                        Toast.makeText(getActivity(), "You must enable this permission", Toast.LENGTH_SHORT);
                     }
 
                     @Override
@@ -122,4 +134,5 @@ public class QR_Code extends AppCompatActivity {
                 }).check();
 
     }
+
 }

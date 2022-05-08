@@ -32,16 +32,17 @@ public class SignUp extends AppCompatActivity {
         loginText= findViewById(R.id.login_Text);
 
         nextBtn.setOnClickListener(view -> {
-           /* if (validate()){
+            if (validate()){
                 if ( passwordET.getText() == confirmPasswordET.getText())
                 {
                     Intent intent = new Intent(SignUp.this,user_Info.class);
                     startActivity(intent);
                 }
+                else
+                    Toast.makeText(this, "Password is not matched", Toast.LENGTH_SHORT).show();
 
             }
-            else*/
-
+            else
             Toast.makeText(getApplicationContext(), "fill all attributes", Toast.LENGTH_SHORT).show();
         });
 

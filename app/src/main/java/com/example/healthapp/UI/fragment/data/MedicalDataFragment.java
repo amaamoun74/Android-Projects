@@ -1,34 +1,22 @@
-package com.example.healthapp.UI.fragment;
+package com.example.healthapp.UI.fragment.data;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.healthapp.R;
 import com.example.healthapp.adapter.DataAdapter;
 
 public class MedicalDataFragment extends Fragment {
 
-    public String title;
-    public String description;
     RecyclerView recyclerView;
-    DataAdapter adapter;
-    //List<MedicalDataFragment> list = new ArrayList<>();
-
-    public MedicalDataFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
