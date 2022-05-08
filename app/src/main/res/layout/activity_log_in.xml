@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/ic_wave__3_"
+        android:background="@drawable/wave_view"
         android:orientation="horizontal">
 
         <TextView

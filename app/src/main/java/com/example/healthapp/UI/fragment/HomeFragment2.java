@@ -20,6 +20,7 @@ public class HomeFragment2 extends Fragment {
         }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".pojo.BottomNavigation">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_wave__3_"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_container"
         android:layout_width="match_parent"
@@ -23,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:mbn_backgroundBottomColor="@color/mainBlue"
         app:mbn_circleColor="@color/white"
-        app:mbn_countBackgroundColor="@color/white"
+        app:mbn_countBackgroundColor="@color/purple_700"
         app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="#A11717" />
+        app:mbn_selectedIconColor="#001DE9B6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
