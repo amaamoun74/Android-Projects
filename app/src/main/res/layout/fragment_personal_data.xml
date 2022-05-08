@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment.data.PersonalDataFragment"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="@dimen/_5sdp">
 
 
     <LinearLayout
@@ -17,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/_150sdp"
             android:background="@drawable/ic_wave__3_"
             android:gravity="top"
             android:orientation="vertical">
@@ -25,7 +26,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@mipmap/profile_icon"
+                android:src="@mipmap/profile_iconn"
                 android:layout_gravity="start"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="25dp"
@@ -54,61 +55,123 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                android:layout_width="370dp"
+                android:layout_width="match_parent"
                 android:layout_height="400dp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:cardCornerRadius="50dp"
-                app:cardElevation="20dp">
+                app:cardElevation="@dimen/_30sdp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="@dimen/_20sdp"
+                    >
 
-                    <EditText
-                        android:layout_width="310dp"
+                    <TextView
+                        android:id="@+id/patientNameTV"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="10dp"
-                        android:minHeight="48dp"
-                        android:text="Patient Name"
-                        android:fontFamily="@font/quicksand_medium"/>
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Patient Name :"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal_700"
+                        android:fontFamily="@font/quicksand_medium"
+                        />
 
-                    <EditText
-                        android:layout_width="310dp"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_2sdp"
+                        android:background="@color/teal_700"/>
+                    <TextView
+                        android:id="@+id/phoneNumberTV"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:minHeight="48dp"
-                        android:text="Mobile Number"
-                        android:fontFamily="@font/quicksand_medium"/>
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/phone_number"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal_700"
+                        android:fontFamily="@font/quicksand_medium"
+                        />
 
-                    <EditText
-                        android:layout_width="310dp"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_2sdp"
+                        android:background="@color/teal_700"/>
+
+                    <TextView
+                        android:id="@+id/emailTV"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:minHeight="48dp"
-                        android:text="E-mail"
-                        android:fontFamily="@font/quicksand_medium"/>
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/e_mail"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal_700"
+                        android:fontFamily="@font/quicksand_medium"
+                        />
 
-                    <EditText
-                        android:layout_width="310dp"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_2sdp"
+                        android:background="@color/teal_700"/>
+
+                    <TextView
+                        android:id="@+id/dateOfBirthTV"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:minHeight="48dp"
-                        android:text="Date of birth"
-                        android:fontFamily="@font/quicksand_medium"/>
+                        android:gravity="start"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Date of birth :"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal_700"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/quicksand_medium"
+                        />
 
-                    <EditText
-                        android:layout_width="310dp"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_2sdp"
+                        android:background="@color/teal_700"/>
+
+                    <TextView
+                        android:id="@+id/genderTV"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:minHeight="48dp"
-                        android:text="Gender"
-                        android:fontFamily="@font/quicksand_medium"/>
+                        android:gravity="start"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/gender"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/teal_700"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_2sdp"
+                        android:background="@color/teal_700"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <Button
-                android:id="@+id/next_button"
+                android:id="@+id/editProfileBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -123,5 +186,4 @@
                 />
         </LinearLayout>
     </LinearLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

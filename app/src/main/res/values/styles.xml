@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge" >
+        <!--
     <item name="colorPrimary" >@color/mainBlue</item>
         <item name="colorPrimaryDark">@color/mainBlue </item>
+        -->
         <item name="colorAccent" >#042E67</item>
         <item name="colorOnPrimary" >@color/white</item>
         <item name="colorOnContainer" >@color/white </item>
+        <item name="android:windowTranslucentStatus" > true </item>
 
     </style>
     <style name="switchTheme" parent="Theme.MaterialComponents.Light.NoActionBar" >

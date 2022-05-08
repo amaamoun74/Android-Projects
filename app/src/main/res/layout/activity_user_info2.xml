@@ -6,6 +6,7 @@
     tools:context=".UI.activity.StartingApp"
     android:background="#FFFFFF"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     >
 
     <LinearLayout

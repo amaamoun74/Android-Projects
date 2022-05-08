@@ -6,6 +6,7 @@
     tools:context=".UI.activity.StartingApp"
     android:background="#FFFFFF"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     >
 
     <LinearLayout
@@ -13,7 +14,8 @@
         android:layout_height="139dp"
         android:background="@drawable/ic_wave__3_"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:fitsSystemWindows="true">
 
 
         <TextView
