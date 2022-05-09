@@ -22,6 +22,7 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/animation4" />
 
+
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="300dp"
