@@ -13,31 +13,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/wave_view"
+        android:background="@drawable/ic_wave_7_"
         android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="85dp"
-            android:text="@string/hint"
-            android:textColor="#989494"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_weight="1"> </TextView>
-
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:src="@drawable/tcarelogo" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="400dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/hint"
+            android:textColor="#989494"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            > </TextView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

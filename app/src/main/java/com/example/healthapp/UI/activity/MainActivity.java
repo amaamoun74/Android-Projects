@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.down_animation);
 
-       // logo= findViewById(R.id.logoImageView);
-        appName= findViewById(R.id.appName_TextView);
+        logo= findViewById(R.id.logoImageView);
+        //appName= findViewById(R.id.appName_TextView);
 
 
         logo.setAnimation(topAnim);
-        appName.setAnimation(bottomAnim);
+        //appName.setAnimation(bottomAnim);
         //slogan.setAnimation(bottomAnim);
 
         new Handler().postDelayed(() -> {

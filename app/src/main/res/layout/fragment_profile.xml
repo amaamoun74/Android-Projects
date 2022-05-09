@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.activity.DataActivity"
-    android:fitsSystemWindows="true"
-    android:layout_marginTop="@dimen/_30sdp"
+    android:fitsSystemWindows="false"
+    android:paddingTop="@dimen/_20sdp"
   >
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        >
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
