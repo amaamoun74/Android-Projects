@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme">
         <activity
+            android:name=".modelQueries"
+            android:exported="false" />
+        <activity
             android:name=".pojo.BottomNavigation"
             android:exported="false" />
         <activity

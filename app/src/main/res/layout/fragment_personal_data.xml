@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment.data.PersonalDataFragment"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     >
 <!--
     <LinearLayout

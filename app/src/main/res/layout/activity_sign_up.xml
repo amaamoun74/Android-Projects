@@ -11,28 +11,23 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".UI.activity.StartingApp"
     android:background="#FFFFFF"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/ic_wave__3_"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="88dp"
-            android:text="@string/hint2"
-            android:textColor="#989494"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            > </TextView>
+        android:background="@drawable/ic_wave_7_"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:src="@drawable/tcarelogo" />
     </LinearLayout>
 
         <LinearLayout
@@ -41,9 +36,17 @@ android:orientation="vertical">
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="15dp"
         android:padding="10dp">
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/hint2"
+                android:textColor="#989494"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                > </TextView>
         <com.google.android.material.textfield.TextInputLayout
             app:boxStrokeWidth="2dp"
             android:layout_width="match_parent"
