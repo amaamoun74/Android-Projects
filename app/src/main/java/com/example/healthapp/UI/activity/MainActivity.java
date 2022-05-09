@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //appName.setAnimation(bottomAnim);
         //slogan.setAnimation(bottomAnim);
 
+
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(MainActivity.this, StartingApp.class);
             startActivity(intent);
