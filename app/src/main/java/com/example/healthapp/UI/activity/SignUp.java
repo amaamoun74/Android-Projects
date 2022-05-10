@@ -13,9 +13,10 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class SignUp extends AppCompatActivity {
 
-    TextInputEditText nameET,mailET, passwordET,confirmPasswordET,phoneNumberET,nationalID;
+    TextInputEditText nameET, mailET, passwordET, confirmPasswordET, phoneNumberET, nationalID;
     Button nextBtn;
     TextView loginText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,41 +29,53 @@ public class SignUp extends AppCompatActivity {
         phoneNumberET = findViewById(R.id.phone);
         nationalID = findViewById(R.id.nationalId);
 
-        nextBtn= findViewById(R.id.next_btn);
-        loginText= findViewById(R.id.login_Text);
+        nextBtn = findViewById(R.id.next_btn);
+        loginText = findViewById(R.id.login_Text);
 
         nextBtn.setOnClickListener(view -> {
-            if (validate()){
-                if ( passwordET.getText() == confirmPasswordET.getText())
-                {
-                    Intent intent = new Intent(SignUp.this,user_Info.class);
+            if (validate()) {
+                if (passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
+                    Intent intent = new Intent(SignUp.this, user_Info.class);
                     startActivity(intent);
-                }
-                else
+                } else
                     Toast.makeText(this, "Password is not matched", Toast.LENGTH_SHORT).show();
 
             }
-            else
-            Toast.makeText(getApplicationContext(), "fill all attributes", Toast.LENGTH_SHORT).show();
         });
 
         loginText.setOnClickListener(view -> {
-            Toast.makeText(getApplicationContext(), "sth went wrong", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignUp.this,LogIn.class);
+            Intent intent = new Intent(SignUp.this, LogIn.class);
             startActivity(intent);
         });
     }
 
-    boolean validate (){
-        if (nameET.getText() == null
-                || mailET.getText() == null
-                || passwordET.getText() == null
-                ||confirmPasswordET.getText() == null
-                ||phoneNumberET.getText() == null
-                ||nationalID.getText() == null){
-            Toast.makeText(getApplicationContext(), "fill all attributes", Toast.LENGTH_SHORT).show();
-            return false;}
-        else
+    boolean validate() {
+        if (nameET.getText().toString().isEmpty()) {
+            nameET.setError("fill in name field");
+            nameET.requestFocus();
+            return false;
+        } else if (mailET.getText().toString().isEmpty()) {
+            mailET.setError("fill in mail field");
+            mailET.requestFocus();
+            return false;
+        } else if (passwordET.getText().toString().isEmpty()) {
+            passwordET.setError("fill in password field");
+            passwordET.requestFocus();
+            return false;
+        } else if (confirmPasswordET.getText().toString().isEmpty()) {
+            confirmPasswordET.setError("fill in confirm Password field");
+            confirmPasswordET.requestFocus();
+            return false;
+        } else if (phoneNumberET.getText().toString().isEmpty()) {
+            phoneNumberET.setError("fill in phone Number field");
+            phoneNumberET.requestFocus();
+            return false;
+        } else if (nationalID.getText().toString().isEmpty()) {
+            nationalID.setError("fill in national ID field");
+            nationalID.requestFocus();
+            return false;
+        } else {
             return true;
+        }
     }
 }

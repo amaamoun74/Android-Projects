@@ -21,7 +21,7 @@
                     android:id="@+id/aboutUs"
                     android:icon="@drawable/info_ic"
                     android:visible="true"
-                    android:title="@string/about_us" />
+                    android:title="@string/about_Us" />
             </group>
         </menu>
     </item>

@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pojo.BottomNavigation"
-    android:fitsSystemWindows="false">
+    >
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:background="@drawable/ic_wave_7_"
@@ -16,15 +17,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:src="@drawable/tcarelogo"
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="180dp"
-        android:src="@drawable/tcarelogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
     </LinearLayout>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_container"
         android:layout_width="match_parent"
@@ -41,8 +45,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:mbn_backgroundBottomColor="@color/mainBlue"
-        app:mbn_circleColor="@color/white"
-        app:mbn_countBackgroundColor="@color/purple_700"
+        app:mbn_countBackgroundColor="@color/white"
         app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="#001DE9B6" />
+        app:mbn_shadowColor="@color/black"
+        app:mbn_selectedIconColor="#E81515"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

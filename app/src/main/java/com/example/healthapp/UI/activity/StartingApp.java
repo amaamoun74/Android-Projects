@@ -26,13 +26,11 @@ public class StartingApp extends AppCompatActivity {
             logIn.setOnClickListener(view -> {
                 Intent intent = new Intent(StartingApp.this, LogIn.class);
                 startActivity(intent);
-                finish();
             });
 
             signUp.setOnClickListener(view -> {
                 Intent intent = new Intent(StartingApp.this, SignUp.class);
                 startActivity(intent);
-                finish();
             });
 
         } catch (Exception e) {

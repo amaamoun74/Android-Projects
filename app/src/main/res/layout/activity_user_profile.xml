@@ -4,10 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.activity.StartingApp"
-    android:background="#FFFFFF"
-    android:orientation="vertical">
+    android:background="#BFFFFFFF"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/ic_wave__3_"

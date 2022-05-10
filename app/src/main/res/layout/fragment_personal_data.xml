@@ -6,52 +6,56 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment.data.PersonalDataFragment"
-    android:fitsSystemWindows="false"
     >
-<!--
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
     <LinearLayout
        android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_150sdp"
-            android:background="@drawable/ic_wave__3_"
-            android:gravity="top"
-            android:orientation="vertical">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@mipmap/profile_iconn"
-                android:layout_gravity="start"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="25dp"
                 android:contentDescription="profileImage"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Menna Ashraf"
-                android:textSize="20sp"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:fontFamily="@font/quicksand_bold"/>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="menna132@gmail.com"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:fontFamily="@font/quicksand_medium"/>
+                android:orientation="vertical"
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menna Ashraf"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#0F4090"
+                    android:fontFamily="@font/quicksand_bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="menna132@gmail.com"
+                    android:textColor="#0F4090"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/quicksand_medium"/>
+            </LinearLayout>
 
         </LinearLayout>
-
-   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -63,8 +67,9 @@
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 app:cardCornerRadius="50dp"
-                app:cardElevation="@dimen/_30sdp">
+                app:cardElevation="@dimen/_10sdp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -80,10 +85,10 @@
                         android:gravity="start"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:padding="@dimen/_10sdp"
-                        android:text="Patient Name"
+                        android:text="Patient Name :"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/teal_200"
                         android:fontFamily="@font/quicksand_medium"
                         />
 
@@ -102,7 +107,7 @@
                         android:text="@string/phone_number"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/teal_200"
                         android:fontFamily="@font/quicksand_medium"
                         />
 
@@ -122,7 +127,7 @@
                         android:text="@string/e_mail"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/teal_200"
                         android:fontFamily="@font/quicksand_medium"
                         />
 
@@ -141,7 +146,7 @@
                         android:text="Date of birth :"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/teal_200"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/quicksand_medium"
                         />
@@ -161,7 +166,7 @@
                         android:text="@string/gender"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/teal_700"
+                        android:textColor="@color/teal_200"
                         android:fontFamily="@font/quicksand_medium"
                         android:layout_marginTop="@dimen/_10sdp"
                         />
@@ -187,5 +192,6 @@
                 android:fontFamily="@font/quicksand_bold"
                 />
         </LinearLayout>
-
+    </LinearLayout>
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

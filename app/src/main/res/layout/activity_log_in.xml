@@ -4,30 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
+    android:background="#BFFFFFFF"
     android:orientation="vertical"
     tools:context=".UI.activity.StartingApp"
-    android:fitsSystemWindows="true">
+    >
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:background="@drawable/ic_wave_7_"
-        android:orientation="horizontal">
+        android:gravity="top"
+        android:orientation="vertical">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="180dp"
             android:src="@drawable/tcarelogo" />
+
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_30sdp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/_10sdp"
             android:hint="@string/usernameHint"
             app:boxStrokeWidth="@dimen/_4sdp"
             >
@@ -60,7 +65,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:boxStrokeWidth="@dimen/_4sdp"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/_10sdp"
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
             android:hint="@string/passwordHint"

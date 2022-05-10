@@ -77,6 +77,7 @@ public class QRScanningFragment extends Fragment {
                     @Override
                     public void run() {
                         txt_result.setText(data);
+                        Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
                         qrEader.stop();
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setData(Uri.parse(data));

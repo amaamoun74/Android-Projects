@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.activity.DataActivity"
-    android:fitsSystemWindows="false"
-    android:paddingTop="@dimen/_20sdp"
+    android:fitsSystemWindows="true"
+    android:background="@color/secWhite"
+    android:padding="@dimen/_10sdp"
   >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/_5sdp"
-
+        android:background="@color/white"
         app:tabGravity="fill"
         app:tabIndicator="@drawable/tablayout"
         app:tabIndicatorAnimationMode="elastic"

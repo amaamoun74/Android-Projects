@@ -29,13 +29,11 @@ public class user_Info extends AppCompatActivity {
         next.setOnClickListener(view -> {
             Intent intent = new Intent(user_Info.this,Verification.class);
             startActivity(intent);
-            finish();
         });
 
         back.setOnClickListener(view -> {
             Intent intent = new Intent(user_Info.this,SignUp.class);
             startActivity(intent);
-            finish();
         });
     }
 }

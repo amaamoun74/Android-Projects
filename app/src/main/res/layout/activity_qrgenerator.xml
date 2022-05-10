@@ -8,6 +8,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center_vertical"
+    android:fitsSystemWindows="true"
     >
 
     <ImageView

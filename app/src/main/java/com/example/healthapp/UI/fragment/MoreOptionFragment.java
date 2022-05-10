@@ -15,13 +15,15 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
+import com.example.healthapp.UI.activity.ContactUs;
+import com.example.healthapp.UI.activity.QRGenerator;
 import com.example.healthapp.UI.activity.StartingApp;
 
 public class MoreOptionFragment extends Fragment {
 
     private Dialog logoutDialog,deleteDialog;
     Button logoutBtn;
-    CardView deleteAccount;
+    CardView deleteAccount, qrGenerator,contactUs,aboutUs,share;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,35 @@ public class MoreOptionFragment extends Fragment {
         deleteAccount.setOnClickListener(view1 -> deleteDialog.show());
         logoutBtn = view.findViewById(R.id.logoutBtn);
         logoutBtn.setOnClickListener(view12 -> logoutDialog.show());
+        contactUs = view.findViewById(R.id.contactCV);
+        contactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ContactUs.class);
+                startActivity(intent);
+            }
+        });
+
+        qrGenerator= view.findViewById(R.id.qrGenerator);
+        qrGenerator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), QRGenerator.class);
+                startActivity(intent);
+            }
+        });
+
+        share=view.findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plan");
+                String body = "Share the T-care app now";
+                intent.putExtra(Intent.EXTRA_TEXT, body);
+                startActivity(Intent.createChooser(intent, "Share with :"));
+            }
+        });
         return view;
     }
 
