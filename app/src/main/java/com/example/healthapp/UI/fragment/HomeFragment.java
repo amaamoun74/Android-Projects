@@ -20,11 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
-import com.example.healthapp.UI.activity.DataActivity;
-import com.example.healthapp.UI.activity.Home;
-import com.example.healthapp.UI.activity.QR_Code;
 import com.example.healthapp.UI.activity.StartingApp;
-import com.example.healthapp.UI.activity.userProfile3;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -166,7 +162,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent;
+      /*  Intent intent;
         switch (view.getId()) {
             case R.id.profileCV:
                 intent = new Intent(getActivity(), userProfile3.class);
@@ -179,7 +175,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
          /*       Toast.makeText(this, "Data Screen is not implemented yet ", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this,.class);
                 startActivity(intent);
-           */     break;
+               break;
 
             case R.id.qrCV:
                 intent = new Intent(getActivity(), QR_Code.class);
@@ -190,7 +186,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 intent = new Intent(getActivity(), Home.class);
                 startActivity(intent);
                 break;
-        }
+        }*/
 
     }
 

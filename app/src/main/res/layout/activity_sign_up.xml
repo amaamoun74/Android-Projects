@@ -9,7 +9,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.activity.StartingApp"
-    android:background="BFFFFFFF"
+    android:background="#BFFFFFFF"
     android:orientation="vertical"
     >
 <LinearLayout
@@ -28,7 +28,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="180dp"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-15dp"
             android:src="@drawable/tcarelogo" />
 
     </LinearLayout>
