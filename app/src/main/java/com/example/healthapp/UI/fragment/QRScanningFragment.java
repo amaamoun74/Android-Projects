@@ -76,6 +76,7 @@ public class QRScanningFragment extends Fragment {
                 txt_result.post(new Runnable() {
                     @Override
                     public void run() {
+
                         txt_result.setText(data);
                         Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
                         qrEader.stop();
