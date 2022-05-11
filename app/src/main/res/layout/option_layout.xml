@@ -17,10 +17,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="More Option"
+            android:text="More Options"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="24sp"
             android:layout_margin="@dimen/_10sdp"
             />
         <LinearLayout
@@ -50,9 +50,9 @@
                         android:layout_marginEnd="@dimen/_20sdp"
                         android:layout_marginBottom="@dimen/_20sdp"
                         android:gravity="center"
-                        android:text="Generator"
+                        android:text="@string/qr_generator"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_18sdp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
@@ -82,7 +82,7 @@
                         android:gravity="center"
                         android:text="@string/contact_us"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_18sdp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
@@ -119,7 +119,7 @@
                     android:gravity="center"
                     android:text="@string/share"
                     android:textColor="@color/mainBlue"
-                    android:textSize="@dimen/_18sdp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -149,7 +149,7 @@
                     android:gravity="center"
                     android:text="@string/about_Us"
                     android:textColor="@color/mainBlue"
-                    android:textSize="@dimen/_18sdp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -158,10 +158,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="More settings"
+            android:text="Settings"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="24sp"
             android:layout_margin="@dimen/_10sdp"
             />
         <LinearLayout
@@ -181,7 +181,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#B4D19F"
+                    android:background="@color/material_dynamic_neutral_variant60"
                     >
 
                     <TextView
@@ -193,8 +193,8 @@
                         android:layout_marginBottom="@dimen/_20sdp"
                         android:gravity="center"
                         android:text="Change Password"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/_18sdp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
@@ -212,7 +212,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#FAC7C7"
+                    android:background="@android:color/holo_red_light"
                     >
 
                     <TextView
@@ -224,8 +224,8 @@
                         android:layout_marginBottom="@dimen/_20sdp"
                         android:gravity="center"
                         android:text="Delete Account"
-                        android:textColor="#E91E63"
-                        android:textSize="@dimen/_18sdp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
@@ -245,7 +245,7 @@
             android:shadowColor="@color/black"
             android:elevation="@dimen/_20sdp"
             android:background="@drawable/bluebutton"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textColor="@color/white"
             android:textStyle="bold" />
     </LinearLayout>

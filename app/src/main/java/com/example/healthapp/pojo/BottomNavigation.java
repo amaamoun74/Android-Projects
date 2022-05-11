@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.healthapp.R;
 import com.example.healthapp.UI.fragment.ExposureFragment;
-import com.example.healthapp.UI.fragment.HomeFragment;
+import com.example.healthapp.UI.fragment.HomeFragment2;
 import com.example.healthapp.UI.fragment.MoreOptionFragment;
 import com.example.healthapp.UI.fragment.QRScanningFragment;
 import com.example.healthapp.UI.fragment.data.profileFragment;
@@ -52,7 +52,7 @@ public class BottomNavigation extends AppCompatActivity {
                 } else if (item.getId() == 2) {
                     fragment = new ExposureFragment();
                 } else if (item.getId() == 3) {
-                    fragment = new HomeFragment();
+                    fragment = new HomeFragment2();
                 } else if (item.getId() == 4) {
                     fragment = new modelQues();
                     layout.setVisibility(View.INVISIBLE);

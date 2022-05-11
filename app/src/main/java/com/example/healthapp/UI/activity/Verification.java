@@ -1,12 +1,13 @@
 package com.example.healthapp.UI.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthapp.R;
+import com.example.healthapp.pojo.BottomNavigation;
 
 public class Verification extends AppCompatActivity {
 
@@ -19,7 +20,10 @@ public class Verification extends AppCompatActivity {
 
         signup_btn= findViewById(R.id.signup_btn);
 
-        signup_btn.setOnClickListener(view -> Toast.makeText(this, "welcome", Toast.LENGTH_SHORT).show());
+        signup_btn.setOnClickListener(view ->{
+            Intent intent = new Intent(Verification.this, BottomNavigation.class);
+            startActivity(intent);
+        });
 
     }
 }
