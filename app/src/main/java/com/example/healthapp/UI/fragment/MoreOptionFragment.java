@@ -18,6 +18,7 @@ import com.example.healthapp.R;
 import com.example.healthapp.UI.activity.ContactUs;
 import com.example.healthapp.UI.activity.QRGenerator;
 import com.example.healthapp.UI.activity.StartingApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MoreOptionFragment extends Fragment {
 
@@ -84,6 +85,7 @@ public class MoreOptionFragment extends Fragment {
         Button No = logoutDialog.findViewById(R.id.btn_cancel);
 
         Yes.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
             Intent intent =  new Intent(getActivity(), StartingApp.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "Yes", Toast.LENGTH_SHORT).show();
