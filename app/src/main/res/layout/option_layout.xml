@@ -181,7 +181,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/material_dynamic_neutral_variant60"
+                    android:background="#F0787272"
                     >
 
                     <TextView
@@ -212,7 +212,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#E80620"
                     >
 
                     <TextView
