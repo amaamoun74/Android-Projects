@@ -40,7 +40,7 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_menu_test.xml" value="0.1" />
-        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_model_queries.xml" value="0.25416666666666665" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_model_queries.xml" value="0.4" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.11200000000000002" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_qr_code.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/activity_qr_scanning.xml" value="0.136" />
@@ -56,16 +56,20 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/contact_us.xml" value="0.152" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/content_home_page.xml" value="0.2" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/content_navigation_drawer.xml" value="0.1480978260869565" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/delete_dialogue.xml" value="0.25416666666666665" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/dialogue_logout.xml" value="0.12360688956433637" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_exposure_system.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_gallery.xml" value="0.1480978260869565" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_home.xml" value="0.1480978260869565" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_home2.xml" value="0.1" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_medical_data.xml" value="0.25416666666666665" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_model_ques.xml" value="0.136" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_personal_data.xml" value="0.2" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_q_r_scanning.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_slideshow.xml" value="0.1480978260869565" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/header.xml" value="0.1480978260869565" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/loding_dialogue.xml" value="0.13858695652173914" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/medical_info.xml" value="0.1" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/nav_header_home_page.xml" value="0.264" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.152" />
@@ -136,8 +140,6 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/bottom_nav.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/contact_us.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/content_user_profile2.xml" value="0.22" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/delete_dialogue.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/dialogue_logout.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_dashboard.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_exposure_system.xml" value="0.209375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/HealthAPP/app/src/main/res/layout/fragment_first.xml" value="0.184375" />

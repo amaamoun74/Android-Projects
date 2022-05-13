@@ -38,10 +38,13 @@ public class MoreOptionFragment extends Fragment {
         View view = inflater.inflate(R.layout.option_layout, container, false);
         logoutDialogue();
         deleteAccountDialogue();
+
         deleteAccount = view.findViewById(R.id.deleteAccount);
         deleteAccount.setOnClickListener(view1 -> deleteDialog.show());
+
         logoutBtn = view.findViewById(R.id.logoutBtn);
         logoutBtn.setOnClickListener(view12 -> logoutDialog.show());
+
         contactUs = view.findViewById(R.id.contactCV);
         contactUs.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -87,7 +87,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="Patient Name :"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:fontFamily="@font/quicksand_medium"
                         />
 
@@ -105,7 +105,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="@string/phone_number"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:fontFamily="@font/quicksand_medium"
                         />
                     <View
@@ -122,7 +122,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="Emergency contact"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:fontFamily="@font/quicksand_medium"
                         />
 
@@ -141,7 +141,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="@string/e_mail"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:fontFamily="@font/quicksand_medium"
                         />
 
@@ -159,7 +159,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="Date of birth :"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/quicksand_medium"
                         />
@@ -178,7 +178,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="@string/gender"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:fontFamily="@font/quicksand_medium"
                         android:layout_marginTop="@dimen/_10sdp"
                         />
@@ -196,7 +196,7 @@
                         android:padding="@dimen/_10sdp"
                         android:text="National ID"
                         android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
+                        android:textColor="#0F4090"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/quicksand_medium"
                         />

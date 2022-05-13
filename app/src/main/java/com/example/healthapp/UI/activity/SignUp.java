@@ -2,7 +2,7 @@ package com.example.healthapp.UI.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +27,7 @@ public class SignUp extends AppCompatActivity {
     Button nextBtn;
     TextView loginText;
     private FirebaseAuth mAuth;
+    String name, password, confirmPassword, email, phoneNum, nationalId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class SignUp extends AppCompatActivity {
         loginText = findViewById(R.id.login_Text);
 
         nextBtn.setOnClickListener(view -> {
-            createUser();
+            validate();
          /*   if (validate()) {
                 if (passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
                     Intent intent = new Intent(SignUp.this, user_Info.class);
@@ -63,24 +64,54 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void createUser() {
-        String name = nameET.getText().toString();
-        String password = passwordET.getText().toString();
-        String confirmPassword = confirmPasswordET.getText().toString();
-        String email = mailET.getText().toString();
-        String phoneNum = phoneNumberET.getText().toString();
-        String nationalId = nationalID.getText().toString();
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            BaseUser user = new BaseUser(name, email, phoneNum, nationalId);
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                        firebaseUser.sendEmailVerification();
+                                        Toast.makeText(SignUp.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(SignUp.this, BottomNavigation.class));
+
+                                    } else {
+                                        Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+
+                        } else {
+                            Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    void validate() {
+        name = nameET.getText().toString();
+        password = passwordET.getText().toString();
+        confirmPassword = confirmPasswordET.getText().toString();
+        email = mailET.getText().toString();
+        phoneNum = phoneNumberET.getText().toString();
+        nationalId = nationalID.getText().toString();
+
         if (name.isEmpty()) {
             nameET.setError("fill in name field");
             nameET.requestFocus();
 
         } else if (email.isEmpty()) {
-            if (TextUtils.isEmpty(email)) {
-                mailET.setError("should be in ****@gmail.com format");
+            mailET.setError("fill in mail field");
+            mailET.requestFocus();
 
-            } else {
-                mailET.setError("fill in mail field");
-
-            }
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            mailET.setError("should be in ****@gmail.com format");
             mailET.requestFocus();
         } else if (password.isEmpty()) {
             passwordET.setError("fill in Password field");
@@ -108,66 +139,8 @@ public class SignUp extends AppCompatActivity {
 
         } else if (!(passwordET.getText().toString().equals(confirmPasswordET.getText().toString()))) {
             Toast.makeText(this, "Password is not matched", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                BaseUser user = new BaseUser(name, email, phoneNum, nationalId);
-                                FirebaseDatabase.getInstance().getReference("Users")
-                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                                            firebaseUser.sendEmailVerification();
-                                            Toast.makeText(SignUp.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(SignUp.this, BottomNavigation.class));
-
-                                        } else {
-                                            Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-
-                            } else {
-                                Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        }
-
-    }
-    boolean validate() {
-        if (nameET.getText().toString().isEmpty()) {
-            nameET.setError("fill in name field");
-            nameET.requestFocus();
-            return false;
-        } else if (mailET.getText().toString().isEmpty()) {
-            mailET.setError("fill in mail field");
-            mailET.requestFocus();
-            return false;
-        } else if (passwordET.getText().toString().isEmpty()) {
-            passwordET.setError("fill in password field");
-            passwordET.requestFocus();
-            return false;
-        } else if (confirmPasswordET.getText().toString().isEmpty()) {
-            confirmPasswordET.setError("fill in confirm Password field");
-            confirmPasswordET.requestFocus();
-            return false;
-        } else if (phoneNumberET.getText().toString().isEmpty()) {
-            phoneNumberET.setError("fill in phone Number field");
-            phoneNumberET.requestFocus();
-            return false;
-        } else if (nationalID.getText().toString().isEmpty()) {
-            nationalID.setError("fill in national ID field");
-            nationalID.requestFocus();
-            return false;
         } else {
-            return true;
+            createUser();
         }
     }
 }

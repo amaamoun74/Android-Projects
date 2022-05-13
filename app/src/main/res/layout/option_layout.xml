@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="More Options"
+            android:text="@string/more_options"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -176,13 +176,14 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_5sdp"
+                app:cardElevation="@dimen/_8sdp"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#F0787272"
+                    android:background="#499F4E"
                     >
+                    <!-- l lon bta3 l change password bta3 menna  #F0787272 bs dh gray f msh laziz y3ni  -->
 
                     <TextView
                         android:layout_width="match_parent"
@@ -207,12 +208,12 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_5sdp"
+                app:cardElevation="@dimen/_8sdp"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#E80620"
+                    android:background="@android:color/holo_red_light"
                     >
 
                     <TextView
@@ -228,7 +229,6 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
-
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
@@ -243,7 +243,6 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:shadowColor="@color/black"
-            android:elevation="@dimen/_20sdp"
             android:background="@drawable/bluebutton"
             android:text="@string/logout"
             android:textColor="@color/white"

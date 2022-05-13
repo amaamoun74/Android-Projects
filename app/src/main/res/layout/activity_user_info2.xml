@@ -156,7 +156,7 @@
         android:background="@drawable/graybutton"
         android:text="@string/back"
         android:textSize="28sp"
-        android:textColor="#0F4090"
+        android:textColor="@color/mainBlue"
         />
 
 </LinearLayout>
