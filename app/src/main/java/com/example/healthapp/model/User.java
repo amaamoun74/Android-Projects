@@ -1,162 +1,173 @@
+
 package com.example.healthapp.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
 public class User {
- @SerializedName("fname")
- @Expose
- private String fname;
- @SerializedName("lname")
- @Expose
- private String lname;
- @SerializedName("username")
- @Expose
- private String username;
- @SerializedName("password")
- @Expose
- private String password;
- @SerializedName("status")
- @Expose
- private String status;
- @SerializedName("DOB")
- @Expose
- private String dob;
- @SerializedName("gender")
- @Expose
- private String gender;
- @SerializedName("age")
- @Expose
- private String age;
- @SerializedName("phone")
- @Expose
- private String phone;
- @SerializedName("address")
- @Expose
- private String address;
- @SerializedName("email")
- @Expose
- private String email;
- @SerializedName("photo")
- @Expose
- private String photo;
- @SerializedName("QR")
- @Expose
- private String qr;
- @SerializedName("ID")
- @Expose
- private String id;
 
- public String getFname() {
-  return fname;
- }
+    @SerializedName("id")
+    @Expose
+    private String id;
 
- public void setFname(String fname) {
-  this.fname = fname;
- }
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("email")
+    @Expose
+    private String email;
 
- public String getLname() {
-  return lname;
- }
+    @SerializedName("email_verified_at")
+    @Expose
+    private String email_verified_at;
 
- public void setLname(String lname) {
-  this.lname = lname;
- }
 
- public String getUsername() {
-  return username;
- }
+    @SerializedName("password")
+    @Expose
+    private String password;
+    @SerializedName("age")
+    @Expose
+    private String age;
 
- public void setUsername(String username) {
-  this.username = username;
- }
+    @SerializedName("gender")
+    @Expose
+    private String gender;
+    @SerializedName("address")
+    @Expose
+    private String address;
+    @SerializedName("state")
+    @Expose
+    private String state;
 
- public String getPassword() {
-  return password;
- }
+    @SerializedName("img")
+    @Expose
+    private String img;
+    @SerializedName("remember_token")
+    @Expose
+    private String remember_token;
 
- public void setPassword(String password) {
-  this.password = password;
- }
+    @SerializedName("created_at")
+    @Expose
+    private String createdAt;
+    @SerializedName("updated_at")
+    @Expose
+    private String updatedAt;
 
- public String getStatus() {
-  return status;
- }
+    public User( String name, String email,
+                String password, String age,
+                String gender, String address,
+                String state) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.password = password;
+        this.gender = gender;
+        this.address = address;
+        this.state = state;
+    }
 
- public void setStatus(String status) {
-  this.status = status;
- }
+    public String getEmail_verified_at() {
+        return email_verified_at;
+    }
 
- public String getDob() {
-  return dob;
- }
+    public void setEmail_verified_at(String email_verified_at) {
+        this.email_verified_at = email_verified_at;
+    }
 
- public void setDob(String dob) {
-  this.dob = dob;
- }
+    public String getImg() {
+        return img;
+    }
 
- public String getGender() {
-  return gender;
- }
+    public void setImg(String img) {
+        this.img = img;
+    }
 
- public void setGender(String gender) {
-  this.gender = gender;
- }
+    public String getRemember_token() {
+        return remember_token;
+    }
 
- public String getAge() {
-  return age;
- }
+    public void setRemember_token(String remember_token) {
+        this.remember_token = remember_token;
+    }
 
- public void setAge(String age) {
-  this.age = age;
- }
+    public String getName() {
+        return name;
+    }
 
- public String getPhone() {
-  return phone;
- }
+    public void setName(String name) {
+        this.name = name;
+    }
 
- public void setPhone(String phone) {
-  this.phone = phone;
- }
+    public String getEmail() {
+        return email;
+    }
 
- public String getAddress() {
-  return address;
- }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
- public void setAddress(String address) {
-  this.address = address;
- }
+    public String getAge() {
+        return age;
+    }
 
- public String getEmail() {
-  return email;
- }
+    public void setAge(String age) {
+        this.age = age;
+    }
 
- public void setEmail(String email) {
-  this.email = email;
- }
+    public String getGender() {
+        return gender;
+    }
 
- public String getPhoto() {
-  return photo;
- }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
- public void setPhoto(String photo) {
-  this.photo = photo;
- }
+    public String getAddress() {
+        return address;
+    }
 
- public String getQr() {
-  return qr;
- }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
- public void setQr(String qr) {
-  this.qr = qr;
- }
+    public String getState() {
+        return state;
+    }
 
- public String getId() {
-  return id;
- }
+    public void setState(String state) {
+        this.state = state;
+    }
 
- public void setId(String id) {
-  this.id = id;
- }
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
 
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -13,6 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.healthapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Collections;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         },splashDuration);
+
+        // for MAC address
+     //   String mobile_mac_address = getMacAddress();  //call the method that return mac address
+       // Log.d("MyMacIS",mobile_mac_address);
     }
 
 /*
@@ -59,4 +68,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
  */
+    public String getMacAddress(){
+        try{
+            List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
+            String stringMac = "";
+            for(NetworkInterface networkInterface : networkInterfaceList)
+            {
+                if(networkInterface.getName().equalsIgnoreCase("wlon0"));
+                {
+                    for(int i = 0 ;i <networkInterface.getHardwareAddress().length; i++){
+                        String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i]& 0xFF);
+                        if(stringMacByte.length() == 1)
+                        {
+                            stringMacByte = "0" +stringMacByte;
+                        }
+                        stringMac = stringMac + stringMacByte.toUpperCase() + ":";
+                    }
+                    break;
+                }
+            }
+            return stringMac;
+        }catch (SocketException e)
+        {
+            e.printStackTrace();
+        }
+        return  "0";
+    }
 }

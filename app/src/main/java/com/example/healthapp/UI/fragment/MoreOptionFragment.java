@@ -1,5 +1,4 @@
 package com.example.healthapp.UI.fragment;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,19 +17,23 @@ import com.example.healthapp.R;
 import com.example.healthapp.UI.activity.ContactUs;
 import com.example.healthapp.UI.activity.QRGenerator;
 import com.example.healthapp.UI.activity.StartingApp;
+import com.example.healthapp.model.Patient;
+import com.example.healthapp.pojo.webServices.ApiClient;
+import com.example.healthapp.pojo.webServices.ApiInterface;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MoreOptionFragment extends Fragment {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
+public class MoreOptionFragment extends Fragment {
     private Dialog logoutDialog,deleteDialog;
     Button logoutBtn;
     CardView deleteAccount, qrGenerator,contactUs,aboutUs,share;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -113,6 +116,7 @@ public class MoreOptionFragment extends Fragment {
         Button No = deleteDialog.findViewById(R.id.btn_cancel);
 
         Yes.setOnClickListener(v -> {
+            destroyUser();
             Toast.makeText(getActivity(), "Yes", Toast.LENGTH_SHORT).show();
             deleteDialog.dismiss();
         });
@@ -121,6 +125,22 @@ public class MoreOptionFragment extends Fragment {
 
             Toast.makeText(getActivity(), "No", Toast.LENGTH_SHORT).show();
             deleteDialog.dismiss();
+        });
+    }
+
+    void destroyUser() {
+        ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
+        Call<Patient> callData = apiInterface.destroyUser();
+        callData.enqueue(new Callback<Patient>() {
+            @Override
+            public void onResponse(Call<Patient> call, Response<Patient> response) {
+            }
+
+            @Override
+            public void onFailure(Call<Patient> call, Throwable t) {
+                //Toast.makeText(LogIn.this, "failed to login :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
         });
     }
 }

@@ -1,8 +1,6 @@
 package com.example.healthapp.UI.activity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthapp.R;
 import com.example.healthapp.model.BaseUser;
-import com.example.healthapp.pojo.BottomNavigation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -42,19 +39,12 @@ public class SignUp extends AppCompatActivity {
         phoneNumberET = findViewById(R.id.phone);
         nationalID = findViewById(R.id.nationalId);
 
+
         nextBtn = findViewById(R.id.next_btn);
         loginText = findViewById(R.id.login_Text);
 
         nextBtn.setOnClickListener(view -> {
-            validate();
-         /*   if (validate()) {
-                if (passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
-                    Intent intent = new Intent(SignUp.this, user_Info.class);
-                    startActivity(intent);
-                } else
-                    Toast.makeText(this, "Password is not matched", Toast.LENGTH_SHORT).show();
-
-            }*/
+         validate();
         });
 
         loginText.setOnClickListener(view -> {
@@ -63,7 +53,7 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-    private void createUser() {
+    private void firebaseCreateUser() {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -78,69 +68,75 @@ public class SignUp extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                                         firebaseUser.sendEmailVerification();
-                                        Toast.makeText(SignUp.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(SignUp.this, BottomNavigation.class));
+                                        //   Toast.makeText(SignUp.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                                        //   startActivity(new Intent(SignUp.this, BottomNavigation.class));
 
-                                    } else {
-                                        Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                 /*   } else {
+                                  //      Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }*/
                                     }
                                 }
                             });
 
-                        } else {
-                            Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+                        } /*else {
+                          //  Toast.makeText(SignUp.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }*/
                     }
                 });
     }
 
     void validate() {
-        name = nameET.getText().toString();
-        password = passwordET.getText().toString();
-        confirmPassword = confirmPasswordET.getText().toString();
-        email = mailET.getText().toString();
-        phoneNum = phoneNumberET.getText().toString();
-        nationalId = nationalID.getText().toString();
-
-        if (name.isEmpty()) {
+        if (nameET.getText().toString().isEmpty()) {
             nameET.setError("fill in name field");
             nameET.requestFocus();
 
-        } else if (email.isEmpty()) {
+        } else if (mailET.getText().toString().isEmpty()) {
             mailET.setError("fill in mail field");
             mailET.requestFocus();
 
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        } /*else if (Patterns.EMAIL_ADDRESS.matcher(mailET.getText().toString()).matches()) {
             mailET.setError("should be in ****@gmail.com format");
             mailET.requestFocus();
-        } else if (password.isEmpty()) {
+
+        } */else if (passwordET.getText().toString().isEmpty()) {
             passwordET.setError("fill in Password field");
             passwordET.requestFocus();
 
-        } else if (confirmPassword.isEmpty()) {
+        } else if (confirmPasswordET.getText().toString().isEmpty()) {
             confirmPasswordET.setError("fill in confirm Password field");
             confirmPasswordET.requestFocus();
 
-
-        } else if (phoneNum.isEmpty()) {
+        } else if (phoneNumberET.getText().toString().isEmpty()) {
             phoneNumberET.setError("fill in phone Number field");
             phoneNumberET.requestFocus();
 
-
-        } else if (nationalId.isEmpty()) {
+        } else if (nationalID.getText().toString().isEmpty()) {
             nationalID.setError("fill in national ID field");
             nationalID.requestFocus();
 
-
-        } else if (password.length() < 6) {
+        } else if (passwordET.getText().toString().length() < 6) {
             passwordET.setError("Min Password length Is 6 char ");
             passwordET.requestFocus();
 
-
         } else if (!(passwordET.getText().toString().equals(confirmPasswordET.getText().toString()))) {
             Toast.makeText(this, "Password is not matched", Toast.LENGTH_SHORT).show();
+
         } else {
-            createUser();
+            name = nameET.getText().toString();
+            password = passwordET.getText().toString();
+            confirmPassword = confirmPasswordET.getText().toString();
+            email = mailET.getText().toString();
+            phoneNum = phoneNumberET.getText().toString();
+            nationalId = nationalID.getText().toString();
+            Intent intent = new Intent(SignUp.this, user_Info.class);
+            intent.putExtra("userName", name);
+            intent.putExtra("password", password);
+            intent.putExtra("confirmPassword", confirmPassword);
+            intent.putExtra("email", email);
+            intent.putExtra("phoneNum", phoneNum);
+            intent.putExtra("nationalId", nationalId);
+            startActivity(intent);
+            firebaseCreateUser();
         }
     }
 }

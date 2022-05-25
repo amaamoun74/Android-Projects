@@ -181,7 +181,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#499F4E"
+                    android:background="#E6499E4D"
                     >
                     <!-- l lon bta3 l change password bta3 menna  #F0787272 bs dh gray f msh laziz y3ni  -->
 
@@ -193,7 +193,7 @@
                         android:layout_marginEnd="@dimen/_20sdp"
                         android:layout_marginBottom="@dimen/_20sdp"
                         android:gravity="center"
-                        android:text="Change Password"
+                        android:text="Change\nPassword"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -213,7 +213,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#E6FF4545"
                     >
 
                     <TextView
@@ -224,7 +224,7 @@
                         android:layout_marginEnd="@dimen/_20sdp"
                         android:layout_marginBottom="@dimen/_20sdp"
                         android:gravity="center"
-                        android:text="Delete Account"
+                        android:text="Delete\nAccount"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />

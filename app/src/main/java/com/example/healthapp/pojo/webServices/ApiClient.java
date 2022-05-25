@@ -1,14 +1,4 @@
-package com.example.healthapp.pojo;
-import com.example.healthapp.model.Data;
-
-import java.io.IOException;
-import java.util.List;
-
-import okhttp3.Request;
-import okio.Timeout;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+package com.example.healthapp.pojo.webServices;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -16,8 +6,9 @@ public class ApiClient {
     public static Retrofit retrofit;
 
     // l var dh hyb2 f class lw7do m3 vars tania
-    public static final String BASE_URL = "https://jsonplaceholder.typicode.com/";
-
+    //10.0.2.2:3306
+    //https://lungcancer-ar.herokuapp.com/api/auth/
+    public static final String BASE_URL = "https://ai-clinc.herokuapp.com/api/auth/";
 
     public static Retrofit retrofitInstance() {
         if (retrofit == null) {
@@ -27,7 +18,6 @@ public class ApiClient {
         }
         return retrofit;
     }
-
 }
 
 

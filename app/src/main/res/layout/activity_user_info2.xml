@@ -57,6 +57,7 @@
                 android:textColor="#0F4090"
                 android:textSize="20sp"
                 android:buttonTint="#0F4090"
+                android:onClick="onClick"
                 />
 
             <RadioButton
@@ -70,6 +71,7 @@
                 android:textColor="#0F4090"
                 android:textSize="20sp"
                 android:buttonTint="#0F4090"
+                android:onClick="onClick"
                 > </RadioButton>
         </RadioGroup>
 
@@ -124,6 +126,7 @@
                 android:textSize="20sp"
                 android:textColor="#0F4090"
                 android:buttonTint="#0F4090"
+                android:onClick="onClick"
                 > </RadioButton>
 
             

@@ -2,6 +2,7 @@ package com.example.healthapp.UI.fragment.data;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
 import com.example.healthapp.model.BaseUser;
+import com.example.healthapp.model.Patient;
+import com.example.healthapp.pojo.webServices.ApiClient;
+import com.example.healthapp.pojo.webServices.ApiInterface;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +24,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PersonalDataFragment extends Fragment {
     private FirebaseUser firebaseUser;
@@ -67,5 +75,32 @@ public class PersonalDataFragment extends Fragment {
             }
         });
         return view;
+    }
+    void getUserPersonalInformation(String ID){
+        ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
+        Call<Patient> callData = apiInterface.showUserData(ID);
+        callData.enqueue(new Callback<Patient>() {
+            @Override
+            public void onResponse(Call<Patient> call, Response<Patient> response) {
+                Log.d("response", response.toString());
+                Patient patient = response.body();
+                if (patient != null) {
+                    name.setText("Name : " + patient.getUser().getName());
+                    phoneNum.setText("Age : " +patient.getUser().getAge());
+                    nationalId.setText("Gender : " +patient.getUser().getGender());
+                    email.setText("E-mail : " +patient.getUser().getEmail());
+                } else {
+                    Toast.makeText(getActivity(), "" + response.code(), Toast.LENGTH_SHORT).show();
+                    Log.d("TAG", response.message().toString() + "");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Patient> call, Throwable t) {
+                Toast.makeText(getActivity(), "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("TAG1", t.getMessage().toString());
+            }
+        });
+
     }
 }

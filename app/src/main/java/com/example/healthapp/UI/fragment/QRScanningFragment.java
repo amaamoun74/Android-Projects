@@ -76,7 +76,7 @@ public class QRScanningFragment extends Fragment {
                 txt_result.post(new Runnable() {
                     @Override
                     public void run() {
-
+                       // getUserMedicalData(data);
                         txt_result.setText(data);
                         Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
                         qrEader.stop();
@@ -135,6 +135,21 @@ public class QRScanningFragment extends Fragment {
                     }
                 }).check();
 
-    }
+    }/*
+    void getUserMedicalData(String id) {
+        ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
+        Call<Patient> callData = apiInterface.destroyUser();
+        callData.enqueue(new Callback<Patient>() {
+            @Override
+            public void onResponse(Call<Patient> call, Response<Patient> response) {
+            }
 
+            @Override
+            public void onFailure(Call<Patient> call, Throwable t) {
+                //Toast.makeText(LogIn.this, "failed to login :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+*/
 }

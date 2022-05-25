@@ -51,11 +51,9 @@ public class QR_Code extends AppCompatActivity {
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-
                     }
                 }).check();
     }
-
 
     private void setupQReader() {
         qrEader = new QREader.Builder(this, surfaceView, new QRDataListener() {
@@ -120,6 +118,5 @@ public class QR_Code extends AppCompatActivity {
 
                     }
                 }).check();
-
     }
 }

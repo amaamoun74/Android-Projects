@@ -25,10 +25,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         this.list = list;
     }
 
-    public DataAdapter() {
-
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,24 +35,31 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        //hn8ier f l class name yb2 3 7sb l model w tb3n hn8ier f l get title w l klam dh
 
-       // holder.titleTextView.setText(list.get(position).title);
-       // holder.descriptionTextView.setText(list.get(position).description);
-        holder.titleTextView.setText("title1");
-        holder.descriptionTextView.setText("Description here");
+       Data data = list.get(position);
+       holder.titleTextView.setText(data.getTitle());
+        holder.descriptionTextView.setText(data.getBody());
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                // n3ml dialogue 3shan deleting l user medical data
+                return false;
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return ArrayList.size();
     }
-
+/*
     public void setList(ArrayList<Data> ArrayList) {
         this.ArrayList = ArrayList;
         notifyDataSetChanged();
     }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
+*/
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView titleTextView, descriptionTextView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
