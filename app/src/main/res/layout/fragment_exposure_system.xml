@@ -47,12 +47,12 @@
                 app:layout_constraintVertical_bias="0.191" />
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/bleSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_60sdp"
                 android:layout_marginTop="@dimen/_35sdp"
-
-                android:checked="true"
+                android:checked="false"
                 android:shadowColor="@color/black"
                 android:theme="@style/switchTheme"
                 app:layout_constraintBottom_toBottomOf="parent"
