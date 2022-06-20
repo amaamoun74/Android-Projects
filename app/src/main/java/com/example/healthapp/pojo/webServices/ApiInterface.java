@@ -46,7 +46,7 @@ public interface ApiInterface {
             );
 
      // for doctor
-     @GET("usersearch/{id}")
-     Call<Patient> usersearch();
+     @GET("userviewdiseases")
+     Call<Patient> viewDiseases(@Query("ID") String ID);
 
 }

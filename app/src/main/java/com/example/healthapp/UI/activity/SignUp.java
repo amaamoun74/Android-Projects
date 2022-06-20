@@ -136,7 +136,7 @@ public class SignUp extends AppCompatActivity {
             intent.putExtra("phoneNum", phoneNum);
             intent.putExtra("nationalId", nationalId);
             startActivity(intent);
-            firebaseCreateUser();
+          //  firebaseCreateUser();
         }
     }
 }

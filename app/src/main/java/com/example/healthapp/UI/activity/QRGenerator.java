@@ -31,7 +31,7 @@ public class QRGenerator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String data = text.getText().toString();
-                QRGEncoder encoder = new QRGEncoder(data, null , QRGContents.Type.TEXT,800);
+                QRGEncoder encoder = new QRGEncoder(data, null , QRGContents.Type.TEXT,1200);
                 encoder.setColorBlack(Color.RED);
                 encoder.setColorWhite(Color.WHITE);
                 qrImage.setImageBitmap(encoder.getBitmap());

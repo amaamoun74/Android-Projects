@@ -1,5 +1,7 @@
 package com.example.healthapp.UI.fragment.data;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import com.example.healthapp.R;
 import com.example.healthapp.adapter.DataAdapter;
 import com.example.healthapp.model.Data;
 import com.example.healthapp.model.Patient;
+import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 
@@ -51,6 +54,35 @@ public class MedicalDataFragment extends Fragment {
 
         }*/
         //adapter = new DataAdapter(this,list);
+    }
+
+
+    void getUserDiseases(){
+        SessionManagement sessionManagement = new SessionManagement();
+
+        ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
+        Call<Patient> callData = apiInterface.viewDiseases(sessionManagement.getId());
+        callData.enqueue(new Callback<Patient>() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onResponse(Call<Patient> call, Response<Patient> response) {
+                Log.d("response", response.toString());
+                Patient patient = response.body();
+                if (patient != null) {
+
+                } else {
+                    Toast.makeText(getActivity(), "" + response.code(), Toast.LENGTH_SHORT).show();
+                    Log.d("TAG1", response.message());
+                    // tl3 not allowed :)
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Patient> call, Throwable t) {
+                Toast.makeText(getActivity(), "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("TAG1", t.getMessage().toString());
+            }
+        });
     }
 
     void userMedicalData(){

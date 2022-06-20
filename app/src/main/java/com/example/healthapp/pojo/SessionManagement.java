@@ -14,9 +14,13 @@ public class SessionManagement {
     Intent intent;
 
     private static final String file_name = "file name";
+    private String id;
     public static final String KEY_NAME= "name";
     public static final String KEY_PASSWORD= "password";
     public static final String KEY_Status= "status";
+
+    public SessionManagement() {
+    }
 
     public SessionManagement(Context context) {
         this.context = context;
@@ -54,4 +58,11 @@ public class SessionManagement {
         context.startActivity(intent);
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -9,21 +9,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
-import com.example.healthapp.model.BaseUser;
 import com.example.healthapp.model.Patient;
+import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,7 +46,7 @@ public class PersonalDataFragment extends Fragment {
         dateOfBirth = view.findViewById(R.id.dateOfBirthTV);
         gender = view.findViewById(R.id.genderTV);
         nationalId = view.findViewById(R.id.nationalIDTV);
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+     /*   firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         userID = firebaseUser.getUid();
         databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -74,12 +68,17 @@ public class PersonalDataFragment extends Fragment {
                 Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_SHORT).show();
             }
         });
+*/
+        getUserPersonalInformation();
         return view;
     }
-    void getUserPersonalInformation(String ID){
+    void getUserPersonalInformation(){
+        SessionManagement sessionManagement = new SessionManagement();
+
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.showUserData(ID);
+        Call<Patient> callData = apiInterface.showUserData(sessionManagement.getId());
         callData.enqueue(new Callback<Patient>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(Call<Patient> call, Response<Patient> response) {
                 Log.d("response", response.toString());
@@ -91,7 +90,8 @@ public class PersonalDataFragment extends Fragment {
                     email.setText("E-mail : " +patient.getUser().getEmail());
                 } else {
                     Toast.makeText(getActivity(), "" + response.code(), Toast.LENGTH_SHORT).show();
-                    Log.d("TAG", response.message().toString() + "");
+                    Log.d("TAG1", response.message());
+                    // tl3 not allowed :)
                 }
             }
 
@@ -101,6 +101,5 @@ public class PersonalDataFragment extends Fragment {
                 Log.d("TAG1", t.getMessage().toString());
             }
         });
-
     }
 }

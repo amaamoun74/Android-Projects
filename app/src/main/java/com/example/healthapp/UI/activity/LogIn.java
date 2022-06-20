@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.healthapp.R;
 import com.example.healthapp.model.Patient;
 import com.example.healthapp.pojo.BottomNavigation;
+import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -93,13 +94,13 @@ public class LogIn extends AppCompatActivity {
 
         } else {
             callLogin();
-            firebaseUserLogin();
+          //  firebaseUserLogin();
         }
     }
 
     void callLogin() {
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.login(email, password);
+        Call<Patient> callData = apiInterface.login(logInUsername.getText().toString(), logInPassword.getText().toString());
         callData.enqueue(new Callback<Patient>() {
             @Override
             public void onResponse(Call<Patient> call, Response<Patient> response) {
@@ -107,6 +108,9 @@ public class LogIn extends AppCompatActivity {
                 Patient patient = response.body();
                 if (patient != null) {
                     setProgressDialog();
+                    SessionManagement sessionManagement = new SessionManagement();
+                    sessionManagement.setId(patient.getUser().getId().toString());
+                    Log.d("id",sessionManagement.getId());
                 }
                 else{
                     Toast.makeText(LogIn.this, "enter correct email and password", Toast.LENGTH_SHORT).show();
