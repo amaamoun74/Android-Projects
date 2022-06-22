@@ -14,13 +14,13 @@ public class SessionManagement {
     Intent intent;
 
     private static final String file_name = "file name";
-    private String id;
     public static final String KEY_NAME= "name";
+    public static final String KEY_ID= "id";
+    public static final String KEY_userType= "userType";
+    public static final String KEY_userIDForQrCode= "userid";
     public static final String KEY_PASSWORD= "password";
     public static final String KEY_Status= "status";
 
-    public SessionManagement() {
-    }
 
     public SessionManagement(Context context) {
         this.context = context;
@@ -58,11 +58,36 @@ public class SessionManagement {
         context.startActivity(intent);
     }
 
-    public String getId() {
-        return id;
+    public void saveID(String id){
+        sharedPreferencesEditor.putString(KEY_ID,id);
+        sharedPreferencesEditor.apply();
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void saveUserState(String state){
+
+        sharedPreferencesEditor.putString(KEY_userType,state);
+        sharedPreferencesEditor.apply();
     }
+
+    public void saveUserIdFromQR(String id){
+        sharedPreferencesEditor.putString(KEY_userType,id);
+        sharedPreferencesEditor.apply();
+    }
+
+    public String getID(){
+        String ID = sharedPreferences.getString(KEY_ID,"");
+        return ID;
+    }
+
+    public String getUserIDFromQR(){
+        String UserID = sharedPreferences.getString(KEY_userIDForQrCode,"");
+        return UserID;
+    }
+
+    public String getUserState(){
+        String userType = sharedPreferences.getString(KEY_userType,"");
+        return userType;
+    }
+
+
 }

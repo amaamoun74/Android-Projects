@@ -1,6 +1,7 @@
 package com.example.healthapp.UI.fragment.data;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
@@ -28,6 +30,8 @@ public class PersonalDataFragment extends Fragment {
     private DatabaseReference databaseReference;
     private String userID;
     private TextView name,phoneNum,emergency,email,dateOfBirth,gender,nationalId;
+    private Context mContext;
+    private         SessionManagement sessionManagement;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class PersonalDataFragment extends Fragment {
         dateOfBirth = view.findViewById(R.id.dateOfBirthTV);
         gender = view.findViewById(R.id.genderTV);
         nationalId = view.findViewById(R.id.nationalIDTV);
+        sessionManagement = new SessionManagement(mContext);
      /*   firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         userID = firebaseUser.getUid();
@@ -73,10 +78,9 @@ public class PersonalDataFragment extends Fragment {
         return view;
     }
     void getUserPersonalInformation(){
-        SessionManagement sessionManagement = new SessionManagement();
 
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.showUserData(sessionManagement.getId());
+        Call<Patient> callData = apiInterface.showUserData(sessionManagement.getID());
         callData.enqueue(new Callback<Patient>() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -101,5 +105,11 @@ public class PersonalDataFragment extends Fragment {
                 Log.d("TAG1", t.getMessage().toString());
             }
         });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 }

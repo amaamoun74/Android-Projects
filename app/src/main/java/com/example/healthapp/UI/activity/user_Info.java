@@ -49,6 +49,8 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
         doctor.setOnClickListener(this);
 
         mobile_mac_address = getMacAddress();
+        Log.d("mobile_mac_address", mobile_mac_address);
+
         next.setOnClickListener(view -> {
             if (genderValidate() && userTypeValidation()) {
                 callRegister();
@@ -177,9 +179,6 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
             return "0";
         }
     }
-
-
-
 
 
 

@@ -1,6 +1,7 @@
 package com.example.healthapp.UI.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
+import com.example.healthapp.pojo.SessionManagement;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -29,6 +32,7 @@ public class QRScanningFragment extends Fragment {
     private SurfaceView surfaceView;
     private QREader qrEader;
     private TextView txt_result;
+    private Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,8 @@ public class QRScanningFragment extends Fragment {
                     public void run() {
                        // getUserMedicalData(data);
                         txt_result.setText(data);
+                        SessionManagement sessionManagement = new SessionManagement(mContext);
+                        sessionManagement.saveUserIdFromQR(data);
                         Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
                         qrEader.stop();
                         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -135,21 +141,12 @@ public class QRScanningFragment extends Fragment {
                     }
                 }).check();
 
-    }/*
-    void getUserMedicalData(String id) {
-        ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.destroyUser();
-        callData.enqueue(new Callback<Patient>() {
-            @Override
-            public void onResponse(Call<Patient> call, Response<Patient> response) {
-            }
-
-            @Override
-            public void onFailure(Call<Patient> call, Throwable t) {
-                //Toast.makeText(LogIn.this, "failed to login :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-        });
     }
-*/
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext= context;
+
+    }
 }

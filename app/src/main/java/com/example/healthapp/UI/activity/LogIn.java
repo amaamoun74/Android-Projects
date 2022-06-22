@@ -37,6 +37,7 @@ public class LogIn extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     String email, password;
+    SessionManagement sessionManagement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class LogIn extends AppCompatActivity {
         forgetPass = findViewById(R.id.forgetPass_Text);
         signUp = findViewById(R.id.signUp_Text);
         mAuth = FirebaseAuth.getInstance();
+        sessionManagement = new SessionManagement(LogIn.this);
 
         forgetPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,9 +110,13 @@ public class LogIn extends AppCompatActivity {
                 Patient patient = response.body();
                 if (patient != null) {
                     setProgressDialog();
-                    SessionManagement sessionManagement = new SessionManagement();
-                    sessionManagement.setId(patient.getUser().getId().toString());
-                    Log.d("id",sessionManagement.getId());
+
+                    sessionManagement.saveID(patient.getUser().getId().toString());
+                    sessionManagement.saveUserState(patient.getUser().getState().toString());
+
+                    Log.d("id",sessionManagement.getID());
+                    Log.d("UserType",sessionManagement.getUserState());
+
                 }
                 else{
                     Toast.makeText(LogIn.this, "enter correct email and password", Toast.LENGTH_SHORT).show();

@@ -1,5 +1,6 @@
 package com.example.healthapp.UI.fragment.data;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,6 +31,8 @@ public class MedicalDataFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<Data> userData;
+    SessionManagement sessionManagement;
+    Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,24 +47,21 @@ public class MedicalDataFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         userData = new ArrayList<>();
-        recyclerView.setAdapter(new DataAdapter(getContext(),userData));
+        recyclerView.setAdapter(new DataAdapter(mContext, userData));
+        SessionManagement sessionManagement = new SessionManagement(getContext().getApplicationContext());
+        if (sessionManagement.getUserState() == "doctor") {
+            userMedicalDataByDoctor();
+        } else if (sessionManagement.getUserState() == "patient") {
+            userMedicalDataByPatient();
+        }
         return view;
 
-        /**String title_items[] = getResources().getStringArray(R.array.title);
-        String descriptionforAll= getResources().getString(R.string.description);
-        for(int i=0; i<title.length();i++){
-            list.add(title);
-
-        }*/
-        //adapter = new DataAdapter(this,list);
     }
 
 
-    void getUserDiseases(){
-        SessionManagement sessionManagement = new SessionManagement();
-
+    void userMedicalDataByPatient() {
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.viewDiseases(sessionManagement.getId());
+        Call<Patient> callData = apiInterface.viewDiseases(sessionManagement.getID());
         callData.enqueue(new Callback<Patient>() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -85,14 +85,13 @@ public class MedicalDataFragment extends Fragment {
         });
     }
 
-    void userMedicalData(){
+    void userMedicalDataByDoctor() {
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.destroyUser();
+        Call<Patient> callData = apiInterface.showUserData(sessionManagement.getUserIDFromQR());
         callData.enqueue(new Callback<Patient>() {
             @Override
             public void onResponse(@NonNull Call<Patient> call, @NonNull Response<Patient> response) {
-                //  Intent i = new Intent(LogIn.this, BottomNavigation.class);
-                //  startActivity(i);
+
             }
 
             @Override
@@ -100,5 +99,12 @@ public class MedicalDataFragment extends Fragment {
                 Toast.makeText(getActivity(), "error, please try agian or check the internet connection", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+// momkn ynf3 bdl l function de bs msh mot2kd -> getActivity().getApplicationContext()
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 }

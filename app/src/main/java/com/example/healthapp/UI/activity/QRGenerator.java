@@ -1,7 +1,6 @@
 package com.example.healthapp.UI.activity;
 
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,18 +37,6 @@ public class QRGenerator extends AppCompatActivity {
 
 
             }
-            public ColorDrawable[] vibrantLightColorList =
-                    {
-                            new ColorDrawable(Color.parseColor("#ffeead")),
-                            new ColorDrawable(Color.parseColor("#93cfb3")),
-                            new ColorDrawable(Color.parseColor("#fd7a7a")),
-                            new ColorDrawable(Color.parseColor("#faca5f")),
-                            new ColorDrawable(Color.parseColor("#1ba798")),
-                            new ColorDrawable(Color.parseColor("#6aa9ae")),
-                            new ColorDrawable(Color.parseColor("#ffbf27")),
-                            new ColorDrawable(Color.parseColor("#d93947"))
-                    };
-
         });
 
 
