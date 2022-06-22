@@ -16,6 +16,11 @@ import com.example.healthapp.pojo.BottomNavigation;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Collections;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,7 +29,7 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
 
     Button next, back;
     RadioButton male, female, patient, doctor;
-    String name, password, confirmPassword, email, phoneNum, nationalId, gender, state;
+    String name, password, confirmPassword, email, phoneNum, nationalId, gender, state, mobile_mac_address;;
    // OkHttpClient okHttpClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,7 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
         patient.setOnClickListener(this);
         doctor.setOnClickListener(this);
 
-
+        mobile_mac_address = getMacAddress();
         next.setOnClickListener(view -> {
             if (genderValidate() && userTypeValidation()) {
                 callRegister();
@@ -142,7 +147,36 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    public String getMacAddress() {
+        try {
 
+            List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
+
+            String stringMac = "";
+
+            for (NetworkInterface networkInterface : networkInterfaceList) {
+                if (networkInterface.getName().equalsIgnoreCase("wlon0")) ;
+                Log.d("networkInterface size",networkInterface.getHardwareAddress().toString());
+                {
+                    for (int i = 0; i < networkInterface.getHardwareAddress().length; i++) {
+                        String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i] & 0xFF);
+
+                        if (stringMacByte.length() == 1) {
+                            stringMacByte = "0" + stringMacByte;
+                        }
+
+                        stringMac = stringMac + stringMacByte.toUpperCase() + ":";
+                    }
+                    break;
+                }
+
+            }
+            return stringMac;
+        } catch (SocketException e) {
+            e.printStackTrace();
+            return "0";
+        }
+    }
 
 
 
