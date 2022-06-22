@@ -32,11 +32,11 @@ public class BottomNavigation extends AppCompatActivity {
         bottomNav = findViewById(R.id.bottomNav);
         //add menu items to bottomNav
         bottomNav.add(new MeowBottomNavigation.Model(1, R.drawable.ic_baseline_person_24));
-        bottomNav.add(new MeowBottomNavigation.Model(2, R.drawable.exposure_notif));
+        bottomNav.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_coronavirus_24));
         bottomNav.add(new MeowBottomNavigation.Model(3, R.drawable.ic_home_black_24dp));
         bottomNav.add(new MeowBottomNavigation.Model(4, R.drawable.ic_baseline_more_vert_24));
         bottomNav.add(new MeowBottomNavigation.Model(5, R.drawable.qr));
-        bottomNav.add(new MeowBottomNavigation.Model(6, R.drawable.ic_baseline_coronavirus_24));
+        bottomNav.add(new MeowBottomNavigation.Model(6, R.drawable.exposure_notif));
 
         //set bottomNav on show listener
         bottomNav.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -50,7 +50,7 @@ public class BottomNavigation extends AppCompatActivity {
                     layout.setVisibility(View.INVISIBLE);
                     fragment = new profileFragment();
                 } else if (item.getId() == 2) {
-                    fragment = new ExposureFragment();
+                    fragment = new modelQues();
                 } else if (item.getId() == 3) {
                     fragment = new HomeFragment2();
                 } else if (item.getId() == 4) {
@@ -60,7 +60,7 @@ public class BottomNavigation extends AppCompatActivity {
                     fragment = new QRScanningFragment();
                     layout.setVisibility(View.INVISIBLE);
                 } else if (item.getId() == 6) {
-                    fragment = new modelQues();
+                    fragment = new ExposureFragment();
                     layout.setVisibility(View.INVISIBLE);
                 }
                 loadFragment(fragment);

@@ -20,6 +20,51 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Current ID : "
+            android:textSize="34sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/roboto_medium"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="ID 13 "
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="55sp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="160dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="I have met :"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="ID 5\n  ID 15\nID 3"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
 
         <LinearLayout
             android:layout_width="match_parent"

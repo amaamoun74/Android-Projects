@@ -47,8 +47,6 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
         next.setOnClickListener(view -> {
             if (genderValidate() && userTypeValidation()) {
                 callRegister();
-                Intent intent = new Intent(user_Info.this, BottomNavigation.class);
-                startActivity(intent);
              }
         });
 

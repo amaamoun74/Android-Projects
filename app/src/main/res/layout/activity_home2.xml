@@ -48,6 +48,6 @@
         app:mbn_countBackgroundColor="@color/white"
         app:mbn_defaultIconColor="@color/white"
         app:mbn_shadowColor="@color/black"
-        app:mbn_selectedIconColor="#E81515"
+        app:mbn_selectedIconColor="#1033B1"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
