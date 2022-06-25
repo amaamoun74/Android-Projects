@@ -20,11 +20,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
-    TextInputEditText nameET, mailET, passwordET, confirmPasswordET, phoneNumberET, nationalID;
+    TextInputEditText nameET, mailET, passwordET, confirmPasswordET, phoneNumberET, nationalID, ageET;
     Button nextBtn;
     TextView loginText;
     private FirebaseAuth mAuth;
-    String name, password, confirmPassword, email, phoneNum, nationalId;
+    String name, password, confirmPassword, email, phoneNum, nationalId, age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +38,14 @@ public class SignUp extends AppCompatActivity {
         confirmPasswordET = findViewById(R.id.confirm_pass);
         phoneNumberET = findViewById(R.id.phone);
         nationalID = findViewById(R.id.nationalId);
+        ageET = findViewById(R.id.age);
 
 
         nextBtn = findViewById(R.id.next_btn);
         loginText = findViewById(R.id.login_Text);
 
         nextBtn.setOnClickListener(view -> {
-         validate();
+            validate();
         });
 
         loginText.setOnClickListener(view -> {
@@ -98,7 +99,7 @@ public class SignUp extends AppCompatActivity {
             mailET.setError("should be in ****@gmail.com format");
             mailET.requestFocus();
 
-        } */else if (passwordET.getText().toString().isEmpty()) {
+        } */ else if (passwordET.getText().toString().isEmpty()) {
             passwordET.setError("fill in Password field");
             passwordET.requestFocus();
 
@@ -108,6 +109,11 @@ public class SignUp extends AppCompatActivity {
 
         } else if (phoneNumberET.getText().toString().isEmpty()) {
             phoneNumberET.setError("fill in phone Number field");
+            phoneNumberET.requestFocus();
+
+
+        } else if (ageET.getText().toString().isEmpty()) {
+            phoneNumberET.setError("fill in age field");
             phoneNumberET.requestFocus();
 
         } else if (nationalID.getText().toString().isEmpty()) {
@@ -128,6 +134,7 @@ public class SignUp extends AppCompatActivity {
             email = mailET.getText().toString();
             phoneNum = phoneNumberET.getText().toString();
             nationalId = nationalID.getText().toString();
+            age = ageET.getText().toString();
             Intent intent = new Intent(SignUp.this, user_Info.class);
             intent.putExtra("userName", name);
             intent.putExtra("password", password);
@@ -135,8 +142,9 @@ public class SignUp extends AppCompatActivity {
             intent.putExtra("email", email);
             intent.putExtra("phoneNum", phoneNum);
             intent.putExtra("nationalId", nationalId);
+            intent.putExtra("age", age);
             startActivity(intent);
-          //  firebaseCreateUser();
+            //  firebaseCreateUser();
         }
     }
 }

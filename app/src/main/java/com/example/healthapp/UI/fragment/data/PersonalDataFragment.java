@@ -101,7 +101,7 @@ public class PersonalDataFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Patient> call, Throwable t) {
-                Toast.makeText(getActivity(), "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.d("TAG1", t.getMessage().toString());
             }
         });

@@ -29,7 +29,7 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
 
     Button next, back;
     RadioButton male, female, patient, doctor;
-    String name, password, confirmPassword, email, phoneNum, nationalId, gender, state, mobile_mac_address;;
+    String name, password, confirmPassword, email, phoneNum, nationalId, age, gender, state, mobile_mac_address;;
    // OkHttpClient okHttpClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,11 +73,12 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
             email = bundle.getString("email");
             phoneNum = bundle.getString("phoneNum");
             nationalId = bundle.getString("nationalId");
+            age = bundle.getString("age");
         }
 
             ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
             Call<Patient> callData = apiInterface.register(name, email,
-                    password, "22", gender, phoneNum, state);
+                    password, age, gender, phoneNum, state);
             callData.enqueue(new Callback<Patient>() {
                 @Override
                 public void onResponse(Call<Patient> call, Response<Patient> response) {

@@ -17,6 +17,8 @@ import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,7 +59,7 @@ public class QrDisplayingFragment extends Fragment {
                     Picasso.get().load(patient.getUser().getImg()).into(qrImage);
                 }
                 else{
-                    Toast.makeText(getActivity(), "you may have no qr code image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "you may have no qr code image", Toast.LENGTH_SHORT).show();
                 }
             }
 

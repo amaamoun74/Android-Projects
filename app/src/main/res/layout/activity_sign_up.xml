@@ -158,6 +158,24 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxStrokeWidth="2dp"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#80052861"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Age"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="#0F4090"
+                    tools:ignore="TouchTargetSizeCheck"/>
+            </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             app:boxStrokeWidth="2dp"
             android:layout_width="match_parent"

@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW);
         setContentView(R.layout.activity_main);
 
@@ -94,4 +95,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return  "0";
     }
+
+
 }

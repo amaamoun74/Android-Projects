@@ -1,5 +1,6 @@
 package com.example.healthapp.UI.activity;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,9 @@ public class StartingApp extends AppCompatActivity {
 
     Button logIn;
     Button signUp;
+    NotificationManager notificationManager;
+     int notification_ID= 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +26,8 @@ public class StartingApp extends AppCompatActivity {
         logIn = findViewById(R.id.logInButton);
         signUp = findViewById(R.id.signUpButton);
         try {
-
             logIn.setOnClickListener(view -> {
+
                 Intent intent = new Intent(StartingApp.this, LogIn.class);
                 startActivity(intent);
             });
@@ -39,4 +43,6 @@ public class StartingApp extends AppCompatActivity {
         }
 
     }
+
+
 }
