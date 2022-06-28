@@ -8,10 +8,12 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthapp.R;
-import com.example.healthapp.model.Patient;
+import com.example.healthapp.model.User;
+import com.example.healthapp.model.UserSignup;
 import com.example.healthapp.pojo.BottomNavigation;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
@@ -26,11 +28,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class user_Info extends AppCompatActivity implements View.OnClickListener {
-
     Button next, back;
     RadioButton male, female, patient, doctor;
-    String name, password, confirmPassword, email, phoneNum, nationalId, age, gender, state, mobile_mac_address;;
-   // OkHttpClient okHttpClient;
+    String name, password, confirmPassword, email,
+            phoneNum, nationalId, age, gender, state,
+            mobile_mac_address, address, emergency;
+    User user;
+
+    // OkHttpClient okHttpClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,21 +47,22 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
         female = findViewById(R.id.femaleBtn);
         patient = findViewById(R.id.patientbtn);
         doctor = findViewById(R.id.doctorbtn);
+        user = new User();
 
         male.setOnClickListener(this);
         female.setOnClickListener(this);
         patient.setOnClickListener(this);
         doctor.setOnClickListener(this);
-
-        mobile_mac_address = getMacAddress();
-        Log.d("mobile_mac_address", mobile_mac_address);
+        //mobile_mac_address = getMacAddress();
+       // Log.d("mobile_mac_address", mobile_mac_address);
 
         next.setOnClickListener(view -> {
+
+
             if (genderValidate() && userTypeValidation()) {
                 callRegister();
-             }
+            }
         });
-
         back.setOnClickListener(view -> {
             Intent intent = new Intent(user_Info.this, SignUp.class);
             startActivity(intent);
@@ -74,105 +80,96 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
             phoneNum = bundle.getString("phoneNum");
             nationalId = bundle.getString("nationalId");
             age = bundle.getString("age");
+            address = bundle.getString("address");
+            emergency = bundle.getString("emergency");
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setPhone(phoneNum);
+            user.setName(name);
+            user.setGender(gender);
+            user.setAge(age);
+            //user.setConfirm_password(confirmPassword);
+            user.setEmNum(emergency);
+            user.setMca("vfdg");
         }
-
-            ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-            Call<Patient> callData = apiInterface.register(name, email,
-                    password, age, gender, phoneNum, state);
-            callData.enqueue(new Callback<Patient>() {
-                @Override
-                public void onResponse(Call<Patient> call, Response<Patient> response) {
-                    Log.d("response", response.toString());
-                    Patient patient = response.body();
-                    if (patient != null) {
-                        Intent i = new Intent(user_Info.this, BottomNavigation.class);
-                        startActivity(i);
-                        Log.d("name", response.body().getMessage().toString());
-
-                    } else {
-                        Toast.makeText(getApplicationContext(), "" + response.code(), Toast.LENGTH_SHORT).show();
-                        Log.d("TAG", response.message().toString() + "");
-                    }
+        ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
+        Call<UserSignup> callData = apiInterface.register(user);
+        callData.enqueue(new Callback<UserSignup>() {
+            @Override
+            public void onResponse(@NonNull Call<UserSignup> call, @NonNull Response<UserSignup> response) {
+                Log.d("response", response.toString());
+                if (response.body() != null) {
+                    Intent i = new Intent(user_Info.this, BottomNavigation.class);
+                    startActivity(i);
+                    Log.d("name", response.body().getMessage().toString());
+                } else {
+                    Toast.makeText(getApplicationContext(), "" + response.code(), Toast.LENGTH_SHORT).show();
+                    Log.d("TAG", response.message() + "");
                 }
+            }
 
-                @Override
-                public void onFailure(Call<Patient> call, Throwable t) {
-                    Toast.makeText(user_Info.this, "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.d("TAG1", t.getMessage().toString());
-                }
-            });
-        }
+            @Override
+            public void onFailure(Call<UserSignup> call, Throwable t) {
+                Toast.makeText(user_Info.this, "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("TAG1", t.getMessage().toString());
+            }
+        });
+    }
 
     Boolean genderValidate() {
         if (male.isChecked()) {
             return true;
-
-        }
-       else if (female.isChecked()) {
+        } else if (female.isChecked()) {
             return true;
         } else {
             female.setError("");
             male.setError("");
             return false;
         }
-
-
     }
+
     Boolean userTypeValidation() {
         if (patient.isChecked()) {
             return true;
-
         } else if (doctor.isChecked()) {
             return true;
-
         } else {
             patient.setError("");
             doctor.setError("");
             return false;
         }
-
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == male.getId()) {
             gender = "male";
-
         } else if (view.getId() == female.getId()) {
             gender = "female";
-
         } else if (view.getId() == patient.getId()) {
             state = "patient";
-
         } else if (view.getId() == doctor.getId()) {
             state = "doctor";
-
         }
     }
 
     public String getMacAddress() {
         try {
-
             List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
-
             String stringMac = "";
-
             for (NetworkInterface networkInterface : networkInterfaceList) {
                 if (networkInterface.getName().equalsIgnoreCase("wlon0")) ;
-                Log.d("networkInterface size",networkInterface.getHardwareAddress().toString());
+                Log.d("networkInterface size", networkInterface.getHardwareAddress().toString());
                 {
                     for (int i = 0; i < networkInterface.getHardwareAddress().length; i++) {
                         String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i] & 0xFF);
-
                         if (stringMacByte.length() == 1) {
                             stringMacByte = "0" + stringMacByte;
                         }
-
                         stringMac = stringMac + stringMacByte.toUpperCase() + ":";
                     }
                     break;
                 }
-
             }
             return stringMac;
         } catch (SocketException e) {
@@ -180,10 +177,6 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
             return "0";
         }
     }
-
-
-
-
           /*  Call<Json> call = ApiClient.retrofitInstance().create(ApiInterface.class).getSpecificData();
         call.enqueue(new Callback<Json>() {
             @Override

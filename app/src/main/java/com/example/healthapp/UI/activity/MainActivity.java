@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView logo;
     TextView appName;
     private FirebaseAuth mAuth;
-     private static final int splashDuration= 4000;
+    private static final int splashDuration = 4000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
-        bottomAnim = AnimationUtils.loadAnimation(this,R.anim.down_animation);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.down_animation);
 
-        logo= findViewById(R.id.logoImageView);
+        logo = findViewById(R.id.logoImageView);
         //appName= findViewById(R.id.appName_TextView);
 
 
@@ -51,37 +52,35 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, StartingApp.class);
             startActivity(intent);
             finish();
-        },splashDuration);
+        }, splashDuration);
 
         // for MAC address
-     //   String mobile_mac_address = getMacAddress();  //call the method that return mac address
-       // Log.d("MyMacIS",mobile_mac_address);
+        //   String mobile_mac_address = getMacAddress();  //call the method that return mac address
+        // Log.d("MyMacIS",mobile_mac_address);
     }
 
-/*
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user == null) {
-            startActivity(new Intent(MainActivity.this, BottomNavigation.class));
+    /*
+        @Override
+        protected void onStart() {
+            super.onStart();
+            FirebaseUser user = mAuth.getCurrentUser();
+            if (user == null) {
+                startActivity(new Intent(MainActivity.this, BottomNavigation.class));
+            }
         }
-    }
 
- */
-    public String getMacAddress(){
-        try{
+     */
+    public String getMacAddress() {
+        try {
             List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
             String stringMac = "";
-            for(NetworkInterface networkInterface : networkInterfaceList)
-            {
-                if(networkInterface.getName().equalsIgnoreCase("wlon0"));
+            for (NetworkInterface networkInterface : networkInterfaceList) {
+                if (networkInterface.getName().equalsIgnoreCase("wlon0")) ;
                 {
-                    for(int i = 0 ;i <networkInterface.getHardwareAddress().length; i++){
-                        String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i]& 0xFF);
-                        if(stringMacByte.length() == 1)
-                        {
-                            stringMacByte = "0" +stringMacByte;
+                    for (int i = 0; i < networkInterface.getHardwareAddress().length; i++) {
+                        String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i] & 0xFF);
+                        if (stringMacByte.length() == 1) {
+                            stringMacByte = "0" + stringMacByte;
                         }
                         stringMac = stringMac + stringMacByte.toUpperCase() + ":";
                     }
@@ -89,12 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return stringMac;
-        }catch (SocketException e)
-        {
+        } catch (SocketException e) {
             e.printStackTrace();
         }
-        return  "0";
+        return "0";
     }
-
-
 }

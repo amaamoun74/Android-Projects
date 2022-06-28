@@ -20,6 +20,8 @@ public class SessionManagement {
     public static final String KEY_userIDForQrCode= "userid";
     public static final String KEY_PASSWORD= "password";
     public static final String KEY_Status= "status";
+    public static final String KEY_Token= "status";
+
 
 
     public SessionManagement(Context context) {
@@ -58,8 +60,8 @@ public class SessionManagement {
         context.startActivity(intent);
     }
 
-    public void saveID(String id){
-        sharedPreferencesEditor.putString(KEY_ID,id);
+    public void saveID(int id){
+        sharedPreferencesEditor.putInt(KEY_ID,id);
         sharedPreferencesEditor.apply();
     }
 
@@ -69,18 +71,23 @@ public class SessionManagement {
         sharedPreferencesEditor.apply();
     }
 
-    public void saveUserIdFromQR(String id){
-        sharedPreferencesEditor.putString(KEY_userType,id);
+    public void saveUserIdFromQR(int id){
+        sharedPreferencesEditor.putInt(KEY_userType,id);
         sharedPreferencesEditor.apply();
     }
 
-    public String getID(){
-        String ID = sharedPreferences.getString(KEY_ID,"");
+    public void saveToken(String token){
+        sharedPreferencesEditor.putString(KEY_Token,token);
+        sharedPreferencesEditor.apply();
+    }
+
+    public int getID(){
+        int ID = sharedPreferences.getInt(KEY_ID,0);
         return ID;
     }
 
-    public String getUserIDFromQR(){
-        String UserID = sharedPreferences.getString(KEY_userIDForQrCode,"");
+    public int getUserIDFromQR(){
+        int UserID = sharedPreferences.getInt(KEY_userIDForQrCode,0);
         return UserID;
     }
 
@@ -90,4 +97,8 @@ public class SessionManagement {
     }
 
 
+    public String getToken() {
+        String userToken = sharedPreferences.getString(KEY_Token,"");
+        return userToken;
+    }
 }

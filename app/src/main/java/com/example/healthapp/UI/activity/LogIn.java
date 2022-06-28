@@ -2,6 +2,7 @@ package com.example.healthapp.UI.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -15,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthapp.R;
-import com.example.healthapp.model.Patient;
+import com.example.healthapp.model.UserLogin;
 import com.example.healthapp.pojo.BottomNavigation;
 import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
@@ -102,20 +103,28 @@ public class LogIn extends AppCompatActivity {
 
     void callLogin() {
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.login(logInUsername.getText().toString(), logInPassword.getText().toString());
-        callData.enqueue(new Callback<Patient>() {
+        Call<UserLogin> callData = apiInterface.login(logInUsername.getText().toString(), logInPassword.getText().toString());
+        callData.enqueue(new Callback<UserLogin>() {
             @Override
-            public void onResponse(Call<Patient> call, Response<Patient> response) {
+            public void onResponse(Call<UserLogin> call, Response<UserLogin> response) {
                 Log.d("tag",response.message());
-                Patient patient = response.body();
-                if (patient != null) {
+                UserLogin user = response.body();
+                if (user != null) {
                     setProgressDialog();
 
-                    sessionManagement.saveID(patient.getUser().getId().toString());
-                    sessionManagement.saveUserState(patient.getUser().getState().toString());
+                    sessionManagement.saveID(user.getUser().getId());
+                    sessionManagement.saveUserState(user.getUser().getState().toString());
+                    sessionManagement.saveToken(user.getAccess_token().toString());
 
-                    Log.d("id",sessionManagement.getID());
+                    Log.d("id",sessionManagement.getID()+"");
                     Log.d("UserType",sessionManagement.getUserState());
+                    Toast.makeText(LogIn.this, user.getAccess_token(), Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences preferences = getSharedPreferences("Token", getApplicationContext().MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("token",user.getAccess_token());
+                    editor.putInt("Patient_id",user.getUser().getId() );
+                    editor.commit();
 
                 }
                 else{
@@ -124,7 +133,7 @@ public class LogIn extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Patient> call, Throwable t) {
+            public void onFailure(Call<UserLogin> call, Throwable t) {
                 Toast.makeText(LogIn.this, "failed to login :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

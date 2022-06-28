@@ -9,86 +9,71 @@ public class User {
 
     @SerializedName("id")
     @Expose
-    private String id;
-
+    private int id;
     @SerializedName("name")
     @Expose
     private String name;
     @SerializedName("email")
     @Expose
     private String email;
-
     @SerializedName("email_verified_at")
     @Expose
-    private String email_verified_at;
-
-
-    @SerializedName("password")
-    @Expose
-    private String password;
+    private String emailVerifiedAt;
     @SerializedName("age")
     @Expose
     private String age;
-
     @SerializedName("gender")
     @Expose
     private String gender;
     @SerializedName("address")
     @Expose
     private String address;
+    @SerializedName("phone")
+    @Expose
+    private String phone;
+    @SerializedName("MCA")
+    @Expose
+    private String mca;
     @SerializedName("state")
     @Expose
     private String state;
-
+    @SerializedName("em_num")
+    @Expose
+    private String emNum;
     @SerializedName("img")
     @Expose
     private String img;
-    @SerializedName("remember_token")
-    @Expose
-    private String remember_token;
-
     @SerializedName("created_at")
     @Expose
     private String createdAt;
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
+    private String password;
+    private String confirm_password;
 
-    public User( String name, String email,
-                String password, String age,
-                String gender, String address,
-                String state) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
+    public String getConfirm_password() {
+        return confirm_password;
+    }
+
+    public void setConfirm_password(String confirm_password) {
+        this.confirm_password = confirm_password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
-        this.gender = gender;
-        this.address = address;
-        this.state = state;
     }
 
-    public String getEmail_verified_at() {
-        return email_verified_at;
+    public int getId() {
+        return id;
     }
 
-    public void setEmail_verified_at(String email_verified_at) {
-        this.email_verified_at = email_verified_at;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public String getRemember_token() {
-        return remember_token;
-    }
-
-    public void setRemember_token(String remember_token) {
-        this.remember_token = remember_token;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -105,6 +90,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getEmailVerifiedAt() {
+        return emailVerifiedAt;
+    }
+
+    public void setEmailVerifiedAt(String emailVerifiedAt) {
+        this.emailVerifiedAt = emailVerifiedAt;
     }
 
     public String getAge() {
@@ -131,6 +124,22 @@ public class User {
         this.address = address;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getMca() {
+        return mca;
+    }
+
+    public void setMca(String mca) {
+        this.mca = mca;
+    }
+
     public String getState() {
         return state;
     }
@@ -139,12 +148,20 @@ public class User {
         this.state = state;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
+    public String getEmNum() {
+        return emNum;
     }
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setEmNum(String emNum) {
+        this.emNum = emNum;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getCreatedAt() {
@@ -155,19 +172,12 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    public String getId() {
-        return id;
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

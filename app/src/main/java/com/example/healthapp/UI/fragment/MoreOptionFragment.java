@@ -1,5 +1,6 @@
 package com.example.healthapp.UI.fragment;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -17,7 +19,8 @@ import com.example.healthapp.R;
 import com.example.healthapp.UI.activity.ContactUs;
 import com.example.healthapp.UI.activity.QRGenerator;
 import com.example.healthapp.UI.activity.StartingApp;
-import com.example.healthapp.model.Patient;
+import com.example.healthapp.model.User;
+import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +33,8 @@ public class MoreOptionFragment extends Fragment {
     private Dialog logoutDialog,deleteDialog;
     Button logoutBtn;
     CardView deleteAccount, qrGenerator,contactUs,aboutUs,share;
+    private Context mContext;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,18 +134,24 @@ public class MoreOptionFragment extends Fragment {
     }
 
     void destroyUser() {
+        SessionManagement sessionManagement = new SessionManagement(mContext);
+
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.destroyUser();
-        callData.enqueue(new Callback<Patient>() {
+        Call<User> callData = apiInterface.destroyUser(sessionManagement.getUserIDFromQR());
+        callData.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Patient> call, Response<Patient> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
             }
 
             @Override
-            public void onFailure(Call<Patient> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 //Toast.makeText(LogIn.this, "failed to login :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
+    }
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext= context;
     }
 }

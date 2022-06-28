@@ -62,7 +62,7 @@ public class BottomNavigation extends AppCompatActivity {
                     if (sessionManagement.getUserState().equals("doctor")) {
                         fragment = new QRScanningFragment();
                         layout.setVisibility(View.INVISIBLE);
-                    } else if (sessionManagement.getUserState().equals("patient")) {
+                    } else {
                         fragment = new QrDisplayingFragment();
                         layout.setVisibility(View.INVISIBLE);
                     }

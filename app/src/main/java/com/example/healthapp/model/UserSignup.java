@@ -2,7 +2,7 @@ package com.example.healthapp.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Patient {
+public class UserSignup {
 
     @SerializedName("message")
     @Expose

@@ -3,14 +3,14 @@
 android:isScrollContainer="true"
 android:scrollbars="vertical"
 tools:ignore="ScrollViewCount"
-xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UI.activity.StartingApp"
+    tools:context=".UI.activity.SignUp"
     android:background="#BFFFFFFF"
     android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 <LinearLayout
     android:layout_width="match_parent"
@@ -109,7 +109,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                app:passwordToggleEnabled="true"
+                app:passwordToggleEnabled="false"
                 app:passwordToggleTint="#0F4090"
                 android:textColor="#0F4090"
                 > </com.google.android.material.textfield.TextInputEditText>
@@ -138,6 +138,26 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxStrokeWidth="2dp"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#80052861"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Address"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="#0F4090"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#0F4090"
+                    > </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             app:boxStrokeWidth="2dp"
             android:layout_width="match_parent"
@@ -157,6 +177,26 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:inputType="number"> </com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxStrokeWidth="2dp"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#80052861"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Emergency Number"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emergencyNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0F4090"
+                    android:inputType="number"> </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 app:boxStrokeWidth="2dp"

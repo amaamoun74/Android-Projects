@@ -1,52 +1,60 @@
 package com.example.healthapp.pojo.webServices;
 
 import com.example.healthapp.model.Data;
+import com.example.healthapp.model.DiseasesData;
 import com.example.healthapp.model.Json;
-import com.example.healthapp.model.Patient;
+import com.example.healthapp.model.PersonalInformation;
+import com.example.healthapp.model.User;
+import com.example.healthapp.model.UserLogin;
+import com.example.healthapp.model.UserSignup;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-     // for user
      @GET("posts/1")
      Call<Json> getSpecificData();
+     // for user
 
      @GET("showresult")
-     Call<Patient>showUserData(@Query("ID") String ID);
+     Call<User>showUserData(@Query("ID") int ID);
 
      @GET("get")
      Call<Data> getUserData();
 
-     @GET("destroyuser")
-     Call<Patient> destroyUser();
 
      @GET("showrcovid")
-     Call<Patient> showrCovid();
+     Call<User> showrCovid();
 
-
+     @POST("updatediseases")
+     Call<User> updateDiseases(String diseases ,String description);
      @POST("login")
      @FormUrlEncoded
-     Call<Patient> login(@Field("email") String email, @Field("password") String password);
+     Call<UserLogin> login(@Field("email") String email, @Field("password") String password);
 
      @POST("register")
      @FormUrlEncoded
-     Call<Patient> register(@Field("name") String name
-             , @Field("email") String email
-             , @Field("password") String password
-             , @Field("age") String age
-             , @Field("gender") String gender
-             , @Field("address") String address
-             , @Field("state") String state
-            );
-
+     Call<UserSignup> register(@Body User user);
      // for doctor
-     @GET("userviewdiseases")
-     Call<Patient> viewDiseases(@Query("ID") String ID);
+     @GET("showde/{userid}")
+     Call<DiseasesData> viewDiseases(@Header("Authorization") String token, @Path("userid") int userid);
+
+     @POST ("logout")
+     Call<User>logout(String id);
+
+     @DELETE("destroyuser")
+     Call<User>destroyUser(int id);
+
+     @GET("viewserdata/{userid}")
+     Call<PersonalInformation> viewUser(@Header("Authorization") String token, @Path("userid") int userid);
 
 }

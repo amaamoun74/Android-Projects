@@ -20,11 +20,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
-    TextInputEditText nameET, mailET, passwordET, confirmPasswordET, phoneNumberET, nationalID, ageET;
+    TextInputEditText nameET, mailET, passwordET, confirmPasswordET, phoneNumberET,
+            nationalID, ageET,addressET,emergencyNumET;
     Button nextBtn;
     TextView loginText;
     private FirebaseAuth mAuth;
-    String name, password, confirmPassword, email, phoneNum, nationalId, age;
+    String name, password, confirmPassword, email, phoneNum,
+            nationalId, age,address,emergency;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,8 @@ public class SignUp extends AppCompatActivity {
         phoneNumberET = findViewById(R.id.phone);
         nationalID = findViewById(R.id.nationalId);
         ageET = findViewById(R.id.age);
-
+        addressET = findViewById(R.id.address);
+        emergencyNumET = findViewById(R.id.emergencyNum);
 
         nextBtn = findViewById(R.id.next_btn);
         loginText = findViewById(R.id.login_Text);
@@ -104,20 +107,31 @@ public class SignUp extends AppCompatActivity {
             passwordET.requestFocus();
 
         } else if (confirmPasswordET.getText().toString().isEmpty()) {
-            confirmPasswordET.setError("fill in confirm Password field");
+            confirmPasswordET.setError("fill in Confirm Password field");
             confirmPasswordET.requestFocus();
 
-        } else if (phoneNumberET.getText().toString().isEmpty()) {
-            phoneNumberET.setError("fill in phone Number field");
+        }
+        else if (addressET.getText().toString().isEmpty()) {
+            phoneNumberET.setError("fill in Address field");
             phoneNumberET.requestFocus();
 
+        }
+        else if (phoneNumberET.getText().toString().isEmpty()) {
+            phoneNumberET.setError("fill in Phone Number field");
+            phoneNumberET.requestFocus();
 
-        } else if (ageET.getText().toString().isEmpty()) {
+        }
+        else if (emergencyNumET.getText().toString().isEmpty()) {
+            phoneNumberET.setError("fill in Emergency Number field");
+            phoneNumberET.requestFocus();
+
+        }
+        else if (ageET.getText().toString().isEmpty()) {
             phoneNumberET.setError("fill in age field");
             phoneNumberET.requestFocus();
 
         } else if (nationalID.getText().toString().isEmpty()) {
-            nationalID.setError("fill in national ID field");
+            nationalID.setError("fill in National ID field");
             nationalID.requestFocus();
 
         } else if (passwordET.getText().toString().length() < 6) {
@@ -128,23 +142,32 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(this, "Password is not matched", Toast.LENGTH_SHORT).show();
 
         } else {
-            name = nameET.getText().toString();
-            password = passwordET.getText().toString();
-            confirmPassword = confirmPasswordET.getText().toString();
-            email = mailET.getText().toString();
-            phoneNum = phoneNumberET.getText().toString();
-            nationalId = nationalID.getText().toString();
-            age = ageET.getText().toString();
-            Intent intent = new Intent(SignUp.this, user_Info.class);
-            intent.putExtra("userName", name);
-            intent.putExtra("password", password);
-            intent.putExtra("confirmPassword", confirmPassword);
-            intent.putExtra("email", email);
-            intent.putExtra("phoneNum", phoneNum);
-            intent.putExtra("nationalId", nationalId);
-            intent.putExtra("age", age);
-            startActivity(intent);
+            data();
             //  firebaseCreateUser();
         }
+    }
+    void data(){
+
+        name = nameET.getText().toString();
+        password = passwordET.getText().toString();
+        confirmPassword = confirmPasswordET.getText().toString();
+        email = mailET.getText().toString();
+        phoneNum = phoneNumberET.getText().toString();
+        nationalId = nationalID.getText().toString();
+        age = ageET.getText().toString();
+        address = addressET.getText().toString();
+        emergency = emergencyNumET.getText().toString();
+
+        Intent intent = new Intent(SignUp.this, user_Info.class);
+        intent.putExtra("userName", name);
+        intent.putExtra("password", password);
+        intent.putExtra("confirmPassword", confirmPassword);
+        intent.putExtra("email", email);
+        intent.putExtra("phoneNum", phoneNum);
+        intent.putExtra("nationalId", nationalId);
+        intent.putExtra("age", age);
+        intent.putExtra("address", address);
+        intent.putExtra("emergency", emergency);
+        startActivity(intent);
     }
 }

@@ -1,6 +1,8 @@
 package com.example.healthapp.UI.fragment.data;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,13 +17,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.healthapp.R;
 import com.example.healthapp.adapter.DataAdapter;
-import com.example.healthapp.model.Data;
-import com.example.healthapp.model.Patient;
+import com.example.healthapp.model.Diseases;
+import com.example.healthapp.model.DiseasesData;
+import com.example.healthapp.model.User;
 import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,8 +34,9 @@ import retrofit2.Response;
 public class MedicalDataFragment extends Fragment {
 
     RecyclerView recyclerView;
-    ArrayList<Data> userData;
+    List<Diseases> userData = new ArrayList<>();
     SessionManagement sessionManagement;
+    DataAdapter dataAdapter;
     Context mContext;
 
     @Override
@@ -46,56 +51,62 @@ public class MedicalDataFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_medical_data, container, false);
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        userData = new ArrayList<>();
-        recyclerView.setAdapter(new DataAdapter(mContext, userData));
-        SessionManagement sessionManagement = new SessionManagement(getContext().getApplicationContext());
-        if (sessionManagement.getUserState() == "doctor") {
+        dataAdapter = new DataAdapter(mContext,userData);
+         recyclerView.setAdapter(dataAdapter);
+
+        userMedicalDataByPatient();
+        sessionManagement = new SessionManagement(mContext.getApplicationContext());
+      /*  if (sessionManagement.getUserState() == "doctor") {
             userMedicalDataByDoctor();
-        } else if (sessionManagement.getUserState() == "patient") {
+        } else  {
             userMedicalDataByPatient();
-        }
+        }*/
         return view;
 
     }
 
 
     void userMedicalDataByPatient() {
+        SharedPreferences prfs = mContext.getSharedPreferences("Token", Context.MODE_PRIVATE);
+        String token = prfs.getString("token", "");
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.viewDiseases(sessionManagement.getID());
-        callData.enqueue(new Callback<Patient>() {
+        Call<DiseasesData> callData = apiInterface.viewDiseases("Bearer "+sessionManagement.getToken() ,sessionManagement.getID());
+        callData.enqueue(new Callback<DiseasesData>() {
             @SuppressLint("SetTextI18n")
             @Override
-            public void onResponse(Call<Patient> call, Response<Patient> response) {
-                Log.d("response", response.toString());
-                Patient patient = response.body();
-                if (patient != null) {
+            public void onResponse(Call<DiseasesData> call, Response<DiseasesData> response){
+                if (response.isSuccessful() && response.body().getData() != null) {
+                    Toast.makeText(getActivity(), ""+response.message(), Toast.LENGTH_SHORT).show();
 
-                } else {
-                    Toast.makeText(getActivity(), "" + response.code(), Toast.LENGTH_SHORT).show();
-                    Log.d("TAG1", response.message());
-                    // tl3 not allowed :)
+                    userData.addAll(response.body().getData());
+                    dataAdapter.notifyDataSetChanged();
+
+                }
+                else {
+                    String message="error";
+                    Toast.makeText(mContext.getApplicationContext(),message,Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<Patient> call, Throwable t) {
+            public void onFailure(Call<DiseasesData> call, Throwable t) {
                 Toast.makeText(getActivity(), "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("TAG1", t.getMessage().toString());
+                Log.d("TAG2", t.getMessage().toString());
             }
         });
     }
 
     void userMedicalDataByDoctor() {
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.showUserData(sessionManagement.getUserIDFromQR());
-        callData.enqueue(new Callback<Patient>() {
+        Call<User> callData = apiInterface.showUserData(sessionManagement.getUserIDFromQR());
+        callData.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(@NonNull Call<Patient> call, @NonNull Response<Patient> response) {
+            public void onResponse(@NonNull Call<User> call, @NonNull Response<User> response) {
 
             }
 
             @Override
-            public void onFailure(@NonNull Call<Patient> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<User> call, @NonNull Throwable t) {
                 Toast.makeText(getActivity(), "error, please try agian or check the internet connection", Toast.LENGTH_LONG).show();
             }
         });

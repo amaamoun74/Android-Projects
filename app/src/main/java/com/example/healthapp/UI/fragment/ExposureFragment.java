@@ -38,7 +38,6 @@ public class ExposureFragment extends Fragment {
 
     Toolbar toolbar;
     SwitchCompat bluetoothSwitch;
-    boolean switchBtn = false;
     BluetoothAdapter bluetoothAdapter;
     Context mContext;
     int notification_ID= 1;
@@ -53,7 +52,6 @@ public class ExposureFragment extends Fragment {
                 @SuppressLint("MissingPermission") String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
                 Log.d("tag", deviceHardwareAddress);
-
             }
         }
     };
@@ -62,7 +60,6 @@ public class ExposureFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         createNotificationChannel();
-
     }
 
     @SuppressLint("ResourceAsColor")
@@ -86,18 +83,49 @@ public class ExposureFragment extends Fragment {
             // logic hena 
             @Override
             public void onClick(View view) {
-                if (bluetoothSwitch.isChecked()) {
-
+                if (bluetoothSwitch.isChecked() || !bluetoothSwitch.isChecked()) {
                     enableBluetooth();
-                    if (switchBtn = false ) {
-                        discoverability();
-                    }
-
                 }
             }
         });
-
         return view;
+    }
+
+    @SuppressLint("MissingPermission")
+    void enableBluetooth() {
+        if (bluetoothAdapter == null) {
+            Toast.makeText(mContext.getApplicationContext(), "ble_not_supported", Toast.LENGTH_SHORT).show();
+        }
+        if (!bluetoothAdapter.isEnabled()) {
+            Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+             startActivity(enableBTIntent);
+            // Register for broadcasts when a device is discovered.
+            IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+            mContext.registerReceiver(receiver, filter);
+            discoverability();
+        }
+        if (bluetoothAdapter.isEnabled()) {
+            Log.d("TAG", "enableDisableBT: disabling BT.");
+            bluetoothAdapter.disable();
+            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+            mContext.registerReceiver(receiver, BTIntent);
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    void discoverability(){
+        bluetoothAdapter.startDiscovery();
+        int requestCode = 1;
+        Intent discoverableIntent =
+                new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 86400);//discoverable for 24h
+        startActivityForResult(discoverableIntent, requestCode);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        requireActivity().unregisterReceiver(receiver);
     }
 
     @Override
@@ -109,7 +137,6 @@ public class ExposureFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 
     @Override
@@ -125,49 +152,8 @@ public class ExposureFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressLint("MissingPermission")
-    void enableBluetooth() {
-        if (bluetoothAdapter == null) {
-            Toast.makeText(mContext.getApplicationContext(), "ble_not_supported", Toast.LENGTH_SHORT).show();
-        }
-        if (!bluetoothAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivity(enableBTIntent);
-
-            // Register for broadcasts when a device is discovered.
-            IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-            mContext.registerReceiver(receiver, filter);
-            switchBtn= true;
 
 
-        }
-        if(bluetoothAdapter.isEnabled()){
-            Log.d("TAG", "enableDisableBT: disabling BT.");
-            bluetoothAdapter.disable();
-            switchBtn= false;
-            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            mContext.registerReceiver(receiver, BTIntent);
-        }
-    }
-
-
-
-    @SuppressLint("MissingPermission")
-    void discoverability(){
-        bluetoothAdapter.startDiscovery();
-        int requestCode = 1;
-        Intent discoverableIntent =
-                new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 24*60*60);//discoverable for 24h
-        startActivityForResult(discoverableIntent, requestCode);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        requireActivity().unregisterReceiver(receiver);
-    }
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -203,7 +189,7 @@ public class ExposureFragment extends Fragment {
 
             NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(mContext);
 
-// notificationId is a unique int for each notification that you must define
+            // notificationId is a unique int for each notification that you must define
             notificationManagerCompat.notify(notification_ID, builder.build());
         }
     }

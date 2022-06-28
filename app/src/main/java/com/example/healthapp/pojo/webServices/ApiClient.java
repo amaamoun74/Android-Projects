@@ -8,7 +8,7 @@ public class ApiClient {
     // l var dh hyb2 f class lw7do m3 vars tania
     //10.0.2.2:3306
     //https://lungcancer-ar.herokuapp.com/api/auth/
-    public static final String BASE_URL = "https://ai-clinc.herokuapp.com/api/auth/";
+    public static final String BASE_URL = "https://ai-clinics.herokuapp.com/api/auth/";
 
     public static Retrofit retrofitInstance() {
         if (retrofit == null) {

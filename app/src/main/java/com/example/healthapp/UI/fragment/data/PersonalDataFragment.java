@@ -2,6 +2,7 @@ package com.example.healthapp.UI.fragment.data;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthapp.R;
-import com.example.healthapp.model.Patient;
+import com.example.healthapp.model.PersonalInformation;
 import com.example.healthapp.pojo.SessionManagement;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
@@ -31,11 +32,12 @@ public class PersonalDataFragment extends Fragment {
     private String userID;
     private TextView name,phoneNum,emergency,email,dateOfBirth,gender,nationalId;
     private Context mContext;
-    private         SessionManagement sessionManagement;
+    private SessionManagement sessionManagement;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getUserPersonalInformation();
     }
 
     @Override
@@ -79,28 +81,32 @@ public class PersonalDataFragment extends Fragment {
     }
     void getUserPersonalInformation(){
 
+         SharedPreferences prfs = mContext.getSharedPreferences("Token", Context.MODE_PRIVATE);
+         String token = prfs.getString("token", "");
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<Patient> callData = apiInterface.showUserData(sessionManagement.getID());
-        callData.enqueue(new Callback<Patient>() {
+        Call<PersonalInformation> callData = apiInterface.viewUser("Bearer "+token,1);
+        callData.enqueue(new Callback<PersonalInformation>() {
             @SuppressLint("SetTextI18n")
             @Override
-            public void onResponse(Call<Patient> call, Response<Patient> response) {
+            public void onResponse(Call<PersonalInformation> call, Response<PersonalInformation> response) {
                 Log.d("response", response.toString());
-                Patient patient = response.body();
-                if (patient != null) {
-                    name.setText("Name : " + patient.getUser().getName());
-                    phoneNum.setText("Age : " +patient.getUser().getAge());
-                    nationalId.setText("Gender : " +patient.getUser().getGender());
-                    email.setText("E-mail : " +patient.getUser().getEmail());
+                //PersonalInformation user = response.body();
+                if (response.isSuccessful() && response.body().getUser() != null) {
+
+                    name.setText("Name : " + response.body().getUser());
+                    phoneNum.setText("utvbuhnjmkl");
+                    //nationalId.setText(response.body().getUser().getAddress());
+                    //email.setText(response.body().getUser().getEmail());
+
+
                 } else {
                     Toast.makeText(getActivity(), "" + response.code(), Toast.LENGTH_SHORT).show();
                     Log.d("TAG1", response.message());
                     // tl3 not allowed :)
                 }
             }
-
             @Override
-            public void onFailure(Call<Patient> call, Throwable t) {
+            public void onFailure(Call<PersonalInformation> call, Throwable t) {
                 Toast.makeText(mContext, "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.d("TAG1", t.getMessage().toString());
             }
