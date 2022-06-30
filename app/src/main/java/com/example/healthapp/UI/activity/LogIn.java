@@ -2,7 +2,6 @@ package com.example.healthapp.UI.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -135,13 +134,13 @@ public class LogIn extends AppCompatActivity {
                     Log.d("UserType",sessionManagement.getUserState());
                     Log.d("token",sessionManagement.getToken());
 
-                    Toast.makeText(LogIn.this, user.getAccess_token(), Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(LogIn.this, user.getAccess_token(), Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences preferences = getSharedPreferences("Token", getApplicationContext().MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("token",user.getAccess_token());
-                    editor.putInt("Patient_id",user.getUser().getId() );
-                    editor.commit();
+                //    SharedPreferences preferences = getSharedPreferences("Token", getApplicationContext().MODE_PRIVATE);
+                //    SharedPreferences.Editor editor = preferences.edit();
+                //    editor.putString("token",user.getAccess_token());
+                //    editor.putInt("Patient_id",user.getUser().getId() );
+                //    editor.commit();
 
                 }
                 else{

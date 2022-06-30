@@ -1,4 +1,5 @@
 package com.example.healthapp.UI.activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -99,10 +100,10 @@ public class SignUp extends AppCompatActivity {
             mailET.requestFocus();
 
         } /*else if (Patterns.EMAIL_ADDRESS.matcher(mailET.getText().toString()).matches()) {
-            mailET.setError("should be in ****@gmail.com format");
+            mailET.setError("should be in ****@example.com format");
             mailET.requestFocus();
 
-        } */ else if (passwordET.getText().toString().isEmpty()) {
+        }*/  else if (passwordET.getText().toString().isEmpty()) {
             passwordET.setError("fill in Password field");
             passwordET.requestFocus();
 

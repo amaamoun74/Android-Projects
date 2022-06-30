@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment.MoreOptionFragment"
-    android:background="@color/secWhite"
     android:fitsSystemWindows="true"
     android:paddingTop="@dimen/_30sdp">
 

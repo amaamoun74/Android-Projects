@@ -73,6 +73,8 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
         errorMessage = view.findViewById(R.id.errorMessage);
         animationView = view.findViewById(R.id.errorAnimationView);
         progressAnimation=view.findViewById(R.id.progress);
+        progressAnimation.setVisibility(VISIBLE);
+
 
         retrieveData();
         return view;
@@ -83,6 +85,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
     void userMedicalDataByPatient() {
         progressAnimation.playAnimation();
         errorLayout.setVisibility(GONE);
+        progressAnimation.setVisibility(VISIBLE);
         swipeRefreshLayout.setRefreshing(true);
         //SharedPreferences prfs = mContext.getSharedPreferences("Token", Context.MODE_PRIVATE);
         //String token = prfs.getString("token", "");
@@ -99,6 +102,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onFailure(Call<DiseasesData> call, Throwable t) {
                 swipeRefreshLayout.setRefreshing(false);
+                progressAnimation.setVisibility(GONE);
                 showMessage(
                         R.raw.noconnection,
                         "No Result",
@@ -112,6 +116,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
     void userMedicalDataByDoctor() {
         progressAnimation.playAnimation();
         errorLayout.setVisibility(GONE);
+        progressAnimation.setVisibility(VISIBLE);
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
         Call<DiseasesData> callData = apiInterface.showUserData("Bearer " + sessionManagement.getToken(), sessionManagement.getUserIDFromQR());
         callData.enqueue(new Callback<DiseasesData>() {
@@ -123,6 +128,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onFailure(@NonNull Call<DiseasesData> call, @NonNull Throwable t) {
                 swipeRefreshLayout.setRefreshing(false);
+                progressAnimation.setVisibility(GONE);
                 showMessage(
                         R.raw.noconnection,
                         "No Result",
@@ -168,6 +174,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
         if (response.isSuccessful() && response.body().getData() != null) {
             swipeRefreshLayout.setRefreshing(false);
             progressAnimation.pauseAnimation();
+            progressAnimation.setVisibility(GONE);
             //Toast.makeText(getActivity(), ""+response.message(), Toast.LENGTH_SHORT).show();
             userData.addAll(response.body().getData());
             dataAdapter.notifyDataSetChanged();
@@ -175,9 +182,11 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
         }
         else if (response.isSuccessful() && response.body().getData() == null){
             swipeRefreshLayout.setRefreshing(false);
+            progressAnimation.setVisibility(GONE);
             showMessage(R.raw.examine,"Empty Medical data!","to get medical information \nplease go to the nearest hospital for examination ");
         }
         else {
+            progressAnimation.setVisibility(GONE);
             progressAnimation.pauseAnimation();
             swipeRefreshLayout.setRefreshing(false);
 

@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
             android:layout_margin="@dimen/_10sdp"
-            android:hint="@string/usernameHint"
+            android:hint="E-mail"
             app:boxStrokeWidth="@dimen/_4sdp"
             >
 

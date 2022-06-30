@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".UI.activity.DataActivity"
     android:fitsSystemWindows="true"
-    android:background="@color/secWhite"
     android:padding="@dimen/_10sdp"
   >
 
@@ -21,7 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/_5sdp"
-        android:background="@color/white"
         app:tabGravity="fill"
         app:tabIndicator="@drawable/tablayout"
         app:tabIndicatorAnimationMode="elastic"
