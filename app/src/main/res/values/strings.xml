@@ -105,4 +105,6 @@
     <string name="more_options">More Options</string>
     <string name="disease_name">Disease name</string>
     <string name="scan_now">Scan Now</string>
+    <string name="error_message">error message</string>
+    <string name="error_title">error title</string>
 </resources>

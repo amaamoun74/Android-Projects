@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 import com.example.healthapp.R;
-import com.example.healthapp.adapter.FragmentAdapter;
+import com.example.healthapp.pojo.adapter.FragmentAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class profileFragment extends Fragment {

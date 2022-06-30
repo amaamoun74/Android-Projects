@@ -15,18 +15,20 @@ public class SessionManagement {
 
     private static final String file_name = "file name";
     public static final String KEY_NAME= "name";
+    public static final String KEY_MAIN_NAME= "mainName";
+    public static final String KEY_MAIN_EMAIL= "mainEmail";
     public static final String KEY_ID= "id";
     public static final String KEY_userType= "userType";
     public static final String KEY_userIDForQrCode= "userid";
     public static final String KEY_PASSWORD= "password";
     public static final String KEY_Status= "status";
-    public static final String KEY_Token= "status";
+    public static final String KEY_Token= "token";
 
 
 
     public SessionManagement(Context context) {
         this.context = context;
-        sharedPreferences=context.getSharedPreferences(file_name,context.MODE_PRIVATE);
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
         sharedPreferencesEditor=sharedPreferences.edit();
     }
 
@@ -66,8 +68,17 @@ public class SessionManagement {
     }
 
     public void saveUserState(String state){
-
         sharedPreferencesEditor.putString(KEY_userType,state);
+        sharedPreferencesEditor.apply();
+    }
+
+    public void saveName(String name){
+        sharedPreferencesEditor.putString(KEY_MAIN_NAME,name);
+        sharedPreferencesEditor.apply();
+    }
+
+    public void saveMainEmail(String email){
+        sharedPreferencesEditor.putString(KEY_MAIN_EMAIL,email);
         sharedPreferencesEditor.apply();
     }
 
@@ -82,23 +93,32 @@ public class SessionManagement {
     }
 
     public int getID(){
-        int ID = sharedPreferences.getInt(KEY_ID,0);
-        return ID;
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(KEY_ID,0);
     }
 
     public int getUserIDFromQR(){
-        int UserID = sharedPreferences.getInt(KEY_userIDForQrCode,0);
-        return UserID;
+        return sharedPreferences.getInt(KEY_userIDForQrCode,0);
     }
 
     public String getUserState(){
-        String userType = sharedPreferences.getString(KEY_userType,"");
-        return userType;
+        return sharedPreferences.getString(KEY_userType,"");
     }
 
 
     public String getToken() {
-        String userToken = sharedPreferences.getString(KEY_Token,"");
-        return userToken;
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_Token,"");
     }
+
+    public String getMainName() {
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_MAIN_NAME,"");
+    }
+
+    public String getMainEmail() {
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_MAIN_EMAIL,"");
+    }
+
 }

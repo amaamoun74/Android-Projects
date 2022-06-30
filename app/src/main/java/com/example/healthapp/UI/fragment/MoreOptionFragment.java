@@ -34,7 +34,7 @@ public class MoreOptionFragment extends Fragment {
     Button logoutBtn;
     CardView deleteAccount, qrGenerator,contactUs,aboutUs,share;
     private Context mContext;
-
+    SessionManagement sessionManagement;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +44,14 @@ public class MoreOptionFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.option_layout, container, false);
-        logoutDialogue();
-        deleteAccountDialogue();
 
         deleteAccount = view.findViewById(R.id.deleteAccount);
         deleteAccount.setOnClickListener(view1 -> deleteDialog.show());
 
         logoutBtn = view.findViewById(R.id.logoutBtn);
         logoutBtn.setOnClickListener(view12 -> logoutDialog.show());
-
+        sessionManagement = new SessionManagement(container.getContext());
+        mContext = requireContext().getApplicationContext();
         contactUs = view.findViewById(R.id.contactCV);
         contactUs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +68,7 @@ public class MoreOptionFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), QRGenerator.class);
                 startActivity(intent);
             }
+
         });
 
         share=view.findViewById(R.id.share);
@@ -82,6 +82,9 @@ public class MoreOptionFragment extends Fragment {
                 startActivity(Intent.createChooser(intent, "Share with :"));
             }
         });
+        logoutDialogue();
+        deleteAccountDialogue();
+
         return view;
     }
 
@@ -100,6 +103,7 @@ public class MoreOptionFragment extends Fragment {
             Intent intent =  new Intent(getActivity(), StartingApp.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "Yes", Toast.LENGTH_SHORT).show();
+
             logoutDialog.dismiss();
         });
 
@@ -134,13 +138,14 @@ public class MoreOptionFragment extends Fragment {
     }
 
     void destroyUser() {
-        SessionManagement sessionManagement = new SessionManagement(mContext);
-
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<User> callData = apiInterface.destroyUser(sessionManagement.getUserIDFromQR());
+        Call<User> callData = apiInterface.destroyUser( "Bearer "+sessionManagement.getToken(),sessionManagement.getID());
         callData.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+                Toast.makeText(mContext, response.message(), Toast.LENGTH_SHORT).show();
+                Intent intent =  new Intent(getActivity(), StartingApp.class);
+                startActivity(intent);
             }
 
             @Override

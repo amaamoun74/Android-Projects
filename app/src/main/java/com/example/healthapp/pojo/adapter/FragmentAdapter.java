@@ -1,4 +1,4 @@
-package com.example.healthapp.adapter;
+package com.example.healthapp.pojo.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

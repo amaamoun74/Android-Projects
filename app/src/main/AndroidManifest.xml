@@ -51,7 +51,8 @@
             android:exported="true" />
         <activity
             android:name=".UI.activity.user_Info"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity
             android:name=".UI.activity.ContactUs"
             android:exported="true" />
@@ -60,10 +61,12 @@
             android:exported="true" />
         <activity
             android:name=".UI.activity.SignUp"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity
             android:name=".UI.activity.LogIn"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity
             android:name=".UI.activity.StartingApp"
             android:exported="true" />

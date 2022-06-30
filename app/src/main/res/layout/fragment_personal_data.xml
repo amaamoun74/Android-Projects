@@ -7,6 +7,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.fragment.data.PersonalDataFragment"
     >
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -37,6 +44,7 @@
                 android:orientation="vertical"
                 android:layout_marginTop="15dp">
                 <TextView
+                    android:id="@+id/mainName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Menna Ashraf"
@@ -46,6 +54,7 @@
                     android:textColor="#0F4090"
                     android:fontFamily="@font/quicksand_bold"/>
                 <TextView
+                    android:id="@+id/mainEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -57,6 +66,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/personalLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -224,4 +234,26 @@
         </LinearLayout>
     </LinearLayout>
     </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <include
+        layout="@layout/error" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/barProgress"
+        android:layout_width="166dp"
+        android:layout_height="181dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213"
+        app:lottie_autoPlay="true"
+        app:lottie_enableMergePathsForKitKatAndAbove="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/progressbar1"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

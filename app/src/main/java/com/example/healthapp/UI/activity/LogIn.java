@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.healthapp.R;
 import com.example.healthapp.model.UserLogin;
 import com.example.healthapp.pojo.BottomNavigation;
@@ -35,10 +37,12 @@ public class LogIn extends AppCompatActivity {
     EditText logInUsername, logInPassword;
     Button loginBtn;
     TextView forgetPass, signUp;
-    ProgressDialog progressDialog;
     FirebaseAuth mAuth;
     String email, password;
     SessionManagement sessionManagement;
+    ProgressDialog progressDialog;
+    private LottieAnimationView progressAnimation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +54,14 @@ public class LogIn extends AppCompatActivity {
         logInPassword = findViewById(R.id.password);
         forgetPass = findViewById(R.id.forgetPass_Text);
         signUp = findViewById(R.id.signUp_Text);
+        progressAnimation=findViewById(R.id.progress);
+
         mAuth = FirebaseAuth.getInstance();
         sessionManagement = new SessionManagement(LogIn.this);
+
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE |
+                        WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE );
 
         forgetPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +112,8 @@ public class LogIn extends AppCompatActivity {
     }
 
     void callLogin() {
+        progressAnimation.playAnimation();
+        progressAnimation.setVisibility(View.VISIBLE);
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
         Call<UserLogin> callData = apiInterface.login(logInUsername.getText().toString(), logInPassword.getText().toString());
         callData.enqueue(new Callback<UserLogin>() {
@@ -115,9 +127,14 @@ public class LogIn extends AppCompatActivity {
                     sessionManagement.saveID(user.getUser().getId());
                     sessionManagement.saveUserState(user.getUser().getState().toString());
                     sessionManagement.saveToken(user.getAccess_token().toString());
+                    sessionManagement.saveMainEmail(user.getUser().getEmail().toString());
+                    sessionManagement.saveName(user.getUser().getName().toString());
+
 
                     Log.d("id",sessionManagement.getID()+"");
                     Log.d("UserType",sessionManagement.getUserState());
+                    Log.d("token",sessionManagement.getToken());
+
                     Toast.makeText(LogIn.this, user.getAccess_token(), Toast.LENGTH_SHORT).show();
 
                     SharedPreferences preferences = getSharedPreferences("Token", getApplicationContext().MODE_PRIVATE);
@@ -128,12 +145,16 @@ public class LogIn extends AppCompatActivity {
 
                 }
                 else{
+                    progressAnimation.setVisibility(View.GONE);
+                    progressAnimation.pauseAnimation();
                     Toast.makeText(LogIn.this, "enter correct email and password", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<UserLogin> call, Throwable t) {
+                progressAnimation.pauseAnimation();
+                progressAnimation.setVisibility(View.GONE);
                 Toast.makeText(LogIn.this, "failed to login :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -165,6 +186,8 @@ public class LogIn extends AppCompatActivity {
     }
 
     void setProgressDialog() {
+        progressAnimation.pauseAnimation();
+        progressAnimation.setVisibility(View.GONE);
         progressDialog = new ProgressDialog(LogIn.this);
         progressDialog.show();
         progressDialog.setContentView(R.layout.loding_dialogue);

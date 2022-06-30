@@ -1,26 +1,30 @@
 package com.example.healthapp.UI.fragment.data;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.healthapp.R;
-import com.example.healthapp.adapter.DataAdapter;
 import com.example.healthapp.model.Diseases;
 import com.example.healthapp.model.DiseasesData;
-import com.example.healthapp.model.User;
 import com.example.healthapp.pojo.SessionManagement;
+import com.example.healthapp.pojo.adapter.DataAdapter;
 import com.example.healthapp.pojo.webServices.ApiClient;
 import com.example.healthapp.pojo.webServices.ApiInterface;
 
@@ -31,13 +35,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MedicalDataFragment extends Fragment {
+public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     RecyclerView recyclerView;
     List<Diseases> userData = new ArrayList<>();
     SessionManagement sessionManagement;
     DataAdapter dataAdapter;
     Context mContext;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private RelativeLayout errorLayout;
+    private TextView errorTitle, errorMessage;
+    private LottieAnimationView animationView,progressAnimation;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,61 +63,72 @@ public class MedicalDataFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         dataAdapter = new DataAdapter(mContext,userData);
          recyclerView.setAdapter(dataAdapter);
+        sessionManagement = new SessionManagement(container.getContext());
+        swipeRefreshLayout=view.findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout.setOnRefreshListener(this);
+        swipeRefreshLayout.setColorSchemeResources(R.color.mainBlue);
+        swipeRefreshLayout.setRefreshing(true);
+        errorLayout = view.findViewById(R.id.errorLayout);
+        errorTitle = view.findViewById(R.id.errorTitle);
+        errorMessage = view.findViewById(R.id.errorMessage);
+        animationView = view.findViewById(R.id.errorAnimationView);
+        progressAnimation=view.findViewById(R.id.progress);
 
-        userMedicalDataByPatient();
-        sessionManagement = new SessionManagement(mContext.getApplicationContext());
-      /*  if (sessionManagement.getUserState() == "doctor") {
-            userMedicalDataByDoctor();
-        } else  {
-            userMedicalDataByPatient();
-        }*/
+        retrieveData();
         return view;
 
     }
 
 
     void userMedicalDataByPatient() {
-        SharedPreferences prfs = mContext.getSharedPreferences("Token", Context.MODE_PRIVATE);
-        String token = prfs.getString("token", "");
+        progressAnimation.playAnimation();
+        errorLayout.setVisibility(GONE);
+        swipeRefreshLayout.setRefreshing(true);
+        //SharedPreferences prfs = mContext.getSharedPreferences("Token", Context.MODE_PRIVATE);
+        //String token = prfs.getString("token", "");
+        userData.clear();
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<DiseasesData> callData = apiInterface.viewDiseases("Bearer "+sessionManagement.getToken() ,sessionManagement.getID());
+        Call<DiseasesData> callData = apiInterface.viewMedicalDataByPatient("Bearer "+sessionManagement.getToken(),sessionManagement.getID());
         callData.enqueue(new Callback<DiseasesData>() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(Call<DiseasesData> call, Response<DiseasesData> response){
-                if (response.isSuccessful() && response.body().getData() != null) {
-                    Toast.makeText(getActivity(), ""+response.message(), Toast.LENGTH_SHORT).show();
-
-                    userData.addAll(response.body().getData());
-                    dataAdapter.notifyDataSetChanged();
-
-                }
-                else {
-                    String message="error";
-                    Toast.makeText(mContext.getApplicationContext(),message,Toast.LENGTH_LONG).show();
-                }
+                dataResponse(response);
             }
 
             @Override
             public void onFailure(Call<DiseasesData> call, Throwable t) {
-                Toast.makeText(getActivity(), "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("TAG2", t.getMessage().toString());
+                swipeRefreshLayout.setRefreshing(false);
+                showMessage(
+                        R.raw.noconnection,
+                        "No Result",
+                        "Please Try Again!\n" +
+                                "check your network connection");
+
             }
         });
     }
 
     void userMedicalDataByDoctor() {
+        progressAnimation.playAnimation();
+        errorLayout.setVisibility(GONE);
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<User> callData = apiInterface.showUserData(sessionManagement.getUserIDFromQR());
-        callData.enqueue(new Callback<User>() {
+        Call<DiseasesData> callData = apiInterface.showUserData("Bearer " + sessionManagement.getToken(), sessionManagement.getUserIDFromQR());
+        callData.enqueue(new Callback<DiseasesData>() {
             @Override
-            public void onResponse(@NonNull Call<User> call, @NonNull Response<User> response) {
-
+            public void onResponse(@NonNull Call<DiseasesData> call, @NonNull Response<DiseasesData> response) {
+                dataResponse(response);
             }
 
             @Override
-            public void onFailure(@NonNull Call<User> call, @NonNull Throwable t) {
-                Toast.makeText(getActivity(), "error, please try agian or check the internet connection", Toast.LENGTH_LONG).show();
+            public void onFailure(@NonNull Call<DiseasesData> call, @NonNull Throwable t) {
+                swipeRefreshLayout.setRefreshing(false);
+                showMessage(
+                        R.raw.noconnection,
+                        "No Result",
+                        "Please Try Again!\n" +
+                                "check your network connection");
+
             }
         });
     }
@@ -118,4 +139,67 @@ public class MedicalDataFragment extends Fragment {
         super.onAttach(context);
         mContext = context;
     }
+
+    @Override
+    public void onRefresh() {
+        retrieveData();
+    }
+
+    public void showMessage(int animation,String title, String message) {
+        Log.v("Show1Error", message);
+        if (errorLayout.getVisibility() != VISIBLE) {
+            errorLayout.setVisibility(VISIBLE);
+            errorTitle.setText(title);
+            errorMessage.setText(message);
+            animationView.setAnimation(animation);
+            animationView.playAnimation();
+        }
+    }
+
+    void retrieveData(){
+        if (sessionManagement.getUserState() == "doctor") {
+            userMedicalDataByDoctor();
+        } else  {
+            userMedicalDataByPatient();
+        }
+    }
+
+    void dataResponse(Response<DiseasesData> response){
+        if (response.isSuccessful() && response.body().getData() != null) {
+            swipeRefreshLayout.setRefreshing(false);
+            progressAnimation.pauseAnimation();
+            //Toast.makeText(getActivity(), ""+response.message(), Toast.LENGTH_SHORT).show();
+            userData.addAll(response.body().getData());
+            dataAdapter.notifyDataSetChanged();
+
+        }
+        else if (response.isSuccessful() && response.body().getData() == null){
+            swipeRefreshLayout.setRefreshing(false);
+            showMessage(R.raw.examine,"Empty Medical data!","to get medical information \nplease go to the nearest hospital for examination ");
+        }
+        else {
+            progressAnimation.pauseAnimation();
+            swipeRefreshLayout.setRefreshing(false);
+
+            String errorCode;
+            switch (response.code()) {
+                case 404:
+                    errorCode = "404 not found";
+                    break;
+                case 500:
+                    errorCode = "500 server broken";
+                    break;
+                default:
+                    errorCode = "unknown error";
+                    break;
+            }
+            showMessage(
+                    R.raw.noconnection,
+                    "No Result",
+                    "Please Try Again!\n" +
+                            errorCode);
+
+        }
+    }
+
 }

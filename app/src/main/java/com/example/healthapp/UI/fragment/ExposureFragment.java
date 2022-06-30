@@ -83,27 +83,37 @@ public class ExposureFragment extends Fragment {
             // logic hena 
             @Override
             public void onClick(View view) {
-                if (bluetoothSwitch.isChecked() || !bluetoothSwitch.isChecked()) {
+                if (bluetoothSwitch.isChecked()) {
                     enableBluetooth();
                 }
+                else if ( !bluetoothSwitch.isChecked())
+                {
+                    disableBluetooth();
+                }
+
             }
         });
         return view;
     }
 
-    @SuppressLint("MissingPermission")
     void enableBluetooth() {
         if (bluetoothAdapter == null) {
             Toast.makeText(mContext.getApplicationContext(), "ble_not_supported", Toast.LENGTH_SHORT).show();
         }
-        if (!bluetoothAdapter.isEnabled()) {
-            Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-             startActivity(enableBTIntent);
-            // Register for broadcasts when a device is discovered.
-            IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-            mContext.registerReceiver(receiver, filter);
-            discoverability();
+        else {
+            if (!bluetoothAdapter.isEnabled()) {
+                Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivity(enableBTIntent);
+                // Register for broadcasts when a device is discovered.
+                IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+                mContext.registerReceiver(receiver, filter);
+                discoverability();
+            }
         }
+    }
+
+    @SuppressLint("MissingPermission")
+    void disableBluetooth(){
         if (bluetoothAdapter.isEnabled()) {
             Log.d("TAG", "enableDisableBT: disabling BT.");
             bluetoothAdapter.disable();
@@ -118,7 +128,7 @@ public class ExposureFragment extends Fragment {
         int requestCode = 1;
         Intent discoverableIntent =
                 new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 86400);//discoverable for 24h
+        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 6000);
         startActivityForResult(discoverableIntent, requestCode);
     }
 
@@ -151,9 +161,6 @@ public class ExposureFragment extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
     @Override
     public void onAttach(@NonNull Context context) {
