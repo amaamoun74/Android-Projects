@@ -42,7 +42,7 @@
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:textColor="#0F4090"
-                android:fontFamily="@font/quicksand_bold"/>
+                android:fontFamily="@font/roboto_medium"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                 android:text="menna132@gmail.com"
                 android:textColor="#0F4090"
                 android:textSize="18sp"
-                android:fontFamily="@font/quicksand_medium"/>
+                android:fontFamily="@font/roboto_medium" />
         </LinearLayout>
 
         </LinearLayout>
@@ -125,7 +125,7 @@
                     android:text="Edit Profile"
                     android:textSize="26sp"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/quicksand_bold"
+                    android:fontFamily="@font/roboto_medium"
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

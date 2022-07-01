@@ -56,6 +56,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
             android:layout_margin="10dp"
+            android:fontFamily="@font/roboto_medium"
             android:hint= "@string/enter_text_to_generate_qr_code"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -63,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#0F4090"
+                android:fontFamily="@font/roboto_medium"
                 android:inputType="text"> </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
         <Button
@@ -70,7 +72,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/generate"
-            android:fontFamily="monospace"
             android:textStyle="normal"
             android:textSize="22sp"
             android:layout_marginStart="20dp"
@@ -79,6 +80,7 @@
             android:layout_marginBottom="15dp"
             android:textColor="@color/white"
             android:background="@drawable/bluebutton"
+            android:fontFamily="@font/roboto_medium"
             />
     </LinearLayout>
 

@@ -11,11 +11,11 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="200dp"
@@ -26,7 +26,6 @@
             android:layout_width="wrap_content"
             android:layout_height="180dp"
             android:src="@drawable/tcarelogo" />
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,26 +140,16 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/bluebutton"
-        android:text="@string/next"
-        android:textSize="28sp"
-        android:textColor="@color/white"
-        />
+
 
     <Button
         android:id="@+id/back_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+
         android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/graybutton"
@@ -168,6 +157,19 @@
         android:textSize="28sp"
         android:textColor="@color/mainBlue"
         />
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bluebutton"
+            android:text="@string/next"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            />
     </LinearLayout>
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressing"

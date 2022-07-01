@@ -51,6 +51,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:textColor="#989494"
                 android:textSize="22sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/roboto_medium"
+
                 > </TextView>
         <com.google.android.material.textfield.TextInputLayout
             app:boxStrokeWidth="2dp"
@@ -60,6 +62,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:textColorHint="#80052861"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/first_name"
+            android:fontFamily="@font/roboto_medium"
 
             >
 
@@ -69,6 +72,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:textColor="#0F4090"
+                android:fontFamily="@font/roboto_medium"
+
 
 
                 > </com.google.android.material.textfield.TextInputEditText>
@@ -82,6 +87,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:textColorHint="#80052861"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/e_mail"
+            android:fontFamily="@font/roboto_medium"
 
 
             >
@@ -91,6 +97,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:textColor="#0F4090"
+                android:fontFamily="@font/roboto_medium"
+
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,6 +112,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:hint="@string/passwordHint"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="#0F4090"
+            android:fontFamily="@font/roboto_medium"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -114,6 +123,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 app:passwordToggleEnabled="false"
                 app:passwordToggleTint="#0F4090"
                 android:textColor="#0F4090"
+                android:fontFamily="@font/roboto_medium"
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,6 +137,9 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:hint="@string/confirm_password_hint"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="#0F4090"
+            android:fontFamily="@font/roboto_medium"
+
+
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -137,6 +150,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:textColor="#0F4090"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#0F4090"
+                android:fontFamily="@font/roboto_medium"
+
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,6 +163,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:textColorHint="#80052861"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="Address"
+                android:fontFamily="@font/roboto_medium"
+
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -158,6 +175,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:textColor="#0F4090"
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="#0F4090"
+                    android:fontFamily="@font/roboto_medium"
+
                     > </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -166,7 +185,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
-
+            android:fontFamily="@font/roboto_medium"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/phone_number"
             >
@@ -176,7 +195,9 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#0F4090"
-                android:inputType="number"> </com.google.android.material.textfield.TextInputEditText>
+                android:inputType="number"
+                android:fontFamily="@font/roboto_medium"
+                > </com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -186,7 +207,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_margin="5dp"
                 android:layout_height="wrap_content"
                 android:textColorHint="#80052861"
-
+                android:fontFamily="@font/roboto_medium"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="Emergency Number"
                 >
@@ -196,7 +217,9 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#0F4090"
-                    android:inputType="number"> </com.google.android.material.textfield.TextInputEditText>
+                    android:inputType="number"
+                    android:fontFamily="@font/roboto_medium"
+                    > </com.google.android.material.textfield.TextInputEditText>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -208,6 +231,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:textColorHint="#80052861"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="Age"
+                android:fontFamily="@font/roboto_medium"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -216,6 +240,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:textColor="#0F4090"
+                    android:fontFamily="@font/roboto_medium"
                     tools:ignore="TouchTargetSizeCheck"/>
             </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -226,6 +251,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             android:textColorHint="#80052861"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/nationalId_hint"
+            android:fontFamily="@font/roboto_medium"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -234,6 +260,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:textColor="#0F4090"
+                android:fontFamily="@font/roboto_medium"
                 tools:ignore="TouchTargetSizeCheck"/>
         </com.google.android.material.textfield.TextInputLayout>
             <Button
@@ -248,6 +275,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:text="@string/next"
                 android:textSize="28sp"
                 android:textColor="@color/white"
+                android:fontFamily="@font/roboto_medium"
                 />
 
             <LinearLayout
@@ -257,6 +285,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_gravity="center"
+                android:fontFamily="@font/roboto_medium"
+
                 android:weightSum="2">
                 <TextView
                     android:layout_width="wrap_content"
@@ -269,6 +299,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:textColor="#A19F9F"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:fontFamily="@font/roboto_medium"
                     tools:ignore="RtlHardcoded,TextContrastCheck"> </TextView>
                 <TextView
                     android:id="@+id/login_Text"
@@ -282,6 +313,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="5dp"
                     android:gravity="left"
+                    android:fontFamily="@font/roboto_medium"
                     tools:ignore="RtlHardcoded"/>
             </LinearLayout>
     </LinearLayout>

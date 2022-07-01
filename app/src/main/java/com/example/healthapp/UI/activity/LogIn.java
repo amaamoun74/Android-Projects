@@ -124,10 +124,10 @@ public class LogIn extends AppCompatActivity {
                     setProgressDialog();
 
                     sessionManagement.saveID(user.getUser().getId());
-                    sessionManagement.saveUserState(user.getUser().getState().toString());
-                    sessionManagement.saveToken(user.getAccess_token().toString());
-                    sessionManagement.saveMainEmail(user.getUser().getEmail().toString());
-                    sessionManagement.saveName(user.getUser().getName().toString());
+                    sessionManagement.saveUserState(user.getUser().getState());
+                    sessionManagement.saveToken(user.getAccess_token());
+                    sessionManagement.saveMainEmail(user.getUser().getEmail());
+                    sessionManagement.saveName(user.getUser().getName());
 
 
                     Log.d("id",sessionManagement.getID()+"");

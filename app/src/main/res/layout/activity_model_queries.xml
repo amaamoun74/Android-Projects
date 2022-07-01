@@ -37,10 +37,11 @@
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="40dp"
                 android:buttonTint="@color/mainBlue"
-                android:fontFamily="@font/quicksand_medium"
                 android:minHeight="48dp"
                 android:text="Yes"
                 android:textColor="@color/mainBlue"
+                android:fontFamily="@font/roboto_medium"
+
                 android:textSize="22sp" />
 
             <RadioButton
@@ -50,7 +51,7 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="40dp"
                 android:buttonTint="@color/mainBlue"
-                android:fontFamily="@font/quicksand_medium"
+                android:fontFamily="@font/roboto_medium"
                 android:minHeight="48dp"
                 android:text="No"
                 android:textColor="@color/mainBlue"

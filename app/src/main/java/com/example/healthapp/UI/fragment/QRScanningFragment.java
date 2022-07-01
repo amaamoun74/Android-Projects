@@ -83,8 +83,8 @@ public class QRScanningFragment extends Fragment {
                        // getUserMedicalData(data);
                         txt_result.setText(data);
                         SessionManagement sessionManagement = new SessionManagement(mContext);
-                        sessionManagement.saveUserIdFromQR(Integer.getInteger(data));;
-                        Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
+                        sessionManagement.saveUserIdFromQR(Integer.getInteger(data));
+                        Toast.makeText(getActivity(), data, Toast.LENGTH_SHORT).show();
                         qrEader.stop();
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setData(Uri.parse(data));

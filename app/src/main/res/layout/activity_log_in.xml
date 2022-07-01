@@ -51,6 +51,7 @@
             android:textColor="#989494"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:fontFamily="@font/roboto_medium"
             > </TextView>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -67,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#0F4090"
+                android:fontFamily="@font/roboto_medium"
                 android:inputType="text"> </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +79,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="#80052861"
             android:hint="@string/passwordHint"
+            android:fontFamily="@font/roboto_medium"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="#0F4090">
 
@@ -88,7 +91,7 @@
                 android:textColor="#0F4090"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#0F4090"
-
+                android:fontFamily="@font/roboto_medium"
                 > </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,6 +107,7 @@
             android:textColor="#0F4090"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:fontFamily="@font/roboto_medium"
             tools:ignore="RtlHardcoded"> </TextView>
 
 
@@ -123,6 +127,7 @@
         android:textColor="@color/white"
         android:textSize="28sp"
         android:drawableTint="@color/white"
+        android:fontFamily="@font/roboto_medium"
         tools:targetApi="m" />
 
     <LinearLayout
@@ -141,6 +146,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="0dp"
             android:gravity="left"
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/dont_have_an_account"
             android:textColor="#A19F9F"
             android:textSize="18sp"
@@ -159,6 +165,7 @@
             android:textColor="#0F4090"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:fontFamily="@font/roboto_medium"
             tools:ignore="RtlHardcoded"> </TextView>
     </LinearLayout>
 

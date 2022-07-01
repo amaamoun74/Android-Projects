@@ -22,7 +22,8 @@
             android:text="Title"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/mainBlue"/>
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="#D90E1E96"/>
 
         <TextView
             android:id="@+id/descriptionTextView"
@@ -31,9 +32,10 @@
             android:layout_below="@+id/titleTextView"
             android:layout_marginStart="40dp"
             android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/roboto_medium"
             android:text="Description here"
-            android:textSize="24sp"
-            android:textColor="@color/mainBlue"/>
+            android:textColor="#E62381FC"
+            android:textSize="24sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

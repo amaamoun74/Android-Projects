@@ -27,7 +27,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/medical_info"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progress"

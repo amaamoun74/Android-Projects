@@ -112,7 +112,7 @@ public class user_Info extends AppCompatActivity implements View.OnClickListener
                 progressAnimation.pauseAnimation();
                 progressAnimation.setVisibility(View.GONE);
                 Toast.makeText(user_Info.this, "failed to register :  " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("TAG1", t.getMessage().toString());
+                Log.d("TAG1", t.getMessage());
             }
         });
     }

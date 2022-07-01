@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
-    private List<Fragment> fragmentList = new ArrayList<>();
-    private List<String> titleList = new ArrayList<>();
+    private final List<Fragment> fragmentList = new ArrayList<>();
+    private final List<String> titleList = new ArrayList<>();
 
     public FragmentAdapter(@NonNull FragmentManager fm) {
         super(fm);

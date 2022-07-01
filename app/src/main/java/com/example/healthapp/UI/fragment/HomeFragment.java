@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         dataCV.setOnClickListener(this);
         contactUsCv.setOnClickListener(this);
 
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
