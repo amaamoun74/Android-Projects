@@ -239,7 +239,7 @@
                             android:layout_height="0dp"
                             android:layout_gravity="center"
                             android:layout_weight="6"
-                            android:src="@drawable/qr"/>
+                            android:src="@drawable/qricon"/>
 
                         <TextView
                             android:layout_width="match_parent"

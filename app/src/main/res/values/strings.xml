@@ -107,4 +107,9 @@
     <string name="scan_now">Scan Now</string>
     <string name="error_message">error message</string>
     <string name="error_title">error title</string>
+    <string name="our_features">Our Features</string>
+    <string name="covid_19_nresult">Covid-19\nResult</string>
+    <string name="your_id_n1">Your ID \n1</string>
+    <string name="basic_information">Basic information</string>
+    <string name="usertype">usertype</string>
 </resources>

@@ -14,9 +14,9 @@
         android:orientation="vertical">
 
         <TextView
+            android:text="@string/more_options"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/more_options"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="24sp"

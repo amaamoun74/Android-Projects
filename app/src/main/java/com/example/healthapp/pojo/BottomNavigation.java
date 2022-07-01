@@ -37,7 +37,7 @@ public class BottomNavigation extends AppCompatActivity {
         bottomNav.add(new MeowBottomNavigation.Model(1, R.drawable.ic_baseline_person_24));
         bottomNav.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_coronavirus_24));
         bottomNav.add(new MeowBottomNavigation.Model(3, R.drawable.ic_home_black_24dp));
-        bottomNav.add(new MeowBottomNavigation.Model(4, R.drawable.qr));
+        bottomNav.add(new MeowBottomNavigation.Model(4, R.drawable.ic_baseline_qr_code_scanner_24));
         bottomNav.add(new MeowBottomNavigation.Model(5, R.drawable.ic_notifications_black_24dp));
         bottomNav.add(new MeowBottomNavigation.Model(6, R.drawable.ic_baseline_menu_24));
 
@@ -51,26 +51,28 @@ public class BottomNavigation extends AppCompatActivity {
                 //QRGenerator qrGenerator = null;
                 // LogIn logIn=null;
                 if (item.getId() == 1) {
-                    layout.setVisibility(View.INVISIBLE);
+                    layout.setVisibility(View.GONE);
                     fragment = new profileFragment();
                 } else if (item.getId() == 2) {
                     fragment = new modelQues();
                 } else if (item.getId() == 3) {
+                    layout.setVisibility(View.GONE);
                     fragment = new HomeFragment2();
                 } else if (item.getId() == 4) {
                     if (sessionManagement.getUserState().equals("doctor")) {
                         fragment = new QRScanningFragment();
-                        layout.setVisibility(View.INVISIBLE);
+                        layout.setVisibility(View.GONE);
                     } else {
                         fragment = new QrDisplayingFragment();
-                        layout.setVisibility(View.INVISIBLE);
+                        layout.setVisibility(View.GONE);
                     }
                 } else if (item.getId() == 5) {
                     fragment = new ExposureFragment();
-                    layout.setVisibility(View.INVISIBLE);
+                    layout.setVisibility(View.GONE);
+
                 } else if (item.getId() == 6) {
                     fragment = new MoreOptionFragment();
-                    layout.setVisibility(View.INVISIBLE);
+                    layout.setVisibility(View.GONE);
                 }
                 loadFragment(fragment);
             }
