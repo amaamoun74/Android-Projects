@@ -67,13 +67,6 @@ public interface ApiInterface {
      @POST("updatediseases")
      Call<User> updateDiseases(String diseases ,String description);
 
-
-
-
-
-
-
-
      @GET("showresult")
      Call<DiseasesData>showUserData(@Header("Authorization") String token,@Query("ID") int ID);
 
