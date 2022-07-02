@@ -22,7 +22,8 @@
             android:layout_gravity="center"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loadinganim" />
+            app:lottie_rawRes="@raw/loadinganim"
+            />
 
         <TextView
             android:layout_width="wrap_content"

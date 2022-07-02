@@ -61,9 +61,9 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/content_home_page.xml" value="0.2" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/content_navigation_drawer.xml" value="0.1480978260869565" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/delete_dialogue.xml" value="0.25416666666666665" />
-        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/dialogue_logout.xml" value="0.12360688956433637" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/dialogue_logout.xml" value="0.176" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/error.xml" value="0.25416666666666665" />
-        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/exposure.xml" value="0.25416666666666665" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/exposure.xml" value="0.152" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_exposure_system.xml" value="0.16" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_gallery.xml" value="0.1480978260869565" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/fragment_home.xml" value="0.1480978260869565" />
@@ -84,7 +84,7 @@
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.152" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/noconnection_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/option_layout.xml" value="0.2" />
-        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/postive_model_result.xml" value="0.25416666666666665" />
+        <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/postive_model_result.xml" value="0.264" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/layout/toolbar.xml" value="0.10914855072463768" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/menu/activity_home_page_drawer.xml" value="0.23854166666666668" />
         <entry key="..\:/Temp/HealthAPP/app/src/main/res/menu/activity_main_drawer.xml" value="0.176" />

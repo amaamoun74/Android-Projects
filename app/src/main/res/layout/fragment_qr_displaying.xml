@@ -51,14 +51,6 @@
                 android:layout_marginBottom="@dimen/_25sdp"
                 android:background="#2F5C5A57"
                 android:contentDescription="@string/todo" />
-
-            <ProgressBar
-                android:id="@+id/progress_load"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-
-                android:layout_marginTop="@dimen/_120sdp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     </LinearLayout>

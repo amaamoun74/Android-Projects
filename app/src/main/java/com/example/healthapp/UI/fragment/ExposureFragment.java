@@ -152,7 +152,6 @@ public class ExposureFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.moreInfo) {
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse("https://www.google.com/covid19/exposurenotifications/"));
@@ -167,7 +166,6 @@ public class ExposureFragment extends Fragment {
         super.onAttach(context);
         mContext = context;
     }
-
 
     private void createNotificationChannel() {
         Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(),R.drawable.ic_baseline_coronavirus_24);

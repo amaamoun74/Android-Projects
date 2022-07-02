@@ -23,6 +23,7 @@ public class SessionManagement {
     public static final String KEY_PASSWORD= "password";
     public static final String KEY_Status= "status";
     public static final String KEY_Token= "token";
+    public static final String KEY_COVID= "covid";
 
 
 
@@ -90,6 +91,16 @@ public class SessionManagement {
     public void saveToken(String token){
         sharedPreferencesEditor.putString(KEY_Token,token);
         sharedPreferencesEditor.apply();
+    }
+
+    public void saveToken(Boolean covid){
+        sharedPreferencesEditor.putBoolean(KEY_Token,covid);
+        sharedPreferencesEditor.apply();
+    }
+
+    public Boolean getCovid(){
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        return sharedPreferences.getBoolean(KEY_COVID,true);
     }
 
     public int getID(){

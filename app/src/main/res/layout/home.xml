@@ -37,19 +37,19 @@
             app:lottie_autoPlay="true"
             app:lottie_enableMergePathsForKitKatAndAbove="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/pulsehome" />
+            app:lottie_rawRes="@raw/pulse" />
 
             <TextView
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="36dp"
                 android:layout_toEndOf="@+id/progress"
                 android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
                 android:text="@string/hi_username"
                 android:textColor="@color/mainBlue"
-                android:textSize="@dimen/_20sdp"
+                android:textSize="@dimen/_18sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -65,10 +65,10 @@
                 android:gravity="center"
                 android:text="@string/usertype"
                 android:textColor="#B32381FC"
-                android:textSize="@dimen/_20sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintHorizontal_bias="0.106"
                 app:layout_constraintStart_toEndOf="@+id/progress"
                 app:layout_constraintTop_toBottomOf="@id/welcome" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_17sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
@@ -89,7 +89,7 @@
             android:orientation="horizontal"
             >
             <androidx.cardview.widget.CardView
-                android:id="@+id/contactCV"
+                android:id="@+id/id"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:text="@string/our_features"
             android:textStyle="bold"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_17sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
@@ -178,7 +178,7 @@
                     <ImageView
                         android:id="@+id/medicalIcon"
                         android:layout_width="@dimen/_55sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_height="@dimen/_75sdp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center"
@@ -196,17 +196,17 @@
                         android:id="@+id/medical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_18sdp"
                         android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="24dp"
                         android:layout_toEndOf="@+id/progress123"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="center"
                         android:text="medical information"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_20sdp"
+                        android:textSize="@dimen/_18sdp"
                         android:textStyle="normal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.26"
+                        app:layout_constraintHorizontal_bias="0.057"
                         app:layout_constraintStart_toEndOf="@+id/medicalIcon"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -214,16 +214,17 @@
                         android:id="@+id/medicalDes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="2dp"
                         android:layout_toEndOf="@+id/medicalIcon"
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:text="providing user medical history  "
                         android:textColor="#8C2381FC"
-                        android:layout_marginStart="@dimen/_5sdp"
-                        android:textSize="@dimen/_12sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:paddingStart="@dimen/_1sdp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.203"
+                        app:layout_constraintHorizontal_bias="0.039"
                         app:layout_constraintStart_toEndOf="@+id/medicalIcon"
                         app:layout_constraintTop_toBottomOf="@id/medical" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -248,7 +249,7 @@
                     <ImageView
                         android:id="@+id/personalIcon"
                         android:layout_width="@dimen/_55sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_height="@dimen/_75sdp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center"
@@ -265,16 +266,16 @@
                         android:id="@+id/personal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_18sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="20dp"
                         android:layout_toEndOf="@+id/personalIcon"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="center"
                         android:text="Personal information"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_5sdp"
+                        android:textSize="@dimen/_18sdp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.26"
+                        app:layout_constraintHorizontal_bias="0.114"
                         app:layout_constraintStart_toEndOf="@+id/personalIcon"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -287,9 +288,11 @@
                         android:gravity="center"
                         android:text="providing user medical history  "
                         android:textColor="#8C2381FC"
-                        android:textSize="@dimen/_12sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:paddingStart="@dimen/_1sdp"
+
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.242"
+                        app:layout_constraintHorizontal_bias="0.121"
                         app:layout_constraintStart_toEndOf="@+id/personalIcon"
                         app:layout_constraintTop_toBottomOf="@+id/personal" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -314,7 +317,7 @@
                     <ImageView
                         android:id="@+id/qrlIcon"
                         android:layout_width="@dimen/_55sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_height="@dimen/_75sdp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center"
@@ -331,16 +334,16 @@
                         android:id="@+id/qr1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_18sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="24dp"
                         android:layout_toEndOf="@+id/qrlIcon"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="center"
                         android:text="QR Code"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_5sdp"
+                        android:textSize="@dimen/_18sdp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.043"
+                        app:layout_constraintHorizontal_bias="0.042"
                         app:layout_constraintStart_toEndOf="@+id/qrlIcon"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -348,19 +351,19 @@
                         android:id="@+id/qrDes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="2dp"
                         android:layout_toEndOf="@+id/qrlIcon"
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:text="QR code displaying and generation"
                         android:textColor="#8C2381FC"
-                        android:layout_marginStart="@dimen/_5sdp"
-                        android:textSize="@dimen/_12sdp"
+                        android:paddingStart="@dimen/_1sdp"
+                        android:textSize="@dimen/_10sdp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.203"
+                        app:layout_constraintHorizontal_bias="0.1"
                         app:layout_constraintStart_toEndOf="@+id/qrlIcon"
-                        app:layout_constraintTop_toBottomOf="@id/qr1"
-                        />
+                        app:layout_constraintTop_toBottomOf="@id/qr1" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -383,7 +386,7 @@
                     <ImageView
                         android:id="@+id/covidDetectIcon"
                         android:layout_width="@dimen/_55sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_height="@dimen/_75sdp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center"
@@ -407,7 +410,7 @@
                         android:gravity="center"
                         android:text="Covid-19 Detection"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_20sdp"
+                        android:textSize="@dimen/_18sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.166"
                         app:layout_constraintStart_toEndOf="@+id/covidDetectIcon"
@@ -418,19 +421,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        app:layout_constraintHorizontal_bias="0.203"
-
                         android:layout_toEndOf="@+id/covidDetectIcon"
+
                         android:fontFamily="@font/roboto_bold"
                         android:gravity="center"
                         android:text="now you can detect covid-19"
                         android:textColor="#8C2381FC"
-                        android:textSize="@dimen/_12sdp"
-
+                        android:textSize="@dimen/_10sdp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/covid"
-                        tools:layout_editor_absoluteY="59dp"
-                        app:layout_constraintStart_toEndOf="@+id/covidDetectIcon"/>
+                        android:paddingStart="@dimen/_1sdp"
+                        app:layout_constraintHorizontal_bias="0.166"
+                        app:layout_constraintStart_toEndOf="@+id/covidDetectIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/covid" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -453,7 +455,7 @@
                     <ImageView
                         android:id="@+id/exposureIcon"
                         android:layout_width="@dimen/_55sdp"
-                        android:layout_height="@dimen/_80sdp"
+                        android:layout_height="@dimen/_75sdp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center"
@@ -476,7 +478,7 @@
                         android:gravity="center"
                         android:text="exposure system"
                         android:textColor="@color/mainBlue"
-                        android:textSize="@dimen/_20sdp"
+                        android:textSize="@dimen/_18sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.172"
                         app:layout_constraintStart_toEndOf="@+id/exposureIcon"
@@ -491,9 +493,10 @@
                         android:gravity="center"
                         android:text="get notification about covid-19"
                         android:textColor="#8C2381FC"
-                        android:textSize="@dimen/_12sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:paddingStart="@dimen/_1sdp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.214"
+                        app:layout_constraintHorizontal_bias="0.175"
                         app:layout_constraintStart_toEndOf="@+id/exposureIcon"
                         app:layout_constraintTop_toBottomOf="@+id/welcome123" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

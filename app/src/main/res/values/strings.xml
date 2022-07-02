@@ -112,4 +112,6 @@
     <string name="your_id_n1">Your ID \n1</string>
     <string name="basic_information">Basic information</string>
     <string name="usertype">usertype</string>
+    <string name="it_will_require_enabling_bluetooth_to_discover_nearby_devices">It will require enabling Bluetooth to discover nearby devices</string>
+    <string name="enable_notification">Enable Notification</string>
 </resources>

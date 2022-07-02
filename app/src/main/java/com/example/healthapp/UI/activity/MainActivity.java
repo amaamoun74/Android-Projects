@@ -53,11 +53,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }, splashDuration);
-
-        // for MAC address
-        //   String mobile_mac_address = getMacAddress();  //call the method that return mac address
-        // Log.d("MyMacIS",mobile_mac_address);
     }
+
 
     /*
         @Override

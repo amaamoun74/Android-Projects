@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 
 import androidx.fragment.app.Fragment;
 
@@ -19,14 +18,13 @@ import androidmads.library.qrgenearator.QRGEncoder;
 public class QrDisplayingFragment extends Fragment {
 
     ImageView qrImage;
-    ProgressBar progressBar;
     SessionManagement sessionManagement;
     int text;
+    String name = "ahmed";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -38,17 +36,27 @@ public class QrDisplayingFragment extends Fragment {
         sessionManagement = new SessionManagement(container.getContext());
         text = sessionManagement.getID();
         generate(text);
-        progressBar = view.findViewById(R.id.progress_load);
-        progressBar.setVisibility(View.VISIBLE);
-
         return view;
     }
 
     void generate(int text) {
         String data = String.valueOf(text);
         QRGEncoder encoder = new QRGEncoder(data, null, QRGContents.Type.TEXT, 1200);
-        encoder.setColorBlack(Color.RED);
-        encoder.setColorWhite(Color.WHITE);
+        if (name.equals("mohamed")&& sessionManagement.getCovid()) {
+            encoder.setColorBlack(Color.RED);
+            encoder.setColorWhite(Color.WHITE);
+        } else if (name.equals("mohamed")&& !sessionManagement.getCovid()){
+            encoder.setColorBlack(Color.YELLOW);
+            encoder.setColorWhite(Color.GRAY);
+        }
+        else if(name.equals("ahmed")&& !sessionManagement.getCovid()){
+            encoder.setColorBlack(Color.GREEN);
+            encoder.setColorWhite(Color.WHITE);
+        }
+        else {
+            encoder.setColorBlack(Color.MAGENTA);
+            encoder.setColorWhite(Color.WHITE);
+        }
         qrImage.setImageBitmap(encoder.getBitmap());
     }
 }

@@ -34,8 +34,6 @@ public class QRGenerator extends AppCompatActivity {
                 encoder.setColorBlack(Color.RED);
                 encoder.setColorWhite(Color.WHITE);
                 qrImage.setImageBitmap(encoder.getBitmap());
-
-
             }
         });
 
