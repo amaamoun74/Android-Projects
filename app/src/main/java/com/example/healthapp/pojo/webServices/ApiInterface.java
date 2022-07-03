@@ -61,13 +61,13 @@ public interface ApiInterface {
 
 
      // for doctor
-     @GET("showde/{userid}")
-     Call<DiseasesData> viewDiseases(@Header("Authorization") String token, @Path("userid") int userid);
+     @GET("userview/{userid}")
+     Call<DiseasesData> viewMedicalDataByDoctor(@Header("Authorization") String token, @Path("userid") int userid);
 
      @POST("updatediseases")
      Call<User> updateDiseases(String diseases ,String description);
 
-     @GET("showresult")
+     @GET("showresult/{userid}")
      Call<DiseasesData>showUserData(@Header("Authorization") String token,@Query("ID") int ID);
 
      @GET("showrcovid")

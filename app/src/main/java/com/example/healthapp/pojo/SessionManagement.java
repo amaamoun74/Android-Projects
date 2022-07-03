@@ -83,8 +83,8 @@ public class SessionManagement {
         sharedPreferencesEditor.apply();
     }
 
-    public void saveUserIdFromQR(int id){
-        sharedPreferencesEditor.putInt(KEY_userType,id);
+    public void saveUserIdFromQR(String id){
+        sharedPreferencesEditor.putString(KEY_userType,id);
         sharedPreferencesEditor.apply();
     }
 
@@ -93,14 +93,14 @@ public class SessionManagement {
         sharedPreferencesEditor.apply();
     }
 
-    public void saveToken(Boolean covid){
-        sharedPreferencesEditor.putBoolean(KEY_Token,covid);
+    public void saveCovid(String covid){
+        sharedPreferencesEditor.putString(KEY_Token,covid);
         sharedPreferencesEditor.apply();
     }
 
-    public Boolean getCovid(){
+    public String getCovid(){
         sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
-        return sharedPreferences.getBoolean(KEY_COVID,true);
+        return sharedPreferences.getString(KEY_COVID,"NAN");
     }
 
     public int getID(){
@@ -109,11 +109,13 @@ public class SessionManagement {
     }
 
     public int getUserIDFromQR(){
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
         return sharedPreferences.getInt(KEY_userIDForQrCode,0);
     }
 
     public String getUserState(){
-        return sharedPreferences.getString(KEY_userType,"");
+        sharedPreferences=context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_userType,"doctor");
     }
 
 

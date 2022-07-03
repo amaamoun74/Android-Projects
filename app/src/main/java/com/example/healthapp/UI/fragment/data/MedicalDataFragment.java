@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -76,6 +77,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
         progressAnimation.setVisibility(VISIBLE);
 
 
+
         retrieveData();
         return view;
 
@@ -118,7 +120,7 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
         errorLayout.setVisibility(GONE);
         progressAnimation.setVisibility(VISIBLE);
         ApiInterface apiInterface = ApiClient.retrofitInstance().create(ApiInterface.class);
-        Call<DiseasesData> callData = apiInterface.showUserData("Bearer " + sessionManagement.getToken(), sessionManagement.getUserIDFromQR());
+        Call<DiseasesData> callData = apiInterface.viewMedicalDataByDoctor("Bearer " + sessionManagement.getToken(), sessionManagement.getUserIDFromQR());
         callData.enqueue(new Callback<DiseasesData>() {
             @Override
             public void onResponse(@NonNull Call<DiseasesData> call, @NonNull Response<DiseasesData> response) {
@@ -163,28 +165,30 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     void retrieveData(){
-        if (sessionManagement.getUserState() == "doctor") {
+        if (sessionManagement.getUserState().equals("doctor")) {
             userMedicalDataByDoctor();
         } else  {
             userMedicalDataByPatient();
         }
     }
 
-    void dataResponse(Response<DiseasesData> response){
+    void
+    dataResponse(Response<DiseasesData> response){
         if (response.isSuccessful() && response.body().getData() != null) {
             swipeRefreshLayout.setRefreshing(false);
             progressAnimation.pauseAnimation();
             progressAnimation.setVisibility(GONE);
-            //Toast.makeText(getActivity(), ""+response.message(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, ""+response.body(), Toast.LENGTH_SHORT).show();
             userData.addAll(response.body().getData());
             dataAdapter.notifyDataSetChanged();
-
         }
+
         else if (response.isSuccessful() && response.body().getData() == null){
             swipeRefreshLayout.setRefreshing(false);
             progressAnimation.setVisibility(GONE);
             showMessage(R.raw.examine,"Empty Medical data!","to get medical information \nplease go to the nearest hospital for examination ");
         }
+
         else {
             progressAnimation.setVisibility(GONE);
             progressAnimation.pauseAnimation();
@@ -207,7 +211,6 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
                     "No Result",
                     "Please Try Again!\n" +
                             errorCode);
-
         }
     }
 

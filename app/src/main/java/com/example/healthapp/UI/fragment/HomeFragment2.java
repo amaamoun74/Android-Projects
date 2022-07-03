@@ -33,6 +33,8 @@ TextView id,covidResult;
         id = view.findViewById(R.id.userID);
         covidResult = view.findViewById(R.id.userCovidResultTV);
         id.setText("Your ID \n" + String.valueOf(sessionManagement.getID()));
+        covidResult.setText("Covid-19 \n" + String.valueOf(sessionManagement.getCovid()));
+
         return view;
     }
 }

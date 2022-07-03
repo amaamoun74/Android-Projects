@@ -2,13 +2,12 @@ package com.example.healthapp.UI.fragment;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +32,8 @@ public class QRScanningFragment extends Fragment {
     private QREader qrEader;
     private TextView txt_result;
     private Context mContext;
+    SessionManagement sessionManagement;
+    RelativeLayout relativeLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,10 @@ public class QRScanningFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_q_r_scanning, container, false);
         txt_result = (TextView) view.findViewById(R.id.code_info);
         surfaceView = (SurfaceView) view.findViewById(R.id.camera_view);
+        sessionManagement = new SessionManagement(container.getContext());
+        relativeLayout=view.findViewById(R.id.scaning);
+
         setupQReader();
-        qrEader.start();
 
         //Request permission
         Dexter.withActivity(getActivity()).withPermission(Manifest.permission.CAMERA)
@@ -80,15 +83,18 @@ public class QRScanningFragment extends Fragment {
                 txt_result.post(new Runnable() {
                     @Override
                     public void run() {
-                       // getUserMedicalData(data);
+
                         txt_result.setText(data);
-                        SessionManagement sessionManagement = new SessionManagement(mContext);
-                        sessionManagement.saveUserIdFromQR(Integer.getInteger(data));
-                        Toast.makeText(getActivity(), data, Toast.LENGTH_SHORT).show();
+                        sessionManagement.saveUserIdFromQR(data);
                         qrEader.stop();
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        loadFragment(new kdaWKdaFragment());
+
+
+                       /* Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setData(Uri.parse(data));
                         startActivity(intent);
+                        */
+
                     }
                 });
             }
@@ -147,6 +153,14 @@ public class QRScanningFragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext= context;
+    }
 
+
+    private void loadFragment(Fragment fragment) {
+        //replace the fragment
+        relativeLayout.setVisibility(View.GONE);
+        requireActivity().getSupportFragmentManager().beginTransaction().
+                replace(R.id.scanFragment, fragment)
+                .commit();
     }
 }
