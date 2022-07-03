@@ -14,7 +14,7 @@ import com.example.healthapp.pojo.SessionManagement;
 public class HomeFragment2 extends Fragment {
 
 SessionManagement sessionManagement;
-TextView id,covidResult;
+TextView id,covidResult,name,type;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,11 @@ TextView id,covidResult;
         sessionManagement = new SessionManagement(container.getContext());
         id = view.findViewById(R.id.userID);
         covidResult = view.findViewById(R.id.userCovidResultTV);
+        type = view.findViewById(R.id.typeTV);
+        name = view.findViewById(R.id.welcome);
+
+        name.setText(sessionManagement.getMainName());
+        type.setText(sessionManagement.getUserState());
         id.setText("Your ID \n" + String.valueOf(sessionManagement.getID()));
         covidResult.setText("Covid-19 \n" + String.valueOf(sessionManagement.getCovid()));
 
