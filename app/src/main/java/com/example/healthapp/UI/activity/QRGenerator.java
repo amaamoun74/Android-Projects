@@ -28,16 +28,14 @@ public class QRGenerator extends AppCompatActivity {
         text = findViewById(R.id.text);
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
                 String data = text.getText().toString();
                 QRGEncoder encoder = new QRGEncoder(data, null , QRGContents.Type.TEXT,1200);
-                encoder.setColorBlack(Color.RED);
+                encoder.setColorBlack(Color.BLACK);
                 encoder.setColorWhite(Color.WHITE);
                 qrImage.setImageBitmap(encoder.getBitmap());
             }
         });
-
-
     }
 
 

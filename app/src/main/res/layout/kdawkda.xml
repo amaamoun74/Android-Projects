@@ -27,7 +27,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Heart Disease"
+                android:text="Obesity"
                 android:textColor="#D90E1E96"
                 android:textSize="@dimen/_22sdp"
                 android:textStyle="bold" />
@@ -41,48 +41,9 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="may causes problem "
+                android:text="don't eat too much "
                 android:textColor="#E62381FC"
                 android:textSize="@dimen/_18sdp" />
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="@dimen/_5sdp"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_10sdp"
-        android:background="@color/white">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/title2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="muscular pain "
-                android:textColor="#D90E1E96"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/description2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/title2"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_15sdp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="take a rest"
-                android:textColor="#E62381FC"
-                android:textSize="24sp" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
@@ -105,7 +66,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="stomach pain"
+                android:text="Diabetes"
                 android:textColor="#D90E1E96"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -116,10 +77,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title3"
                 android:layout_marginStart="40dp"
-                android:layout_marginBottom="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="take Panadol"
+                android:text="problem with pancreas"
                 android:textColor="#E62381FC"
                 android:textSize="24sp" />
         </RelativeLayout>
