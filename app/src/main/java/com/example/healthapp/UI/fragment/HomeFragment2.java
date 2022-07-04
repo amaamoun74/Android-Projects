@@ -16,13 +16,11 @@ public class HomeFragment2 extends Fragment {
 SessionManagement sessionManagement;
 TextView id,covidResult,name,type;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,10 +33,10 @@ TextView id,covidResult,name,type;
         type = view.findViewById(R.id.typeTV);
         name = view.findViewById(R.id.welcome);
 
-        name.setText(sessionManagement.getMainName());
+        name.setText("Hi "+sessionManagement.getMainName());
         type.setText(sessionManagement.getUserState());
-        id.setText("Your ID \n" + String.valueOf(sessionManagement.getID()));
-        covidResult.setText("Covid-19 \n" + String.valueOf(sessionManagement.getCovid()));
+        id.setText("Your ID \n" + sessionManagement.getID());
+        covidResult.setText("Covid-19 \n" + sessionManagement.getCovid());
 
         return view;
     }

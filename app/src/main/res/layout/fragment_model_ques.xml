@@ -43,6 +43,7 @@
         app:layout_constraintVertical_bias="0.029"
         android:orientation="vertical">
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
@@ -56,6 +57,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
 
                 <TextView
                     android:id="@+id/gender"
@@ -86,6 +88,7 @@
                         android:buttonTint="@color/mainBlue"
                         android:fontFamily="@font/quicksand_medium"
                         android:minHeight="48dp"
+                        android:onClick="onCheck"
                         android:text="@string/male"
                         android:textColor="@color/mainBlue"
                         android:textSize="@dimen/_15sdp" />
@@ -107,70 +110,7 @@
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="@dimen/_5sdp"
-            app:cardCornerRadius="@dimen/_10sdp"
-            app:cardElevation="@dimen/_10sdp"
-            app:cardBackgroundColor="@color/white">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/age"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/quicksand_bold"
-                    android:text="Age"
-                    android:textColor="@color/mainBlue"
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold" />
-
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/age"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/_40sdp">
-
-                    <RadioButton
-                        android:id="@+id/yesAge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/mainBlue"
-                        android:fontFamily="@font/quicksand_medium"
-                        android:minHeight="48dp"
-
-                        android:text="@string/male"
-                        android:textColor="@color/mainBlue"
-
-                        android:textSize="@dimen/_15sdp" />
-
-                    <RadioButton
-                        android:id="@+id/noAge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/mainBlue"
-                        android:fontFamily="@font/quicksand_medium"
-                        android:minHeight="48dp"
-                        android:text="@string/female"
-                        android:textColor="@color/mainBlue"
-
-                        android:textSize="@dimen/_15sdp" />
-                </RadioGroup>
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1096,6 +1036,19 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/bluebutton"
+            android:text="Submit"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

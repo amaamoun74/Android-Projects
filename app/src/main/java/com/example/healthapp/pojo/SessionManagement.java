@@ -94,7 +94,7 @@ public class SessionManagement {
     }
 
     public void saveCovid(String covid){
-        sharedPreferencesEditor.putString(KEY_Token,covid);
+        sharedPreferencesEditor.putString(KEY_COVID,covid);
         sharedPreferencesEditor.apply();
     }
 

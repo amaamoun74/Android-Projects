@@ -58,11 +58,11 @@
 
             <TextView
                 android:id="@+id/typeTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="291dp"
+                android:layout_height="24dp"
                 android:layout_toEndOf="@+id/progress"
                 android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
+                android:paddingStart="@dimen/_10sdp"
                 android:text="@string/usertype"
                 android:textColor="#B32381FC"
                 android:textSize="@dimen/_14sdp"

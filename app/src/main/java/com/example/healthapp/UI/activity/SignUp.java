@@ -113,8 +113,8 @@ public class SignUp extends AppCompatActivity {
 
         }
         else if (addressET.getText().toString().isEmpty()) {
-            phoneNumberET.setError("fill in Address field");
-            phoneNumberET.requestFocus();
+            addressET.setError("fill in Address field");
+            addressET.requestFocus();
 
         }
         else if (phoneNumberET.getText().toString().isEmpty()) {
@@ -123,13 +123,13 @@ public class SignUp extends AppCompatActivity {
 
         }
         else if (emergencyNumET.getText().toString().isEmpty()) {
-            phoneNumberET.setError("fill in Emergency Number field");
-            phoneNumberET.requestFocus();
+            emergencyNumET.setError("fill in Emergency Number field");
+            emergencyNumET.requestFocus();
 
         }
         else if (ageET.getText().toString().isEmpty()) {
-            phoneNumberET.setError("fill in age field");
-            phoneNumberET.requestFocus();
+            ageET.setError("fill in age field");
+            ageET.requestFocus();
 
         } else if (nationalID.getText().toString().isEmpty()) {
             nationalID.setError("fill in National ID field");
