@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class SessionManagement {
     SharedPreferences sharedPreferences;
-    SharedPreferences.Editor sharedPreferencesEditor;
+        SharedPreferences.Editor sharedPreferencesEditor;
     Context context;
     Intent intent;
 

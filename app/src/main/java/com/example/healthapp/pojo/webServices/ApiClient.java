@@ -4,8 +4,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     public static Retrofit retrofit;
-
-
     public static final String BASE_URL = "https://ai-clinics.herokuapp.com/api/auth/";
 
     public static Retrofit retrofitInstance() {

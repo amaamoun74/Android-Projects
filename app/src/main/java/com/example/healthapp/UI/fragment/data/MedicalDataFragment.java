@@ -40,8 +40,8 @@ public class MedicalDataFragment extends Fragment implements SwipeRefreshLayout.
 
     RecyclerView recyclerView;
     List<Diseases> userData = new ArrayList<>();
-    SessionManagement sessionManagement;
     DataAdapter dataAdapter;
+    SessionManagement sessionManagement;
     Context mContext;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RelativeLayout errorLayout;

@@ -151,8 +151,8 @@ public class SignUp extends AppCompatActivity {
 
         name = nameET.getText().toString();
         password = passwordET.getText().toString();
-        confirmPassword = confirmPasswordET.getText().toString();
         email = mailET.getText().toString();
+        confirmPassword = confirmPasswordET.getText().toString();
         phoneNum = phoneNumberET.getText().toString();
         nationalId = nationalID.getText().toString();
         age = ageET.getText().toString();

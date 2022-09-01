@@ -19,10 +19,10 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     Context context;
     List<Diseases> list;
 
-   public DataAdapter (Context context, List<Diseases> list){
-        this.context = context;
-        this.list = list;
-    }
+       public DataAdapter (Context context, List<Diseases> list){
+            this.context = context;
+            this.list = list;
+        }
 
     @NonNull
     @Override
